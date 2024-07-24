@@ -1,6 +1,4 @@
-from class_electron import electron
-from class_electron import plot
-from class_electron import hibrydization
+from electron_atom.class_electron import electron,plot
 e=electron()
 p=plot()
 p.plot_radial_(2,4,0)
