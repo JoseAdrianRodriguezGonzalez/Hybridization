@@ -1,5 +1,12 @@
 <script>
-    import "./main.css"
+    import "./main.css";
+    import radial from "./assets/Radial.png"
+    import real from "./assets/Real.png"
+    import complex from "./assets/Complex.png"
+    import WF2D from "./assets/wf2d.png"
+    import WF3D from "./assets/wf3d.png"
+    import HYBRID from "./assets/sp.png"
+
 </script>
 <div>
 
@@ -20,27 +27,27 @@
     <h2>PLOTS</h2>
     <section class="catalogue">
         <div class="RADIAL">
-            <img src="./assets/Radial.png" alt="Radial">
+            <img src={radial} alt="Radial">
             <span>Radial Function</span>
         </div>
         <div class="REAL">
-            <img src="./assets/Real.png" alt="real">
+            <img src={real} alt="real">
             <span>Real part of spherical harmmonics</span>
         </div>
         <div class="COMPLEX">
-            <img src="./assets/Complex.png" alt="complex">
+            <img src={complex} alt="complex">
             <span>Complex part of spherical harmmonics</span>
         </div>
         <div class="FUNCTION-2D">
-            <img src="./assets/wf2d.png" alt="wave function 2d">
+            <img src={WF2D} alt="wave function 2d">
             <span>Probability density function view on 2D</span>
         </div>
         <div class="FUNCTION-3D">
-            <img src="./assets/wf3d.png" alt="wave function 3d">
+            <img src={WF3D} alt="wave function 3d">
             <span>Probability density function view on 3D</span>
         </div>
         <div class="HYBRID">
-            <img src="./assets/sp.png" alt="Hybridization">
+            <img src={HYBRID} alt="Hybridization">
             <span>Hybridization</span>
         </div>
     </section>
