@@ -9,5 +9,10 @@
 }
 .nav ul>li{
     text-shadow: 1vw ;
-    font-size: 2.5vw;
+    
+}
+@media screen and (min-width:1020px) {
+    .nav ul>li{
+        font-size: 2vw;
+    }
 }

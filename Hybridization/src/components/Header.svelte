@@ -5,9 +5,9 @@
     <div>
         <nav class="nav">
             <ul>
-              <li>Inicio</li>
-              <li>Ejemplos</li>
-              <li>Documentación</li>
+              <li>Documentation</li>
+              <li>Examples</li>
+              <li>Home</li>
             </ul>
           </nav>
     </div>

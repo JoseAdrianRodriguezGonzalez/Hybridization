@@ -1,0 +1,102 @@
+
+.catalogue{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: repeat(2,1fr);
+    grid-template: 'RADIAL FUNCTION-2D REAL COMPLEX'
+                    'FUNCTION-3D FUNCTION-3D HYBRID HYBRID';
+    gap:2vw;
+    padding: 2vw;
+}
+.catalogue div > img {
+    
+    transition: filter 1.2s,transform 0.3s;
+}
+
+.RADIAL{
+    grid-area: RADIAL;
+    
+}
+.RADIAL img{
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem yellowgreen);
+}
+.REAL img{
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem crimson );
+}
+.COMPLEX img{
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem navy);
+}
+.FUNCTION-2D img{   
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem crimson);
+}
+.FUNCTION-3D img{
+    width:40vw;
+    filter:drop-shadow(0 0 0.45rem beige);
+}
+.HYBRID img{   
+    width:40vw;
+    filter:drop-shadow(0 0 0.45rem cyan);
+}
+.REAL{
+    grid-area: REAL;
+}
+.COMPLEX{
+    grid-area: COMPLEX;
+}
+.FUNCTION-2D{
+    grid-area: FUNCTION-2D;
+}
+.FUNCTION-3D{
+    grid-area: FUNCTION-3D;
+   
+}
+.HYBRID{
+    grid-area: HYBRID;
+}
+@media (hover:hover){
+        
+    .RADIAL img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem yellowgreen);
+        transform: scale(1.05);
+    }
+    .REAL img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem crimson );
+        transform: scale(1.05);
+    }
+    .COMPLEX img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem navy);
+        transform: scale(1.05);
+    }
+    .FUNCTION-2D img:hover{
+        transition: 1.2s;   
+        filter:drop-shadow(0 0 0.9rem crimson);
+        transform: scale(1.05);
+    }
+    .FUNCTION-3D img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem beige);
+        transform: scale(1.05);
+    }
+    .HYBRID img:hover{
+        transition: 1.2s;   
+        filter:drop-shadow(0 0 0.9rem cyan);
+        transform: scale(1.05);
+    }   
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.catalogue div {
+    animation: fadeIn 1s ease-in-out;
+}
+.Index{
+    animation:fadeIn 1.5s ease-in-out
+}
