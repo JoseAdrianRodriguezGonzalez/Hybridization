@@ -20,32 +20,30 @@
     <h2>PLOTS</h2>
     <section class="catalogue">
         <div class="RADIAL">
-            <img src="Hybridization/src/assets/Radial.png" alt="Radial">
+            <img src="./assets/Radial.png" alt="Radial">
             <span>Radial Function</span>
         </div>
         <div class="REAL">
-            <img src="Hybridization/src/assets/Real.png" alt="real">
+            <img src="./assets/Real.png" alt="real">
             <span>Real part of spherical harmmonics</span>
         </div>
         <div class="COMPLEX">
-            <img src="Hybridization/src/assets/Complex.png" alt="complex">
+            <img src="./assets/Complex.png" alt="complex">
             <span>Complex part of spherical harmmonics</span>
         </div>
         <div class="FUNCTION-2D">
-            <img src="Hybridization/src/assets/wf2d.png" alt="wave function 2d">
+            <img src="./assets/wf2d.png" alt="wave function 2d">
             <span>Probability density function view on 2D</span>
         </div>
         <div class="FUNCTION-3D">
-            <img src="Hybridization/src/assets/wf3d.png" alt="wave function 3d">
+            <img src="./assets/wf3d.png" alt="wave function 3d">
             <span>Probability density function view on 3D</span>
         </div>
         <div class="HYBRID">
-            <img src="Hybridization/src/assets/sp.png" alt="Hybridization">
+            <img src="./assets/sp.png" alt="Hybridization">
             <span>Hybridization</span>
         </div>
     </section>
     <h2>Introduction:</h2>
-    <p>Part of this website will contain some relevant information that could help to understand the usage of the project, so here will be a little index which can show this extra information.
-
-    </p>
+    <p>Part of this website will contain some relevant information that could help to understand the usage of the project, so here will be a little index which can show this extra information.</p>
 </div>
