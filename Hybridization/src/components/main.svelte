@@ -8,7 +8,7 @@
     import HYBRID from "./assets/sp.png"
 
 </script>
-<div>
+<div class="Principal">
 
     <h1>Quantum simulator</h1>
     <article class="Index">
