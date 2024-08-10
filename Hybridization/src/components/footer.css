@@ -1,0 +1,5 @@
+footer{
+    display: grid;
+    grid-template-columns: 3;
+    background-color: black;
+}

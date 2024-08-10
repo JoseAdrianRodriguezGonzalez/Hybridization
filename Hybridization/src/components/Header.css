@@ -1,11 +1,14 @@
 .nav ul{
+    position:fixed;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
     gap:3vw;
+    right: 0;
     list-style-type:none;
     background-color: rgb(8, 7, 7);
     height: 5vh;
+    z-index: 100;
 }
 .nav ul>li{
     text-shadow: 1vw ;

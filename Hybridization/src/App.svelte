@@ -2,6 +2,7 @@
   
   import Header from './components/Header.svelte';
   import Main from './components/main.svelte';
+  import Footer from './components/footer.svelte'
 </script>
 
 <main>
@@ -12,4 +13,7 @@
     
   </Main>
 
+  <Footer>
+    
+  </Footer>
 </main>
