@@ -1,13 +1,14 @@
 <script>
     import './Header.css';
+    import{link} from 'svelte-spa-router';
 </script>
 <header>
     <div>
         <nav class="nav">
             <ul>
-              <li>Documentation</li>
-              <li>Examples</li>
-              <li>Home</li>
+              <li><a href="/Documentation" use:link>Documentation</a></li>
+              <li><a href="/Examples" use:link>Examples</a></li>
+              <li><a href="/" use:link>Home</a></li>
             </ul>
           </nav>
     </div>

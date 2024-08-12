@@ -9,10 +9,15 @@
     background-color: rgb(8, 7, 7);
     height: 5vh;
     z-index: 100;
+    width: 100vw;
+    padding: 2.3vw;
+}
+.nav{
+    height: 10vh;
 }
 .nav ul>li{
     text-shadow: 1vw ;
-    
+    font-style: none;
 }
 @media screen and (min-width:1020px) {
     .nav ul>li{
