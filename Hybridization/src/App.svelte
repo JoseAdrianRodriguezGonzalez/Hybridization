@@ -1,19 +1,13 @@
 <script>
-  
-  import Header from './components/Header.svelte';
-  import Main from './components/main.svelte';
-  import Footer from './components/footer.svelte'
+
+  import Router from 'svelte-spa-router';
+import routes from './routes';
+
+    // Revisa si la ruta es la raízW
 </script>
 
 <main>
-  <div>
-    <Header></Header>
-  </div>
-  <Main>
-    
-  </Main>
-
-  <Footer>
-    
-  </Footer>
+     <Router {routes}>
+    </Router>
+ 
 </main>
