@@ -1,5 +1,5 @@
 # Hybridization
-An upgrade from the past code made on Colab
+An upgrade from the past code made on Colab.  
 # Hibridación
 El proyecto está seccionado en diferentes etapas para gráficar la hibridación
  * [La parte radial](https://github.com/JoseAdrianRodriguezGonzalez/Hibridacion/tree/2bf4264a83fbd573a454ea5dacbccdfb4fb00c84/radial)
