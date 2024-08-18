@@ -6,7 +6,7 @@
     import WF2D from "./assets/wf2d.png"
     import WF3D from "./assets/wf3d.png"
     import HYBRID from "./assets/sp.png"
-
+    import{link} from 'svelte-spa-router';
 </script>
 <div class="Principal">
 
@@ -27,8 +27,10 @@
     <h2>PLOTS</h2>
     <section class="catalogue">
         <div class="RADIAL">
-            <img src={radial} alt="Radial">
-            <span>Radial Function</span>
+            <a href="/Radial" use:link>
+                <img src={radial} alt="Radial">
+                <span>Radial Function</span>
+            </a>
         </div>
         <div class="REAL">
             <img src={real} alt="real">

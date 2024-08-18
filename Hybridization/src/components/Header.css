@@ -17,7 +17,10 @@
 }
 .nav ul>li{
     text-shadow: 1vw ;
-    font-style: none;
+}
+a{
+    text-decoration: none;
+    color:inherit
 }
 @media screen and (min-width:1020px) {
     .nav ul>li{
