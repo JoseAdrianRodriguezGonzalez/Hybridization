@@ -1,0 +1,7 @@
+.Periodic{
+    display:grid;
+    grid-template-columns: repeat(1fr,18);
+    width:80vw;
+    height:100vh;
+    grid-template-rows: repeat(1fr,10);
+}
