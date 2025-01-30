@@ -2,9 +2,10 @@
 .catalogue{
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
     grid-template: 'RADIAL FUNCTION-2D REAL COMPLEX'
-                    'FUNCTION-3D FUNCTION-3D HYBRID HYBRID';
+                    'FUNCTION-3D FUNCTION-3D HYBRID HYBRID'
+                    'PERIODIC PERIODIC PERIODIC PERIODIC';
     gap:2vw;
     padding: 2vw;
 

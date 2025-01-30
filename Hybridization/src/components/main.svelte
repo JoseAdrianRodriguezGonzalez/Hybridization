@@ -52,7 +52,18 @@
             <img src={HYBRID} alt="Hybridization">
             <span>Hybridization</span>
         </div>
+        <div class="PERIODIC">
+            <a href="/table" use:link>
+                <!--<img src={HYBRID} alt="Hybridization">-->
+                <span>Periodic Table</span>
+            </a>
+        </div>
     </section>
     <h2>Introduction:</h2>
-    <p>Part of this website will contain some relevant information that could help to understand the usage of the project, so here will be a little index which can show this extra information.</p>
+    <p>Part of this website will contain some relevant information that could help to understand the usage of the project,however it is indispensable to understand some quantum notations that will be useful to catch the idea up..
+At the main page of the website will describe some general aspects of the Schrödinger's equation and relevant aspects of it. to get more involve, you can go to Documentation and review these relevant aspects.</p>
+        <h3>Preabmule</h3>
+        <!--Aqui-->
+        <article>At XIX, everyone thought that the Physics were finished, that the physical laws and theorems were enough to represent all phenoms. However, at this century, Thermodynamics was a new physics area that had many troubles into its creation.
+As this area of Physics introduced many aspects of particles, some of them had not a contingent response. This problem corresponds to the "black body", and how a contradictory statement was established. Meanwhile you decrease the size of an object, its temperature can be infinitly increased. However, this doesn't have sense, so Planck Proposed that the particles actually make "jumps", and this denomination was called quantums. At 1908,  </article>
 </div>
