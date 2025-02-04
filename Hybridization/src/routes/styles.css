@@ -1,7 +1,27 @@
 .Periodic{
     display:grid;
-    grid-template-columns: repeat(1fr,18);
-    width:80vw;
-    height:100vh;
-    grid-template-rows: repeat(1fr,10);
+    grid-template-columns: repeat(18,1fr);
+    height: 80vh;
+    margin-bottom: 2vw;
 }
+.box{
+    width:4.5vw;
+    height:10vh
+}
+.Periodic-2{
+    display:grid;
+    grid-template-columns: repeat(14,1fr);
+    height: 20vh;
+    margin-bottom: 2vw;
+}
+.box:nth-child(n+2):nth-child(-n+17),
+.box:nth-child(n+21):nth-child(-n+30),
+.box:nth-child(n+39):nth-child(-n+48){
+    visibility: hidden;
+}
+
+.box_{
+    width:4.5vw;
+    height:10vh
+}
+
