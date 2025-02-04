@@ -61,9 +61,14 @@
     </section>
     <h2>Introduction:</h2>
     <p>Part of this website will contain some relevant information that could help to understand the usage of the project,however it is indispensable to understand some quantum notations that will be useful to catch the idea up..
-At the main page of the website will describe some general aspects of the Schrödinger's equation and relevant aspects of it. to get more involve, you can go to Documentation and review these relevant aspects.</p>
+At the main page of the website will describe some general aspects of the Schrödinger's equation and relevant aspects of it, to get more involve, you can go to Documentation and review these relevant aspects.</p>
         <h3>Preabmule</h3>
         <!--Aqui-->
         <article>At XIX, everyone thought that the Physics were finished, that the physical laws and theorems were enough to represent all phenoms. However, at this century, Thermodynamics was a new physics area that had many troubles into its creation.
-As this area of Physics introduced many aspects of particles, some of them had not a contingent response. This problem corresponds to the "black body", and how a contradictory statement was established. Meanwhile you decrease the size of an object, its temperature can be infinitly increased. However, this doesn't have sense, so Planck Proposed that the particles actually make "jumps", and this denomination was called quantums. At 1908,  </article>
+As this area of Physics introduced many aspects of particles, some of them had not a contingent response. This problem corresponds to the "black body", and how a contradictory statement was established. Meanwhile you decrease the size of an object, its temperature can be infinitly increased. However, this doesn't have sense, so Planck Proposed that the particles actually make "jumps", and this denomination was called quantums.
+It was from here that one of the most emerging and modern branches of physics began: quantum physics. Later works emerged as a result of this essential foundation, including those of Albert Einstein, Werner Heisenberg, Erwin Schrödinger, and Paul Dirac. However, the work on which this project will be based is the great contribution made by Erwin Schrödinger.
+
+<h4>Erwin Schrödinger's Equation</h4>
+Erwin Schrödinger's equation was a key component in the implementation of a model that explains the behavior of particles. In the 20th century, Heisenberg and Erwin Schrödinger sought a definitive model to explain how particle motion works. While Heisenberg aimed to find a matrix-based solution, Erwin Schrödinger presented an approach through a differential equation (Schrödinger, 1926).
+</article>
 </div>
