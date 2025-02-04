@@ -19,12 +19,12 @@
     `;
 
     let mathContent2 = 'Orbital: '
-    let Orbital = `\[
+    let Orbital = `\\[
         Y_l^m (\\theta, \\phi) = \\sqrt{\\frac{(2l+1)}{4\\pi} \\frac{(l-m)!}{(l+m)!}} P_l^m(\\cos\\theta) e^{im\\phi}
         \\]
         `;
   onMount(() => {
-    if (!window.<MathJax>) {
+    if (!window.MathJax) {
       window.MathJax = {
         tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
         svg: { fontCache: 'global' },

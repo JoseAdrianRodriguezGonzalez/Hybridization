@@ -10,17 +10,19 @@
     let visibleItems=[];
     let secondIndexes=[];
     
-    let data;
-    async function dataLoad(params) {
-        try{
-            const response= await fetch("/periodic.json")
-            if(!response.ok)throw new Error("Erro fecthing json");
-            data=await response.json();
-        }catch(error){
-            console.error("Error fetchign JSON", error);
-        }
-    }
-    dataLoad();
+    let data = [];
+
+onMount(async () => {
+  try {
+    const res = await fetch("/data.json"); // Ruta en `public/`
+    if (!res.ok) throw new Error("No se pudo cargar el JSON");
+
+    data = await res.json();
+  } catch (error) {
+    console.error("Error al cargar los datos:", error);
+  }
+});
+    
     console.log(data);
     onMount(()=>{
         let counter=1;
