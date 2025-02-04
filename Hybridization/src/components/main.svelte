@@ -7,7 +7,45 @@
     import WF3D from "./assets/wf3d.png"
     import HYBRID from "./assets/sp.png"
     import{link} from 'svelte-spa-router';
+    import {onMount} from 'svelte';
+    let mathContent = 'Equation Schrödinger: '
+    let ecS ='\\[ i\\hbar \\frac{\\partial}{\\partial t} \\Psi = \\hat{H} \\Psi \\]';
+    
+    let radil = `
+        \\[
+        R_{nl}(r)=\\sqrt{\\left(\\frac{2}{na_0}\\right)^3 \\cdot \\frac{(n-l-1)!}{2n(n+l)!}}
+        \\cdot e^{-\\frac{r}{na_0}} \\left(\\frac{2r}{na_0}\\right)^l L^{2l+1}_{n-l-1}\\left(\\frac{2r}{na_0}\\right)
+        \\]
+    `;
+
+    let mathContent2 = 'Orbital: '
+    let Orbital = `\[
+        Y_l^m (\\theta, \\phi) = \\sqrt{\\frac{(2l+1)}{4\\pi} \\frac{(l-m)!}{(l+m)!}} P_l^m(\\cos\\theta) e^{im\\phi}
+        \\]
+        `;
+  onMount(() => {
+    if (!window.<MathJax>) {
+      window.MathJax = {
+        tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+        svg: { fontCache: 'global' },
+      };
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+      script.async = true;
+      script.onload = () => window.MathJax.typesetPromise();
+      document.head.appendChild(script);
+    } else {
+      window.MathJax.typesetPromise();
+    }
+  });
+
+  $: {
+    if (window.MathJax) {
+      window.MathJax.typesetPromise();
+    }
+  }
 </script>
+
 <div class="Principal">
 
     <h1>Quantum simulator</h1>
@@ -70,5 +108,45 @@ It was from here that one of the most emerging and modern branches of physics be
 
 <h4>Erwin Schrödinger's Equation</h4>
 Erwin Schrödinger's equation was a key component in the implementation of a model that explains the behavior of particles. In the 20th century, Heisenberg and Erwin Schrödinger sought a definitive model to explain how particle motion works. While Heisenberg aimed to find a matrix-based solution, Erwin Schrödinger presented an approach through a differential equation (Schrödinger, 1926).
+
+<p>
+    <span>{@html mathContent}</span>
+    <span>{@html ecS}</span>
+</p>
+
+Thanks to this work, quantum mechanics was firmly established, and through the solutions of this equation, we can graph quantum orbitals.
+The particle is described in four dimensions,space and time, however, only space will be used for visualization purposes.
+
+<h4>Solutions to Erwin Schrödinger' equation</h4>
+Given Erwin Schrödinger's differential equation, which helps us understand the behavior of a particle, a standardized result was established for the hydrogen atom, from which two equations arise.
+
+<h4>For the radial function:</h4>
+The particle exhibits a "radius" or distance from the center of the atom. The radial function describes this phenomenon, allowing us to define a distance between energy levels and sublevels for a given energy state.
+
+<p>
+    <span>{@html mathContent}</span>
+    that is described by this expression:<br />
+    <span>{@html radil}</span>
+  </p>
+The first-moment equation may seem impossible to understand; however, it simply involves considering a formula that takes three parameters:
+<ol>
+    <li>The quantum number <b><i>n</i></b>: Describes the energy levels of the atom (n=1,2,3,…).</li>
+<li>The quantum number <b><i>l</i></b>: Describes the sublevels or "subshells" of energy (l=0,1,2,…).</li>
+<li>A radius value <b><i>r</i></b>: This parameter is calculated within the program.</li>
+</ol>
+This formula is extremely useful for plotting the probability of where a particle is likely to be found.
+
+<h4>For the shape of the orbital</h4>
+
+    <p>Erwin Schrödinger's particle model does not describe perfect orbitals but rather probability densities where the electron might be found, given the quantum numbers <b><i>l</i></b> and <b><i>m</i></b>. 
+    <b><i>l</i></b> describes the energy sublevel, and <b><i>m</i></b> describes the orientation of each orbital.</p>
+
+    <p>The function that corresponds to the second part of Schrödinger's equation solution is:</p>
+
+    <p>
+        <span>{@html mathContent2}</span>
+        that is described by this expression:<br />
+        <span>{@html Orbital}</span>
+      </p>
 </article>
 </div>
