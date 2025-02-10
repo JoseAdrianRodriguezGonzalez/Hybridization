@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "mathjax": "^3.2.2",
+    "plotly.js-dist-min": "^3.0.0",
     "svelte-spa-router": "^4.0.1"
   }
 }
