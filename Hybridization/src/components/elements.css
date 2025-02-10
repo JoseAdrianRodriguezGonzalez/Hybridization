@@ -1,0 +1,19 @@
+.main{
+    display:grid;
+    grid-template: "TOP TOP"
+               " MID MID"
+                "MID MID" 
+                "LOW LOW";
+    font-size: 0.8vw;
+    height:20vh;
+    grid-template-rows: .0001fr .0001fr .0001fr .0001fr;
+}
+.top{
+    grid-area: TOP;
+}
+.mid{
+    grid-area:MID;
+}
+.low{
+    grid-area:LOW;
+}

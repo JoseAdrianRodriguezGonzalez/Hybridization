@@ -1,3 +1,4 @@
+import {wrap} from 'svelte-spa-router/wrap'
 import Documentation from "./routes/Documentation.svelte";
 import Examples from "./routes/Examples.svelte";
 import Home from "./routes/home.svelte"
