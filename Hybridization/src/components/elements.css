@@ -1,19 +1,47 @@
 .main{
     display:grid;
-    grid-template: "TOP TOP"
-               " MID MID"
-                "MID MID" 
+    grid-template: "TOP TOP1"
+               " MID MID1"
+                "MID MID1" 
                 "LOW LOW";
-    font-size: 0.8vw;
-    height:20vh;
-    grid-template-rows: .0001fr .0001fr .0001fr .0001fr;
+    font-size: 0.5vw;
+    min-height:30vh;
+    min-width:100%;
+    grid-template-rows: .1fr .1fr .1fr .1fr;
+    
+
 }
 .top{
     grid-area: TOP;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    font-size: 0.8vw;
+}
+.top1{
+grid-area: TOP1;;
+font-size: 0.6vw;
 }
 .mid{
     grid-area:MID;
 }
-.low{
-    grid-area:LOW;
+.quantum{
+    grid-area: MID1;
+    font-size: 0.6vw;
+}
+.down{
+    grid-area: LOW;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9vw;
+}
+.quantum >ul{
+    list-style-type:none ;
+    padding:0;
+}
+.H{
+    display:block;
+    width:2.0vw;
+    height:4vh;
 }

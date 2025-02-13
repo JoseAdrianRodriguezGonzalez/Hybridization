@@ -92,6 +92,9 @@
             atomicNumber={data[visibleItems[index]-1]?.atomicNumber || '-'} 
             elementName={data[visibleItems[index]-1]?.name || 'Unknown'} 
             Symbol={data[visibleItems[index]-1]?.symbol || '-'}
+            n={data[visibleItems[index]-1]?.n || ''}
+            l={data[visibleItems[index]-1]?.l || '-'}
+            m={data[visibleItems[index]-1]?.m || '-'}
           />
         {:else}
           <p>Loading...</p>
@@ -108,6 +111,9 @@
             atomicNumber={data[secondIndexes[index]-1]?.atomicNumber || '-'} 
             elementName={data[secondIndexes[index]-1]?.name || 'Unknown'} 
             Symbol={data[secondIndexes[index]-1]?.symbol || '-'}
+            n={data[visibleItems[index]-1]?.n || ''}
+            l={data[visibleItems[index]-1]?.l || '-'}
+            m={data[visibleItems[index]-1]?.m || '-'}
           />
         {:else}
           <p>Loading...</p>
