@@ -2,17 +2,19 @@
     display:grid;
     grid-template-columns: repeat(18,1fr);
     height: 80vh;
-    margin-bottom: 2vw;
+    margin-bottom: 8vw;
 }
 .box{
-    width:4.5vw;
-    height:10vh
+    width:5.5vw;
+    height:13vh;
+    border:0.01vw solid white;
 }
 .Periodic-2{
     display:grid;
     grid-template-columns: repeat(14,1fr);
-    height: 20vh;
-    margin-bottom: 2vw;
+    height: 25vh;
+    margin-bottom: 6vw;
+    width:75vw;
 }
 .box:nth-child(n+2):nth-child(-n+17),
 .box:nth-child(n+21):nth-child(-n+30),
@@ -21,7 +23,8 @@
 }
 
 .box_{
-    width:4.5vw;
-    height:10vh
+    width:5.9vw;
+    height:13vh;
+    border:0.1vw solid white;
 }
 
