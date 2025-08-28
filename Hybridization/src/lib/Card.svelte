@@ -66,26 +66,20 @@
   @media (max-width: 768px) {
     .card {
       padding: 1rem;
-      width: 80vw;
-      min-width: 80vw;
-      max-width: 80vw;
+      width: 20vw;
+      min-width: 20vw;
+      max-width: 20vw;
     }
     
     .icono {
-      width: 20vw;
+      width: 10vw;
     }
     
-    h2 {
-      font-size: 1.5rem;
-    }
     
     h2::after {
       margin: 0.5rem auto 0 auto;
       border-bottom: 0.25rem solid #48C6FF;
     }
     
-    p {
-      font-size: 1rem;
-    }
   }
 </style>

@@ -1,8 +1,8 @@
   .cards-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem;
+    display:flex;
+    flex-direction: row;
+    gap:3.5em;
   }
   
 .catalogue{
@@ -122,7 +122,6 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 1vw 2vw;
-  min-height: 100vh;
 }
 h1 {
   color: #fff;
