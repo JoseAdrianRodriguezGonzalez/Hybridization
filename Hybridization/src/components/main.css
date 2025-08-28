@@ -1,4 +1,10 @@
-
+  .cards-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
 .catalogue{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -8,15 +14,19 @@
                     'PERIODIC PERIODIC PERIODIC PERIODIC';
     gap:2vw;
     padding: 2vw;
-
 }
+
 .Principal{
-    font-size: 2vw;
+    font-size: 1.7vw;
+    padding: 2vw;
+    margin: 0 auto;
+    max-width: 95vw;
 }
 .catalogue div > img {
     
     transition: filter 1.2s,transform 0.3s;
 }
+
 
 .RADIAL{
     grid-area: RADIAL;
@@ -62,6 +72,7 @@
 .HYBRID{
     grid-area: HYBRID;
 }
+
 @media (hover:hover){
         
     .RADIAL img:hover{
@@ -93,7 +104,8 @@
         transition: 1.2s;   
         filter:drop-shadow(0 0 0.9rem cyan);
         transform: scale(1.05);
-    }   
+    }
+      
 }
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -104,4 +116,55 @@
 }
 .Index{
     animation:fadeIn 1.5s ease-in-out
+}
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1vw 2vw;
+  min-height: 100vh;
+}
+h1 {
+  color: #fff;
+  font-size: vw;
+  font-weight: bold;
+}
+.left-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orbital-icon {
+  width: 40vw;
+  margin-bottom: 1vw;
+}
+.logo-title {
+  display: flex;
+  align-items: center;         
+  gap: 32px;                  
+}
+.right-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.desc {
+  font-style: bold;
+  color: #fff;
+  font-size: 3vw;
+  margin-bottom: 2.5vw;
+  text-align: right;
+}
+.install-btn {
+  background: #02023A;
+  color: #fff;
+  font-size: 2.2vw;
+  font-weight: bold;
+  padding: 1.7vw 3vw;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.install-btn:hover {
+  background-color: #03035f;
 }

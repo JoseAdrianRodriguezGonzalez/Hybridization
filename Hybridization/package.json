@@ -17,7 +17,8 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "plotly.js-dist-min": "^3.0.0"
+    "plotly.js-dist-min": "^3.0.0",
+    "svelte-pdf-simple": "^2.0.0",
+    "svelte-spa-router": "^4.0.1"
   }
 }
-                                            
