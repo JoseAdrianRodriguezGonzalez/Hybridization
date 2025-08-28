@@ -1,12 +1,14 @@
 <script>
   // Card.svelte (componente individual)
+  import{link} from 'svelte-spa-router';
   export let titulo;
   export let texto;
   export let icono;
-  export let link;
+  export let enlace;
+  console.log(enlace)
 </script>
 
-<a class="card" href={link} use:link>
+<a class="card" href={enlace} use:link>
   <img src={icono} alt="icono" class="icono" />
   <h2>{titulo}</h2>
   <p>{texto}</p>

@@ -9,7 +9,7 @@
     import DocumentacionIcon from "./assets/documentacion.svg";
     import TeoriaIcon from "./assets/teoria.svg";
     import GaleriaIcon from "./assets/galeria.svg";
-    import Card from '../routes/Card.svelte';
+    import Card from '../lib/Card.svelte';
     import{link} from 'svelte-spa-router';
     import {onMount} from 'svelte';
     import logo from "./assets/LogoQP.svg"
@@ -66,23 +66,24 @@
                 <a href="/Instalacion" use:link class="install-btn">Instalar</a>
             </div>
         </section>
-        
         <section class="cards-container">
-            <Card titulo="Documentación"
-                texto="Toda la información tecnica sobre el uso de la librería."
-                icono={DocumentacionIcon}
-                link="/Documentacion"/>
-            
+         <Card titulo="Documentación"
+            texto="Toda la información tecnica sobre el uso de la librería."
+            icono={DocumentacionIcon}
+            enlace="/Documentacion"/>
             <Card titulo="Galeria de contenido"
-                texto="Encontraras videos e imagenes detalladas."
-                icono={GaleriaIcon}
-                link="/Galeria"/> 
-
+            texto="Encontraras videos e imagenes detalladas."
+            icono={GaleriaIcon}
+            enlace="/Galeria"/> 
+            
             <Card titulo="Teoria"
-                texto="Encontraras conceptos matemáticos y que hay físicos detrás."
-                icono={TeoriaIcon}
-                link="/Teoria"/> 
+            texto="Encontraras conceptos matemáticos y que hay físicos detrás."
+            icono={TeoriaIcon}
+            enlace="/Teoria"/> 
+        
+            
         </section>
+        
 
         <section class="content">
             <p class="description">

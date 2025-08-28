@@ -79,10 +79,10 @@ function global:deactivate ([switch]$NonDestructive) {
         Remove-Item -Path Function:_OLD_VIRTUAL_PROMPT
     }
 
-    # The prior PYTHONHOME:
-    if (Test-Path -Path Env:_OLD_VIRTUAL_PYTHONHOME) {
-        Copy-Item -Path Env:_OLD_VIRTUAL_PYTHONHOME -Destination Env:PYTHONHOME
-        Remove-Item -Path Env:_OLD_VIRTUAL_PYTHONHOME
+    # The prior PYTHONinicio:
+    if (Test-Path -Path Env:_OLD_VIRTUAL_PYTHONinicio) {
+        Copy-Item -Path Env:_OLD_VIRTUAL_PYTHONinicio -Destination Env:PYTHONinicio
+        Remove-Item -Path Env:_OLD_VIRTUAL_PYTHONinicio
     }
 
     # The prior PATH:
@@ -236,10 +236,10 @@ if (-not $Env:VIRTUAL_ENV_DISABLE_PROMPT) {
     $env:VIRTUAL_ENV_PROMPT = $Prompt
 }
 
-# Clear PYTHONHOME
-if (Test-Path -Path Env:PYTHONHOME) {
-    Copy-Item -Path Env:PYTHONHOME -Destination Env:_OLD_VIRTUAL_PYTHONHOME
-    Remove-Item -Path Env:PYTHONHOME
+# Clear PYTHONinicio
+if (Test-Path -Path Env:PYTHONinicio) {
+    Copy-Item -Path Env:PYTHONinicio -Destination Env:_OLD_VIRTUAL_PYTHONinicio
+    Remove-Item -Path Env:PYTHONinicio
 }
 
 # Add the venv to the PATH
