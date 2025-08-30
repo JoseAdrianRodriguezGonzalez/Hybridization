@@ -6,7 +6,6 @@ import Radial from "./routes/Radial.svelte";
 import Periodic from "./routes/Periodic.svelte";
 import Instalacion from "./routes/Instalacion.svelte";
 import Teoria from "./routes/Teoria.svelte";
-import Poster from "./routes/Poster.svelte";
 
 const routes ={
     '/Documentacion':Documentacion,
@@ -16,6 +15,5 @@ const routes ={
     '/table':Periodic,
     '/Instalacion':Instalacion,
     '/Teoria':Teoria,
-    '/Poster':Poster
 }
 export default routes;

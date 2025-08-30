@@ -11,7 +11,6 @@
               <li><a href="/" use:link>Inicio</a></li>
               <li><a href="/table" use:link>Tabla Periódica</a></li>
               <li><a href="/Teoria" use:link>Teoría</a>
-              <li><a href="/Poster" use:link>Poster</a></li>
               <li><a href="/Instalacion" use:link>Instalación</a></li>
             </ul>
           </nav>
