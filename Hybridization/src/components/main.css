@@ -1,8 +1,8 @@
   .cards-container {
-    padding: 2rem;
+    padding: 1.2rem;
     display:flex;
     flex-direction: row;
-    gap:6.2em;
+    gap:14vw;
   }
   
 .catalogue{
@@ -18,8 +18,8 @@
 
 .Principal{
     font-size: 1.7vw;
-    padding: 2vw;
-    margin: 0 auto;
+    padding: 1.5vw;
+    margin: 1vm auto;
     max-width: 95vw;
 }
 .catalogue div > img {

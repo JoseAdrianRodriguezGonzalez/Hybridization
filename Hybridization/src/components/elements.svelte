@@ -6,7 +6,7 @@
     export let n=1;
     export let l=0;
     export let m=0;
-    import H from '/H.png'
+    import H from '/images/H.png'
 </script>
 <div class="main">
     <div class="top">{atomicNumber}</div>

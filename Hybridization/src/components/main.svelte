@@ -1,18 +1,13 @@
 <script>
     import "./main.css";
-    import radial from "./assets/Radial.png"
-    import real from "./assets/Real.png"
-    import complex from "./assets/Complex.png"
-    import WF2D from "./assets/wf2d.png"
-    import WF3D from "./assets/wf3d.png"
-    import HYBRID from "./assets/sp.png"
-    import DocumentacionIcon from "./assets/documentacion.svg";
-    import TeoriaIcon from "./assets/teoria.svg";
-    import GaleriaIcon from "./assets/galeria.svg";
+
+    import DocumentacionIcon from "/images/documentacion.svg";
+    import TeoriaIcon from "/images/teoria.svg";
+    import GaleriaIcon from "/images/galeria.svg";
     import Card from '../lib/Card.svelte';
     import{link} from 'svelte-spa-router';
     import {onMount} from 'svelte';
-    import logo from "./assets/LogoQP.svg"
+    import logo from "/images/LogoQP.svg"
     let mathContent = 'Equation Schrödinger: '
     let ecS ='\\[ i\\hbar \\frac{\\partial}{\\partial t} \\Psi = \\hat{H} \\Psi \\]';
     
