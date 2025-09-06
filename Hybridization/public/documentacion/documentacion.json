@@ -5,54 +5,52 @@
       {
         "name": "1.1 get_cartesian_grid()",
         "id": "cartesian_grid",
-        "content": "short",
-        "href": "#cartesian_grid"
+        "href": "cartesian_grid.md"
       },
       {
         "name": "1.2. get_spherical_grid(x,y,z)",
         "id": "cartesian",
-        "content": "short",
-        "href": "#"
+        "href": "documentacion/cartesian_grid.md"
       },
       { "name": "1.3 compute_radial()",
         "id": "compute_radial",
-        "content": "short",
+        
         "href": "#compute_radial"},
       { "name": "1.4 compute_real_spherical()",
         "id": "",
-        "content": "short",
+        
         "href": "#"
          },
       { "name": "1.5. compute_imaginary_spherical()",
         "id": "",
-        "content": "short",
+        
         "href": "#"
       },
       { "name": "1.6 compute_wavefunction_2D(d=20)",
         "id": "",
-        "content": "short",
+        
         "href": "#"},
       { "name": "1.7 compute_wavefunction_3D()", "id": "",
-        "content": "short",
+        
         "href": "#"
       },
       { "name": "1.8 compute_wavefunction_3D_complex()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "1.9 getN()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "1.10 getL()", "id": "",
-        "content": "short",
+        
         "href": "#"
       },
       { "name": "1.11 getM()",
         "id": "",
-        "content": "short",
+        
         "href": "#"
       },
       { "name": "1.13 getRadius()", "id": "",
-        "content": "short",
+        
         "href": "#" }
     ]
   },
@@ -60,22 +58,22 @@
     "title": "2. quplots.hybridization",
     "links": [
       { "name": "2.1 generate_sp()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "2.2 generate_sp2()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "2.3 generate_sp3()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "2.4 generate_sp2d()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "2.5 generate_sp3d()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "2.6 generate_sp3d2()", "id": "",
-        "content": "short",
+        
         "href": "#" }
     ]
   },
@@ -83,37 +81,37 @@
     "title": "3. quplots.plots",
     "links": [
       { "name": "3.1. plot_radial_()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.2 plot_spherical_real()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.3 plot_spherical_imaginary()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.4 plot_wf_2d()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.5 plot_wf_3d()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.6 plot_sp()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.7 plot_sp2()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.8 plot_sp3()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.9 plot_sp2d()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.10 plot_sp3d()", "id": "",
-        "content": "short",
+        
         "href": "#" },
       { "name": "3.11 plot_sp3d2()", "id": "",
-        "content": "short",
+        
         "href": "#" }
     ]
   }

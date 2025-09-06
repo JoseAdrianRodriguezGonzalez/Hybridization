@@ -4,5 +4,11 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
-  base:"https://JoseAdrianRodriguezGonzalez.github.io/Hybridization"
+  base:"https://JoseAdrianRodriguezGonzalez.github.io/Hybridization",
+  publicDir: 'public',
+  server: {
+    fs: {
+      allow: ['..']
+    }
+  }
 })

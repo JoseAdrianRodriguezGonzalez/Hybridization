@@ -15,5 +15,6 @@ const routes ={
     '/table':Periodic,
     '/Instalacion':Instalacion,
     '/Teoria':Teoria,
+
 }
 export default routes;
