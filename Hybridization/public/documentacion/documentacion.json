@@ -5,12 +5,12 @@
       {
         "name": "1.1 get_cartesian_grid()",
         "id": "cartesian_grid",
-        "href": "cartesian_grid.md"
+        "href": "GetSphericalGrid.svelte"
       },
       {
         "name": "1.2. get_spherical_grid(x,y,z)",
-        "id": "cartesian",
-        "href": "documentacion/cartesian_grid.md"
+        "id": "get_spherical_grid",
+        "href": "GetSphericalGrid.svelte"
       },
       { "name": "1.3 compute_radial()",
         "id": "compute_radial",
@@ -19,7 +19,7 @@
       { "name": "1.4 compute_real_spherical()",
         "id": "",
         
-        "href": "#"
+        "href": ""
          },
       { "name": "1.5. compute_imaginary_spherical()",
         "id": "",

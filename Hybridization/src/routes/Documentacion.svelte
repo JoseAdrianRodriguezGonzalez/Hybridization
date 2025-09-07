@@ -6,6 +6,9 @@ import AsideNav from '../lib/AsideNav.svelte';
 import { onMount } from 'svelte';
 import ContentSection from '../lib/ContentSection.svelte';
 
+// Importar componentes .svelte dinámicamente
+import GetSphericalGrid from '../lib/GetSphericalGrid.svelte.svelte';
+
 // Datos para el estado de la aplicación
 let jsonData = [];
 let loading = true;
@@ -13,19 +16,22 @@ let error = null;
 let activeSection = 0;
 let activeLink = 0;
 let currentContent = '';
+let currentContentType = 'markdown'; // 'markdown' o 'svelte'
+let currentComponent = null;
+
+// Mapa de componentes disponibles
+const componentMap = {
+  'GetSphericalGrid.svelte': GetSphericalGrid,
+  // Aquí puedes agregar más componentes según necesites
+  // 'otro-componente.svelte': OtroComponente,
+};
 
 // Función para cargar el JSON
 async function loadJsonData() {
   try {
     // URL directa para prueba
     const jsonUrl = "/Hybridization/documentacion/documentacion.json";
-    
-    console.log("=== DEBUG JSON ===");
-    console.log("Cargando JSON desde:", jsonUrl);
-    console.log("URL completa:", window.location.origin + jsonUrl);
-    
-    // Intentar hacer el fetch con logging detallado
-    console.log("Iniciando fetch...");
+
     const res = await fetch(jsonUrl, {
       method: 'GET',
       headers: {
@@ -83,29 +89,91 @@ async function loadJsonData() {
   }
 }
 
-// Función para cargar contenido Markdown
+// Función para determinar el tipo de archivo
+function getFileType(filename) {
+  const extension = filename.split('.').pop()?.toLowerCase();
+  return extension === 'svelte' ? 'svelte' : 'markdown';
+}
+
+// Función para cargar contenido (Markdown o Svelte)
 async function loadContent() {
   if (jsonData.length === 0 || 
       !jsonData[activeSection] ||
       !jsonData[activeSection].links || 
       jsonData[activeSection].links.length === 0) {
     currentContent = "No hay contenido disponible para esta sección.";
+    currentContentType = 'markdown';
+    currentComponent = null;
     return;
   }
   
   const currentLink = jsonData[activeSection].links[activeLink];
   console.log("Cargando contenido para:", currentLink.name, "desde:", currentLink.href);
   
+  // Determinar el tipo de contenido
+  const fileType = getFileType(currentLink.href);
+  currentContentType = fileType;
+  
+  if (fileType === 'svelte') {
+    // Manejar componente Svelte
+    await loadSvelteComponent(currentLink);
+  } else {
+    // Manejar archivo Markdown
+    await loadMarkdownContent(currentLink);
+  }
+}
+
+// Función para cargar componente Svelte
+async function loadSvelteComponent(linkData) {
   try {
-    // URL directa para el contenido - usar el mismo patrón que funciona
-    let contentUrl;
-    if (currentLink.href.startsWith('/')) {
-      contentUrl = currentLink.href;
+    const componentName = linkData.href.split('/').pop(); // Obtener solo el nombre del archivo
+    console.log("Buscando componente:", componentName);
+    
+    if (componentMap[componentName]) {
+      currentComponent = componentMap[componentName];
+      currentContent = ''; // Limpiar contenido markdown
+      console.log("Componente Svelte cargado exitosamente:", componentName);
     } else {
-      contentUrl = `/Hybridization/documentacion/${currentLink.href}`;
+      console.warn("Componente no encontrado en componentMap:", componentName);
+      currentContentType = 'markdown';
+      currentComponent = null;
+      currentContent = `
+## ${linkData.name}
+
+**Error:** El componente Svelte \`${componentName}\` no está disponible.
+
+**Componentes disponibles:**
+${Object.keys(componentMap).map(name => `- ${name}`).join('\n')}
+
+Para usar este componente, asegúrate de:
+1. Importarlo en el script principal
+2. Agregarlo al \`componentMap\`
+      `;
+    }
+  } catch (err) {
+    console.error("Error al cargar componente Svelte:", err);
+    currentContentType = 'markdown';
+    currentComponent = null;
+    currentContent = `
+## ${linkData.name}
+
+**Error al cargar el componente:** ${err.message}
+    `;
+  }
+}
+
+// Función para cargar contenido Markdown
+async function loadMarkdownContent(linkData) {
+  try {
+    // URL directa para el contenido
+    let contentUrl;
+    if (linkData.href.startsWith('/')) {
+      contentUrl = linkData.href;
+    } else {
+      contentUrl = `/Hybridization/documentacion/${linkData.href}`;
     }
     
-    console.log("URL completa del contenido:", contentUrl);
+    console.log("URL completa del contenido MD:", contentUrl);
     
     const response = await fetch(contentUrl, {
       method: 'GET',
@@ -122,14 +190,10 @@ async function loadContent() {
       if (text.includes('<!DOCTYPE html>') || text.includes('<meta charset="UTF-8"')) {
         console.warn("El servidor está devolviendo HTML en lugar del archivo MD");
         currentContent = `
-## ${currentLink.name}
+## ${linkData.name}
 
-**Error:** El servidor no puede encontrar el archivo Markdown.
-
-**Archivo solicitado:** ${currentLink.href}
-**URL intentada:** ${contentUrl}
-
-**Solución:** Verifica que el archivo existe en la ruta correcta y que el servidor está configurado para servir archivos estáticos.
+**Error:** El servidor está devolviendo HTML en lugar del archivo Markdown.
+Verifica que el archivo existe en la ruta correcta.
         `;
       } else {
         currentContent = text;
@@ -137,23 +201,21 @@ async function loadContent() {
       }
     } else {
       currentContent = `
-## ${currentLink.name}
+## ${linkData.name}
 
-**Error HTTP ${response.status}:** ${response.statusText}
-
-**Archivo:** ${currentLink.href}
-**URL intentada:** ${contentUrl}
+**Error HTTP ${response.status}:** No se pudo cargar el contenido.
       `;
     }
+    
+    currentComponent = null; // Limpiar componente
   } catch (err) {
-    console.error("Error al cargar el contenido:", err);
+    console.error("Error al cargar el contenido Markdown:", err);
     currentContent = `
-## ${currentLink.name}
+## ${linkData.name}
 
-**Error de red:** ${err.message}
-
-**Archivo:** ${currentLink.href}
+**Error:** ${err.message}
     `;
+    currentComponent = null;
   }
 }
 
@@ -202,10 +264,18 @@ onMount(() => {
       {:else if error}
         <div class="empty">Error al cargar el contenido: {error}</div>
       {:else if jsonData.length > 0}
-        <ContentSection 
-          title={jsonData[activeSection].title}
-          content={currentContent}
-        />
+        {#if currentContentType === 'svelte' && currentComponent}
+          <!-- Renderizar componente Svelte -->
+          <div class="svelte-component-wrapper">
+            <svelte:component this={currentComponent} />
+          </div>
+        {:else}
+          <!-- Renderizar contenido Markdown -->
+          <ContentSection 
+            title={jsonData[activeSection].title}
+            content={currentContent}
+          />
+        {/if}
       {:else}
         <div class="empty">No hay datos disponibles</div>
       {/if}
@@ -222,17 +292,16 @@ onMount(() => {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
     padding: 1rem;
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    height: 100%;
 }
 
 .aside-wrap {
-    width: 300px;
-    flex-shrink: 0;
+    flex: 0 0 300px;
+    max-width: 300px;
+    min-width: 250px;
 }
 
 .content {
@@ -240,12 +309,17 @@ onMount(() => {
     min-width: 0;
 }
 
+.svelte-component-wrapper {
+    width: 100%;
+    /* Permitir que el componente tome todo el espacio disponible */
+}
+
 .empty {
     padding: 1.5rem;
-    background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     color: #333;
+    background-color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -255,12 +329,10 @@ onMount(() => {
     }
 
     .aside-wrap {
+        flex: none;
         width: 100%;
         max-width: none;
-    }
-
-    .content {
-        width: 100%;
+        min-width: auto;
     }
 }
 </style>
