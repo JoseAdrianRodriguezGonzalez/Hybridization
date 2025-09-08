@@ -20,7 +20,7 @@
     border-radius: 1vw;
     box-shadow: 0 0 0.2vw #21234d22;
     padding: 1vw 1vw;
-    width: 22vw;
+    width: 100%;
     min-width: 22vw;
     max-width: 40vw;
     text-align: center;
@@ -31,7 +31,7 @@
   
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(28, 26, 26, 0.3);
   }
 
   .icono {
@@ -65,10 +65,13 @@
   /* Responsive */
   @media (max-width: 768px) {
     .card {
+      
+      max-width: 95vw;
+      margin: 1rem auto;
       padding: 1rem;
-      width: 20vw;
-      min-width: 20vw;
-      max-width: 20vw;
+      min-width: auto;
+      gap:1px;
+  }
     }
     
     .icono {
@@ -80,6 +83,15 @@
       margin: 0.5rem auto 0 auto;
       border-bottom: 0.25rem solid #48C6FF;
     }
-    
+
+@media (max-width: 480px) {
+  
+  .card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 1rem;
   }
+  }
+    
 </style>

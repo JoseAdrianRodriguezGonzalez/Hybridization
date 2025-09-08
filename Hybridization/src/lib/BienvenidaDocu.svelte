@@ -29,7 +29,7 @@
       {
         label: "Guía Completa PDF",
         description: "Documentación completa con todos los módulos",
-        url: "http://localhost:5173/Hybridization/documentacion/QuPlots-1.pdf",
+        url: "https://joseadrianrodriguezgonzalez.github.io/Hybridization/documentacion/QuPlots-1.pdf",
         filename: "QuPlots-1.pdf",
         icon: "📚",
         type: "download" // Descarga directa

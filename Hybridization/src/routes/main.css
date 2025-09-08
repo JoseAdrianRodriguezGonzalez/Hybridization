@@ -1,12 +1,8 @@
   .cards-container {
     padding: 1.2rem;
-    grid-template-columns: auto auto auto;
     display:flex;
-    gap: 10rem;
-    width: 100%;
-    align-items: center;
-
-
+    flex-direction: row;
+    gap:14vw;
   }
   
 .catalogue{
@@ -21,12 +17,10 @@
 }
 
 .Principal{
-    font-size:medium;
+    font-size: 1.5vw;
     padding: 1.5vw;
     margin: 1vm auto;
     max-width: 95vw;
-    align-items: center;
-
 }
 .catalogue div > img {
     
@@ -131,6 +125,7 @@
 }
 h1 {
   color: #fff;
+  font-size: vw;
   font-weight: bold;
 }
 .left-block {
@@ -171,10 +166,4 @@ h1 {
 }
 .install-btn:hover {
   background-color: #03035f;
-}
-@media (max-width: 768px) {
-  .cards-container {
-    flex-direction: column; /* En móviles, apila las cards verticalmente */
-    gap: 1rem; /* Reduce el gap en móviles */
-  }
 }
