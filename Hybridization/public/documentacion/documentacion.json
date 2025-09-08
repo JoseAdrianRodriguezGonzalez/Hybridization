@@ -1,11 +1,26 @@
 [
   {
+    "title": "Bienvenido a la Documentación",
+    "links": [
+      {
+      "name": "Bienvenido a Quplots",
+        "id": "bienvenidaDocu",
+        "href": "BienvenidaDocu.svelte"}
+    ]
+  },
+  {
     "title": "1. quplots.electron",
     "links": [
       {
+      "name": "1.quplots.electron",
+        "id": "quplots.electron",
+        "href": "QElectron.svelte"
+      },
+      {
+        
         "name": "1.1 get_cartesian_grid()",
         "id": "cartesian_grid",
-        "href": "GetSphericalGrid.svelte"
+        "href": "GetCartesianGrid.svelte"
       },
       {
         "name": "1.2. get_spherical_grid(x,y,z)",
@@ -14,105 +29,95 @@
       },
       { "name": "1.3 compute_radial()",
         "id": "compute_radial",
-        
-        "href": "#compute_radial"},
+        "href": "ComputeRadial.svelte"},
       { "name": "1.4 compute_real_spherical()",
-        "id": "",
-        
-        "href": ""
+        "id": "compute_real_spherical",
+        "href": "ComputeRealSpherical.svelte"
          },
       { "name": "1.5. compute_imaginary_spherical()",
-        "id": "",
-        
-        "href": "#"
+        "id": "compute_imaginary_spherical",
+        "href": "ComputeImaginarySpherical.svelte"
       },
       { "name": "1.6 compute_wavefunction_2D(d=20)",
-        "id": "",
-        
-        "href": "#"},
-      { "name": "1.7 compute_wavefunction_3D()", "id": "",
-        
-        "href": "#"
+        "id": "compute_wavefunction_2D",
+        "href": "ComputeWavefunction2D.svelte"},
+      { "name": "1.7 compute_wavefunction_3D()", "id": "compute_wavefunction_3D",
+        "href": "ComputeWavefunction3D.svelte"
       },
-      { "name": "1.8 compute_wavefunction_3D_complex()", "id": "",
-        
-        "href": "#" },
-      { "name": "1.9 getN()", "id": "",
-        
-        "href": "#" },
-      { "name": "1.10 getL()", "id": "",
-        
-        "href": "#"
+      { "name": "1.8 compute_wavefunction_3D_complex()", "id": "compute_wavefunction_3D_complex",
+        "href": "ComputeWavefunction3DComplex.svelte" },
+      { "name": "1.9 getN()", "id": "getN",
+        "href": "GetN.svelte" },
+      { "name": "1.10 getL()", "id": "getL",
+        "href": "GetL.svelte"
       },
       { "name": "1.11 getM()",
-        "id": "",
-        
-        "href": "#"
+        "id": "getM.",
+        "href": "GetM.svelte"
       },
-      { "name": "1.13 getRadius()", "id": "",
-        
-        "href": "#" }
+      { "name": "1.13 getRadius()", "id": "getRadius",
+        "href": "GetRadius.svelte" }
     ]
   },
   {
     "title": "2. quplots.hybridization",
     "links": [
-      { "name": "2.1 generate_sp()", "id": "",
+      { "name": "quplots.hybridization", "id": "quplots.hybridization",
+        "href": "QHybridization.svelte" },
+      { "name": "2.1 generate_sp()", "id": "generate_sp()",
+        "href": "GenerateSp.svelte" },
+      { "name": "2.2 generate_sp2()", "id": "generate_sp2",
+
+        "href": "GenerateSp2.svelte" },
+      { "name": "2.3 generate_sp3()", "id": "generate_sp3",
         
-        "href": "#" },
-      { "name": "2.2 generate_sp2()", "id": "",
+        "href": "GenerateSp3.svelte" },
+      { "name": "2.4 generate_sp2d()", "id": "generate_sp2d",
         
-        "href": "#" },
-      { "name": "2.3 generate_sp3()", "id": "",
+        "href": "GenerateSp2d.svelte" },
+      { "name": "2.5 generate_sp3d()", "id": "generate_sp3d",
         
-        "href": "#" },
-      { "name": "2.4 generate_sp2d()", "id": "",
+        "href": "GenerateSp3d.svelte" },
+      { "name": "2.6 generate_sp3d2()", "id": "2.6 generate_sp3d2(",
         
-        "href": "#" },
-      { "name": "2.5 generate_sp3d()", "id": "",
-        
-        "href": "#" },
-      { "name": "2.6 generate_sp3d2()", "id": "",
-        
-        "href": "#" }
+        "href": "GenerateSp3d2.svelte" }
     ]
   },
   {
     "title": "3. quplots.plots",
     "links": [
-      { "name": "3.1. plot_radial_()", "id": "",
+      { "name": "3 quplots.plots", "id": "quplots.plots",
         
-        "href": "#" },
-      { "name": "3.2 plot_spherical_real()", "id": "",
+        "href": "QPlots.svelte" },
+      { "name": "3.1. plot_radial_()", "id": "plot_radial",
+        "href": "PlotRadial.svelte"
+      },
+      { "name": "3.2 plot_spherical_real()", "id": "plot_spherical_real",
+        "href": "PlotSphericalReal.svelte" },
+      { "name": "3.3 plot_spherical_imaginary()", "id": "plot_spherical_imaginary",
+        "href": "PlotSphericalImaginary.svelte" },
+      { "name": "3.4 plot_wf_2d()", "id": "plot_wf_2d",
+        "href": "PlotWf2d.svelte" },
+      { "name": "3.5 plot_wf_3d()", "id": "plot_wf_3d",
+        "href": "PlotWf3d.svelte" },
+      { "name": "3.6 plot_sp()", "id": "plot_sp",
         
-        "href": "#" },
-      { "name": "3.3 plot_spherical_imaginary()", "id": "",
+        "href": "PlotSp.svelte" },
+      { "name": "3.7 plot_sp2()", "id": "plot_sp2",
         
-        "href": "#" },
-      { "name": "3.4 plot_wf_2d()", "id": "",
+        "href": "PlotSp2.svelte" },
+      { "name": "3.8 plot_sp3()", "id": "plot_sp3",
         
-        "href": "#" },
-      { "name": "3.5 plot_wf_3d()", "id": "",
+        "href": "PlotSp3.svelte" },
+      { "name": "3.9 plot_sp2d()", "id": "plot_sp2d",
         
-        "href": "#" },
-      { "name": "3.6 plot_sp()", "id": "",
+        "href": "PlotSp2d.svelte" },
+      { "name": "3.10 plot_sp3d()", "id": "plot_sp3d",
         
-        "href": "#" },
-      { "name": "3.7 plot_sp2()", "id": "",
+        "href": "" },
+      { "name": "3.11 plot_sp3d2()", "id": "plot_sp3d2",
         
-        "href": "#" },
-      { "name": "3.8 plot_sp3()", "id": "",
-        
-        "href": "#" },
-      { "name": "3.9 plot_sp2d()", "id": "",
-        
-        "href": "#" },
-      { "name": "3.10 plot_sp3d()", "id": "",
-        
-        "href": "#" },
-      { "name": "3.11 plot_sp3d2()", "id": "",
-        
-        "href": "#" }
+        "href": "" }
     ]
   }
 ]

@@ -6,7 +6,8 @@
   export let title = "";
   export let functionName = "nombre_funcion";
   export let parameters = [];
-  export let syntaxCodeription = "Descripción del retorno";
+  export let description="";
+  export let syntaxCodeription="";
   export let equations = []; // Nueva prop para ecuaciones con viñetas
   export let syntaxCode = "";
   export let output="";
@@ -41,14 +42,15 @@
   });
 </script>
 
-<div class="syntaxCode-container tex2jax_process" bind:this={mathContainer}>
-  <div class="content-wrapper">
+<div class="syntaxCode tex2jax_process" bind:this={mathContainer}>
+  <div class="syntaxCode">
     <!-- <h1>{title}</h1> -->
     <h2>{functionName}</h2>
     
     <!-- Sección de retorno -->
     <div class="syntaxCodeription">
       <h3>Descripción</h3>
+      <div>{@html description}</div>
       <div class="tex2jax_process description-content">
         {@html syntaxCodeription}
       </div>
@@ -107,18 +109,18 @@
 </div>
 
 <style>
-  .syntaxCode-container {
+  .syntaxCode {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     line-height: 1.6;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 0 0;
+    padding: 1rem;
     min-height: 100vh;
   }
   
-  .content-wrapper {
+  .syntaxCode {
     border-radius: 16px;
-    padding: 2.5rem;
+    padding: 1rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
   }
@@ -135,7 +137,6 @@
   }
   
   h2 {
-    color: #2d3748;
     font-size: 1.5rem;
     margin: 2rem 0 1rem 0;
     padding-left: 1rem;
@@ -158,22 +159,20 @@
   }
   
   h3 {
-    color: #4a5568;
+    color: #ffffff;
     font-size: 1.2rem;
     margin: 1.5rem 0 0.5rem 0;
   }
   
   h4 {
-    color: #2d3748;
+    color: #ffffff;
     font-size: 1rem;
     margin: 1rem 0 0.5rem 0;
     font-weight: 600;
-    background: #ffff;
   }
   
   .syntaxCodeription {
     border: 1px solid #9ae6b4;
-    background: #ffff;
     border-radius: 12px;
     padding: 1.5rem;
     margin: 1.5rem 0;
@@ -182,7 +181,7 @@
   
   .syntaxCodeription p {
     margin: 0 0 1rem 0;
-    color: #2d3748;
+    color: #ffffff;
     line-height: 1.8;
   }
   
@@ -192,7 +191,7 @@
   
   .description-content p {
     margin: 0.5rem 0;
-    color: #2d3748;
+    color: #ffffff;
     line-height: 1.8;
   }
   
@@ -212,9 +211,8 @@
     position: relative;
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
-    color: #2d3748;
+    color: #ffffff;
     line-height: 1.8;
-    background: rgba(255, 255, 255, 0.6);
     border-radius: 8px;
     padding: 0.2rem 0.2rem 0.2rem 2rem;
     border-left: 3px solid #48bb78;
@@ -237,7 +235,6 @@
   
   .parameters-section,
   .return-section {
-    background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 100%);
     border: 1px solid #bee5eb;
     border-radius: 12px;
     padding: 1.5rem;
@@ -252,13 +249,13 @@
   
   .parameter-list li {
     margin-bottom: 0.8rem;
-    color: #4a5568;
+    color: #ffffff;
     line-height: 1.8;
   }
   
   .equation-description {
     font-size: 0.9rem;
-    color: #666;
+    color: #ffffff;
     margin-top: 0.5rem;
     font-style: italic;
     line-height: 1.6;
@@ -269,12 +266,10 @@
     margin: 1rem 0;
     font-size: 1.2rem;
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
   }
   
   .math-inline {
-    background: #f7fafc;
     padding: 0.2rem 0.4rem;
     border-radius: 4px;
     font-family: 'Times New Roman', serif;
@@ -313,32 +308,23 @@
   }
   
   .highlight {
-    background: linear-gradient(120deg, #bee3f8 0%, #90cdf4 100%);
     padding: 0.2rem 0.6rem;
     border-radius: 6px;
     font-weight: 500;
-    color: #1a365d;
+    color: #e2e8f0;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
   }
-  
-  .note-section {
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-    border: 1px solid #fbbf24;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-left: 6px solid #f59e0b;
-  }
+
   
   p {
     margin-bottom: 1rem;
     text-align: justify;
-    color: #4a5568;
+    color: #e2e8f0;
   }
   
   strong {
-    color: #2d3748;
+    color: #e2e8f0;
   }
   
   /* Estilos específicos para MathJax */
@@ -355,12 +341,12 @@
   
   /* Responsive */
   @media (max-width: 768px) {
-    .syntaxCode-container {
+    .syntaxCode {
       padding: 1rem;
     }
     
-    .content-wrapper {
-      padding: 1.5rem;
+    .syntaxCode {
+      padding: 0.5rem;
     }
     
     h1 {

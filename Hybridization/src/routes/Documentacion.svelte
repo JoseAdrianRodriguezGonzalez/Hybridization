@@ -5,10 +5,37 @@ import Footer from '../components/footer.svelte';
 import AsideNav from '../lib/AsideNav.svelte';
 import { onMount } from 'svelte';
 import ContentSection from '../lib/ContentSection.svelte';
-
-// Importar componentes .svelte dinámicamente
+import ComputeRadial from '../lib/ComputeRadial.svelte';
 import GetSphericalGrid from '../lib/GetSphericalGrid.svelte.svelte';
-
+import GetCartesianGrid from '../lib/GetCartesianGrid.svelte';
+import ComputeRealSpherical from '../lib/ComputeRealSpherical.svelte'
+import ComputeImaginarySpherical from '../lib/ComputeImaginarySpherical.svelte';
+import ComputeWavefunction2D from '../lib/ComputeWavefunction2D.svelte';
+import ComputeWavefunction3D from '../lib/ComputeWavefunction3D.svelte';
+import ComputeWavefunction3DComplex from '../lib/ComputeWavefunction3DComplex.svelte';
+import GetN from '../lib/GetN.svelte';
+import GetL from '../lib/GetL.svelte';
+import GetM from '../lib/GetM.svelte';
+import GetRadius from '../lib/GetRadius.svelte';
+import GenerateSp from '../lib/GenerateSp.svelte';
+import GenerateSp2 from '../lib/GenerateSp2.svelte';
+import GenerateSp3 from '../lib/GenerateSp3.svelte';
+import GenerateSp2d from '../lib/GenerateSp2d.svelte';
+import GenerateSp3d from '../lib/GenerateSp3d.svelte';
+import GenerateSp3d2 from '../lib/GenerateSp3d2.svelte';
+import QElectron from '../lib/QElectron.svelte';
+import QHybridization from '../lib/QHybridization.svelte';
+import QPlots from '../lib/QPlots.svelte';
+import PlotRadial from '../lib/PlotRadial.svelte';
+import PlotSphericalReal from '../lib/PlotSphericalReal.svelte';
+import PlotSphericalImaginary from '../lib/PlotSphericalImaginary.svelte';
+import PlotWf2d from '../lib/PlotWf2d.svelte';
+import PlotWf3d from '../lib/PlotWf3d.svelte';
+import PlotSp2 from '../lib/PlotSp2.svelte';
+import PlotSp3 from '../lib/PlotSp3.svelte';
+import PlotSp2d from '../lib/PlotSp2d.svelte';
+import PlotSp from '../lib/PlotSp.svelte';
+import BienvenidaDocu from '../lib/BienvenidaDocu.svelte';
 // Datos para el estado de la aplicación
 let jsonData = [];
 let loading = true;
@@ -21,9 +48,38 @@ let currentComponent = null;
 
 // Mapa de componentes disponibles
 const componentMap = {
+  'QElectron.svelte':QElectron,
   'GetSphericalGrid.svelte': GetSphericalGrid,
-  // Aquí puedes agregar más componentes según necesites
-  // 'otro-componente.svelte': OtroComponente,
+  'ComputeRadial.svelte':ComputeRadial,
+   'GetCartesianGrid.svelte':GetCartesianGrid,
+   'ComputeRealSpherical.svelte':ComputeRealSpherical,
+   'ComputeImaginarySpherical.svelte':ComputeImaginarySpherical,
+   'ComputeWavefunction2D.svelte':ComputeWavefunction2D,
+   'ComputeWavefunction3D.svelte':ComputeWavefunction3D,
+   'ComputeWavefunction3DComplex.svelte':ComputeWavefunction3DComplex,
+   'GetN.svelte':GetN,
+   'GetL.svelte':GetL,
+   'GetM.svelte':GetM,
+   'GetRadius.svelte':GetRadius,
+   'GenerateSp.svelte':GenerateSp,
+   'GenerateSp2.svelte':GenerateSp2,
+   'GenerateSp3.svelte':GenerateSp3,
+   'GenerateSp2d.svelte':GenerateSp2d,
+   'GenerateSp3d.svelte':GenerateSp3d,
+   'GenerateSp3d2.svelte':GenerateSp3d2,
+   'QHybridization.svelte':QHybridization,
+   'QPlots.svelte':QPlots,
+   'PlotRadial.svelte':PlotRadial,
+   'PlotSphericalReal.svelte':PlotSphericalReal,
+   'PlotSphericalImaginary.svelte':PlotSphericalImaginary,
+   'PlotWf2d.svelte':PlotWf2d,
+   'PlotWf3d.svelte':PlotWf3d,
+   'PlotSp2.svelte':PlotSp2,
+   'PlotSp3.svelte':PlotSp3,
+   'PlotSp2d.svelte':PlotSp2d,
+   'PlotSp.svelte':PlotSp,
+   'BienvenidaDocu.svelte':BienvenidaDocu,
+
 };
 
 // Función para cargar el JSON
@@ -237,10 +293,14 @@ onMount(() => {
   loadJsonData();
 });
 </script>
+  <Header></Header>
 
 <div class="main-layout">
   <div class="container">
     <!-- Barra lateral de navegación -->
+<button class="menu-toggle" on:click={() => document.querySelector('.aside-wrap').classList.toggle('open')}>
+  &#9776;
+</button>
     <aside class="aside-wrap">
       {#if loading}
         <div class="empty">Cargando navegación...</div>
@@ -257,6 +317,7 @@ onMount(() => {
       {/if}
     </aside>
     
+
     <!-- Contenido principal -->
     <main class="content">
       {#if loading}
@@ -282,6 +343,7 @@ onMount(() => {
     </main>
   </div>
 </div>
+<Footer></Footer>
 
 <style>
 .main-layout {
@@ -334,5 +396,17 @@ onMount(() => {
         max-width: none;
         min-width: auto;
     }
+    .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #eee;
+    cursor: pointer;
+}
 }
 </style>
