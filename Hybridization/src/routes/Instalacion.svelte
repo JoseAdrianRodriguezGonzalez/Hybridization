@@ -68,7 +68,7 @@ deactivate
 pip install quplots`}
             />
 </section>
-<h1>Si no quieres tocar codigo ¡Descarga el Sofware de Quplots!</h1>
+<h1>Si no quieres tocar código ¡Descarga el Sofware de Quplots!</h1>
 
 <section class="cards-container">
 
