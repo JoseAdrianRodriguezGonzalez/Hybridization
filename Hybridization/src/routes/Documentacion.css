@@ -1,0 +1,48 @@
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;        
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 100%; 
+    justify-content: center;
+}
+
+.aside-wrap {
+    flex: 0 0 300px; /* ancho fijo del aside */
+    max-width: 300px;
+    min-width: 250px;
+}
+.empty {
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .aside-wrap {
+        width: 100%;
+        max-width: none;
+    }
+    .Principal {
+    padding: 1rem;
+    font-size: 1.4vw; 
+  }
+}

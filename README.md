@@ -32,5 +32,5 @@ Para hacer posible este proyecto fue realizado por:
 
  $$H\psi=i\hbar\frac{\partial \psi}{\partial t}$$
 
->>   ![Armónicos esféricos](https://github.com/JoseAdrianRodriguezGonzalez/Hibridacion/blob/main/assets/A4.png)
+>>   ![Armónicos esféricos](https://github.com/JoseAdrianRodriguezGonzalez/Hibridacion/blob/main/public/A4.png)
   

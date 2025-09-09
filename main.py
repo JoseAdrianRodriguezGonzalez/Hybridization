@@ -1,3 +1,4 @@
+
 from electron_atom.class_electron import electron,plot
 e=electron()
 p=plot()

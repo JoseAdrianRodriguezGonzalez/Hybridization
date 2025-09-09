@@ -1,0 +1,46 @@
+.cards-container2 {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: row; /* Asegura que estén en fila */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  gap: 10vw;
+  flex-wrap: wrap; /* Permite que se envuelvan en pantallas pequeñas */
+}
+
+.cards-container3 {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: row; /* Asegura que estén en fila */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  gap: 10vw;
+  flex-wrap: wrap; /* Permite que se envuelvan en pantallas pequeñas */
+}
+
+.Principal2 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column; /* Cambiado a column para apilar los containers */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query mejorada */
+@media (max-width: 768px) {
+
+  .cards-container2,
+  .cards-container3 {
+    flex-direction: column; /* En móviles, apila las cards verticalmente */
+    gap: 2rem; /* Reduce el gap en móviles */
+  }
+  
+  
+  .downloads-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    max-width: 100%;
+  }
+}

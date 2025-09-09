@@ -1,0 +1,169 @@
+  .cards-container {
+    padding: 1.2rem;
+    display:flex;
+    flex-direction: row;
+    gap:14vw;
+  }
+  
+.catalogue{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: repeat(3,1fr);
+    grid-template: 'RADIAL FUNCTION-2D REAL COMPLEX'
+                    'FUNCTION-3D FUNCTION-3D HYBRID HYBRID'
+                    'PERIODIC PERIODIC PERIODIC PERIODIC';
+    gap:2vw;
+    padding: 2vw;
+}
+
+.Principal{
+    font-size: 1.5vw;
+    padding: 1.5vw;
+    margin: 1vm auto;
+    max-width: 95vw;
+}
+.catalogue div > img {
+    
+    transition: filter 1.2s,transform 0.3s;
+}
+
+
+.RADIAL{
+    grid-area: RADIAL;
+    
+}
+.RADIAL img{
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem yellowgreen);
+}
+.REAL img{
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem crimson );
+}
+.COMPLEX img{
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem navy);
+}
+.FUNCTION-2D img{   
+    width:20vw;
+    filter:drop-shadow(0 0 0.45rem crimson);
+}
+.FUNCTION-3D img{
+    width:40vw;
+    filter:drop-shadow(0 0 0.45rem beige);
+}
+.HYBRID img{   
+    width:40vw;
+    filter:drop-shadow(0 0 0.45rem cyan);
+}
+.REAL{
+    grid-area: REAL;
+}
+.COMPLEX{
+    grid-area: COMPLEX;
+}
+.FUNCTION-2D{
+    grid-area: FUNCTION-2D;
+}
+.FUNCTION-3D{
+    grid-area: FUNCTION-3D;
+   
+}
+.HYBRID{
+    grid-area: HYBRID;
+}
+
+@media (hover:hover){
+        
+    .RADIAL img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem yellowgreen);
+        transform: scale(1.05);
+    }
+    .REAL img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem crimson );
+        transform: scale(1.05);
+    }
+    .COMPLEX img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem navy);
+        transform: scale(1.05);
+    }
+    .FUNCTION-2D img:hover{
+        transition: 1.2s;   
+        filter:drop-shadow(0 0 0.9rem crimson);
+        transform: scale(1.05);
+    }
+    .FUNCTION-3D img:hover{
+        transition: 1.2s;
+        filter:drop-shadow(0 0 0.9rem beige);
+        transform: scale(1.05);
+    }
+    .HYBRID img:hover{
+        transition: 1.2s;   
+        filter:drop-shadow(0 0 0.9rem cyan);
+        transform: scale(1.05);
+    }
+      
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.catalogue div {
+    animation: fadeIn 1s ease-in-out;
+}
+.Index{
+    animation:fadeIn 1.5s ease-in-out
+}
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1vw 2vw;
+}
+h1 {
+  color: #fff;
+  font-size: vw;
+  font-weight: bold;
+}
+.left-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orbital-icon {
+  width: 40vw;
+  margin-bottom: 1vw;
+}
+.logo-title {
+  display: flex;
+  align-items: center;         
+  gap: 32px;                  
+}
+.right-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.desc {
+  font-style: bold;
+  color: #fff;
+  font-size: 3vw;
+  margin-bottom: 2.5vw;
+  text-align: right;
+}
+.install-btn {
+  background: #02023A;
+  color: #fff;
+  font-size: 2.2vw;
+  font-weight: bold;
+  padding: 1.7vw 3vw;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.install-btn:hover {
+  background-color: #03035f;
+}
