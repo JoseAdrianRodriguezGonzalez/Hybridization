@@ -2,42 +2,55 @@
   import{link} from 'svelte-spa-router'
   import Header from '../components/Header.svelte';
   import Footer from '../components/footer.svelte';
-    // Array de imágenes de ejemplo
-  let images = [
-    { id: 1, src: 'https://picsum.photos/300/200?random=1', alt: 'Imagen 1' },
-    { id: 2, src: 'https://picsum.photos/300/200?random=2', alt: 'Imagen 2' },
-    { id: 3, src: 'https://picsum.photos/300/200?random=3', alt: 'Imagen 3' },
-    { id: 4, src: 'https://picsum.photos/300/200?random=4', alt: 'Imagen 4' },
-    { id: 5, src: 'https://picsum.photos/300/200?random=5', alt: 'Imagen 5' },
-    { id: 6, src: 'https://picsum.photos/300/200?random=6', alt: 'Imagen 6' },
-    { id: 7, src: 'https://picsum.photos/300/200?random=7', alt: 'Imagen 7' },
-    { id: 8, src: 'https://picsum.photos/300/200?random=8', alt: 'Imagen 8' }
-  ];
+  import yti from "/icons/youtube.svg"
+  import DownloadSection from './DownloadSection.svelte';
+const yt= [
+{
+  label:"Videos",
+  description: "Canal de Youtube",
+  url: "https://youtube.com/@quplots?si=KterFMrhEb8fjEYS",
+  icon: yti,
+}]
+let hibri = [
+  { id: 1, src: 'Hybridization/galeria/hibri/nsp.png', alt: 'Hibridación sp (lineal)' },
+  { id: 2, src: 'Hybridization/galeria/hibri/nsp2.png', alt: 'Hibridación sp² (trigonal plana)' },
+  { id: 3, src: 'Hybridization/galeria/hibri/nsp2d.png', alt: 'Hibridación sp²d (piramidal cuadrada)' },
+  { id: 4, src: 'Hybridization/galeria/hibri/nsp3.png', alt: 'Hibridación sp³ (tetraédrica)' },
+  { id: 5, src: 'Hybridization/galeria/hibri/nsp3d.png', alt: 'Hibridación sp³d (bipiramidal trigonal)' },
+  { id: 6, src: 'Hybridization/galeria/hibri/nsp3d2.png', alt: 'Hibridación sp³d² (octaédrica)' }
+];
 
-  function handleImageClick(image) {
-    console.log('Imagen clickeada:', image.alt);
-  }
+function handleImageClick(imagen) {
+ console.log('Imagen clickeada:', imagen.alt);
+}
+
+// Función para manejar errores de carga
+function handleImageError(event) {
+ console.warn('No se pudo cargar la imagen:', event.target.src);
+}
 </script>
 <Header></Header>
 
 <div class="Principal">
 
-
-<!-- Grid responsivo -->
-<div class="image-grid-responsive">
-  <h2>Grid Responsivo</h2>
-  <div class="grid-responsive">
-    {#each images as image (image.id)}
-      <div class="image-item-responsive" on:click={() => handleImageClick(image)}>
-        <img src={image.src} alt={image.alt} />
-        <div class="overlay">
-          <span>{image.alt}</span>
+  <div class="image-grid-responsive">
+    <h1>Hibridaciónes</h1>
+    <div class="grid-responsive">
+      {#each hibri as imagen (imagen.id)}
+      <div class="image-item-responsive" on:click={() => handleImageClick(imagen)}>
+      <img src={imagen.src} alt={imagen.alt} on:error={handleImageError} />
+      <div class="overlay">
+        <span>{imagen.alt}</span>
+          </div>
         </div>
-      </div>
-    {/each}
+      {/each}
   </div>
 </div>
 </div>
+
+<DownloadSection 
+      downloads={yt}
+    />
 
 <Footer></Footer>
 
@@ -47,7 +60,7 @@
   /* Grid responsivo */
   .grid-responsive {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
   }
@@ -111,11 +124,7 @@
 
   }
 
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
+
 
   .image-grid-responsive {
     margin-bottom: 50px;
