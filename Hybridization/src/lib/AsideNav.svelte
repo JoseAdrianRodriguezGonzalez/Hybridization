@@ -292,43 +292,46 @@
   .aside-nav::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.3);
   }
-    .menu-toggle {
-    display: none; /* oculto por defecto */
-  }
 
-  /* Mostrar solo en móviles */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-      position: fixed;      /* fijo en la pantalla */
-      top: 1rem;            /* separación superior */
-      right: 1rem;          /* separación derecha */
-      z-index: 1000;        /* sobre otros elementos */
-      background: none;
-      border: none;
-      font-size: 2rem;
-      color: #eee;
-      cursor: pointer;
-    }
-  }
 
-  /* Responsive */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   .aside-nav {
-    position: fixed;      /* Para poder deslizar fuera de pantalla */
-    top: 0;
-    left: -100%;          /* Inicialmente oculto fuera de pantalla a la izquierda */
-    width: 70vw;
-    max-width: 300px;
-    height: 100vh;
-    background: #161634;
-    overflow-y: auto;
-    box-shadow: 2px 0 10px #0008;
-    transition: left 0.3s ease;
-    z-index: 999;
+    /* Remover position fixed que está causando conflicto */
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: calc(100vh - 5vh) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: none !important;
+    z-index: auto !important;
+    border-right: none !important;
+    padding: 1rem 0 !important;
   }
-  .aside-nav.open {
-    left: 0;              /* Visible al estar abierto */
+  
+  /* Asegurar que todos los elementos sean visibles */
+  .section-title,
+  .link,
+  .toggle-btn {
+    color: #e8eaed !important;
+  }
+  
+  .section-title:hover,
+  .link:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+  
+  .section-title.active {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6) !important;
+    color: #ffffff !important;
+  }
+  
+  .link.active {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 197, 253, 0.1)) !important;
+    color: #93c5fd !important;
   }
 }
 

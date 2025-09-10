@@ -101,9 +101,5 @@
             <!-- Aquí va tu galería de imágenes -->
         </section>
 
-        <section class="download">
-            <h2>Descargar Software</h2>
-            <p class="coming-soon">¡Muy pronto! ...</p>
-        </section>
     </article>
 </div>

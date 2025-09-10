@@ -3,7 +3,7 @@
   // Props del componente
   export let downloads = []; // Array de objetos de descarga
   export let showSection = true; // Mostrar u ocultar la sección
-  
+
   // Función para manejar la descarga o navegación
   function handleAction(downloadItem) {
     if (!downloadItem.url) {
@@ -40,7 +40,9 @@
           disabled={!download.url}
           title={download.type === 'link' ? 'Abrir en nueva pestaña' : 'Descargar archivo'}
         >
-          <span class="download-icon">{download.icon || (download.type === 'link' ? '🔗' : '📥')}</span>
+          {#if download.icon}
+            <img src={download.icon} alt="icono {download.label}" class="icono" />
+          {/if}
           <div class="download-text">
             <span class="download-label">{download.label}</span>
             {#if download.description}
@@ -66,8 +68,6 @@
     animation: fadeInUp 0.8s ease-out 0.8s both;
   }
   
-
-  
   .downloads-grid {
     display: grid;
     gap: 1rem;
@@ -88,7 +88,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
-    width:20rem;
+    width: 20rem;
+  }
+  
+  .icono {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
   }
   
   .download-button.primary {
@@ -194,7 +200,6 @@
   
   /* Responsive */
   @media (max-width: 768px) {
-    
     .downloads-grid {
       grid-template-columns: 1fr;
       gap: 0.8rem;
@@ -212,6 +217,11 @@
     
     .download-label {
       font-size: 1rem;
+    }
+    
+    .icono {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
   
@@ -234,6 +244,11 @@
     .external-link-icon {
       margin-left: 0;
       align-self: center;
+    }
+    
+    .icono {
+      width: 2rem;
+      height: 2rem;
     }
   }
 </style>

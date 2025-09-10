@@ -36,6 +36,7 @@ import PlotSp3 from '../lib/PlotSp3.svelte';
 import PlotSp2d from '../lib/PlotSp2d.svelte';
 import PlotSp from '../lib/PlotSp.svelte';
 import BienvenidaDocu from '../lib/BienvenidaDocu.svelte';
+
 // Datos para el estado de la aplicación
 let jsonData = [];
 let loading = true;
@@ -43,8 +44,21 @@ let error = null;
 let activeSection = 0;
 let activeLink = 0;
 let currentContent = '';
-let currentContentType = 'markdown'; // 'markdown' o 'svelte'
+let currentContentType = 'markdown';
 let currentComponent = null;
+
+// Estado para controlar la visibilidad del índice
+let isIndexOpen = false;
+
+// Función para alternar el índice
+function toggleIndex() {
+  isIndexOpen = !isIndexOpen;
+}
+
+// Función para cerrar el índice
+function closeIndex() {
+  isIndexOpen = false;
+}
 
 // Mapa de componentes disponibles
 const componentMap = {
@@ -79,13 +93,11 @@ const componentMap = {
    'PlotSp2d.svelte':PlotSp2d,
    'PlotSp.svelte':PlotSp,
    'BienvenidaDocu.svelte':BienvenidaDocu,
-
 };
 
 // Función para cargar el JSON
 async function loadJsonData() {
   try {
-    // URL directa para prueba
     const jsonUrl = "/Hybridization/documentacion/documentacion.json";
 
     const res = await fetch(jsonUrl, {
@@ -105,7 +117,6 @@ async function loadJsonData() {
       throw new Error(`Error ${res.status}: ${res.statusText}. URL: ${jsonUrl}`);
     }
     
-    // Verificar que realmente recibimos JSON
     const contentType = res.headers.get('content-type');
     console.log("Content-Type:", contentType);
     
@@ -118,7 +129,6 @@ async function loadJsonData() {
       }
     }
     
-    // Intentar parsear como JSON
     try {
       jsonData = JSON.parse(responseText);
       console.log("JSON parseado exitosamente:", jsonData);
@@ -130,7 +140,6 @@ async function loadJsonData() {
     
     loading = false;
     
-    // Cargar el contenido inicial
     if (jsonData.length > 0) {
       await loadContent();
     } else {
@@ -166,15 +175,12 @@ async function loadContent() {
   const currentLink = jsonData[activeSection].links[activeLink];
   console.log("Cargando contenido para:", currentLink.name, "desde:", currentLink.href);
   
-  // Determinar el tipo de contenido
   const fileType = getFileType(currentLink.href);
   currentContentType = fileType;
   
   if (fileType === 'svelte') {
-    // Manejar componente Svelte
     await loadSvelteComponent(currentLink);
   } else {
-    // Manejar archivo Markdown
     await loadMarkdownContent(currentLink);
   }
 }
@@ -182,12 +188,12 @@ async function loadContent() {
 // Función para cargar componente Svelte
 async function loadSvelteComponent(linkData) {
   try {
-    const componentName = linkData.href.split('/').pop(); // Obtener solo el nombre del archivo
+    const componentName = linkData.href.split('/').pop();
     console.log("Buscando componente:", componentName);
     
     if (componentMap[componentName]) {
       currentComponent = componentMap[componentName];
-      currentContent = ''; // Limpiar contenido markdown
+      currentContent = '';
       console.log("Componente Svelte cargado exitosamente:", componentName);
     } else {
       console.warn("Componente no encontrado en componentMap:", componentName);
@@ -221,7 +227,6 @@ Para usar este componente, asegúrate de:
 // Función para cargar contenido Markdown
 async function loadMarkdownContent(linkData) {
   try {
-    // URL directa para el contenido
     let contentUrl;
     if (linkData.href.startsWith('/')) {
       contentUrl = linkData.href;
@@ -242,7 +247,6 @@ async function loadMarkdownContent(linkData) {
     if (response.ok) {
       const text = await response.text();
       
-      // Verificar si realmente recibimos el archivo MD o el HTML del index
       if (text.includes('<!DOCTYPE html>') || text.includes('<meta charset="UTF-8"')) {
         console.warn("El servidor está devolviendo HTML en lugar del archivo MD");
         currentContent = `
@@ -263,7 +267,7 @@ Verifica que el archivo existe en la ruta correcta.
       `;
     }
     
-    currentComponent = null; // Limpiar componente
+    currentComponent = null;
   } catch (err) {
     console.error("Error al cargar el contenido Markdown:", err);
     currentContent = `
@@ -280,12 +284,21 @@ function handleSectionChange(event) {
   activeSection = event.detail;
   activeLink = 0;
   loadContent();
+  closeIndex(); // Cerrar índice al cambiar sección
 }
 
 function handleLinkChange(event) {
   activeSection = event.detail.sectionIndex;
   activeLink = event.detail.linkIndex;
   loadContent();
+  closeIndex(); // Cerrar índice al cambiar enlace
+}
+
+// Cerrar índice al redimensionar ventana
+function handleResize() {
+  if (window.innerWidth > 768) {
+    isIndexOpen = false;
+  }
 }
 
 // Cargar los datos cuando el componente se monte
@@ -293,15 +306,29 @@ onMount(() => {
   loadJsonData();
 });
 </script>
-  <Header></Header>
+
+<svelte:window on:resize={handleResize} />
+
+<Header></Header>
+
+<!-- Botón hamburguesa para el índice (lado izquierdo) -->
+<button class="index-hamburger" class:active={isIndexOpen} on:click={toggleIndex} aria-label="Toggle index">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- Icono de índice/lista -->
+    <rect x="3" y="3" width="7" height="3" rx="1"></rect>
+    <rect x="3" y="8" width="7" height="3" rx="1"></rect>
+    <rect x="3" y="13" width="7" height="3" rx="1"></rect>
+    <line x1="13" y1="4" x2="21" y2="4"></line>
+    <line x1="13" y1="9" x2="21" y2="9"></line>
+    <line x1="13" y1="14" x2="21" y2="14"></line>
+  </svg>
+  <span class="index-text">Índice</span>
+</button>
 
 <div class="main-layout">
   <div class="container">
-    <!-- Barra lateral de navegación -->
-<button class="menu-toggle" on:click={() => document.querySelector('.aside-wrap').classList.toggle('open')}>
-  &#9776;
-</button>
-    <aside class="aside-wrap">
+    <!-- Barra lateral de navegación (índice) -->
+    <aside class="aside-wrap" class:open={isIndexOpen}>
       {#if loading}
         <div class="empty">Cargando navegación...</div>
       {:else if error}
@@ -317,7 +344,6 @@ onMount(() => {
       {/if}
     </aside>
     
-
     <!-- Contenido principal -->
     <main class="content">
       {#if loading}
@@ -326,12 +352,10 @@ onMount(() => {
         <div class="empty">Error al cargar el contenido: {error}</div>
       {:else if jsonData.length > 0}
         {#if currentContentType === 'svelte' && currentComponent}
-          <!-- Renderizar componente Svelte -->
           <div class="svelte-component-wrapper">
             <svelte:component this={currentComponent} />
           </div>
         {:else}
-          <!-- Renderizar contenido Markdown -->
           <ContentSection 
             title={jsonData[activeSection].title}
             content={currentContent}
@@ -343,70 +367,185 @@ onMount(() => {
     </main>
   </div>
 </div>
+
+<!-- Overlay para cerrar el índice al tocar afuera -->
+{#if isIndexOpen}
+  <div class="index-overlay" on:click={closeIndex}></div>
+{/if}
+
 <Footer></Footer>
 
 <style>
+  /* Botón de índice (lado izquierdo) */
+.index-hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: rgba(8, 7, 7, 0.9);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.index-hamburger:hover {
+  background: rgba(8, 7, 7, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.index-hamburger svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.index-hamburger.active {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+.index-hamburger.active svg {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.index-text {
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+
+/* Overlay para cerrar el índice */
+.index-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  cursor: pointer;
+}
+
 .main-layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 5vh; /* Espacio para el header fijo */
 }
 
 .container {
-    max-width: 1200px;
-    padding: 1rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .aside-wrap {
-    flex: 0 0 300px;
-    max-width: 300px;
-    min-width: 250px;
+  flex: 0 0 300px;
+  max-width: 300px;
+  min-width: 250px;
+  transition: transform 0.3s ease;
+  /* Asegurar que siempre tenga contenido visible */
+  background: transparent;
+}
+
+/* Mantener estilos originales del AsideNav */
+.aside-wrap :global(.aside-nav) {
+  width: 100%;
+  height: auto;
 }
 
 .content {
-    flex: 1;
-    min-width: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .svelte-component-wrapper {
-    width: 100%;
-    /* Permitir que el componente tome todo el espacio disponible */
+  width: 100%;
 }
 
 .empty {
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
-    background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  background-color: #fff;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 1rem;
-    }
+  /* Mostrar botón hamburguesa en móvil */
+  .index-hamburger {
+    display: flex;
+  }
+  
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 0;
+  }
 
-    .aside-wrap {
-        flex: none;
-        width: 100%;
-        max-width: none;
-        min-width: auto;
-    }
-    .menu-toggle {
-    display: block;
+  /* Índice móvil */
+  .aside-wrap {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1000;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #eee;
-    cursor: pointer;
+    top: 5vh;
+    left: -75%; /* Oculto inicialmente, ocupa 3/4 */
+    width: 75%;
+    height: calc(100vh - 5vh);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    overflow-y: auto;
+    padding: 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    flex: none;
+    max-width: none;
+    min-width: auto;
+  }
+  
+  /* Índice activo - se desliza desde la izquierda */
+  .aside-wrap.open {
+    left: 0;
+  }
+  
+  .content {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .main-layout {
+    margin-top: 5vh;
+  }
 }
+
+@media (max-width: 480px) {
+  .index-hamburger {
+    top: 10px;
+    left: 10px;
+    padding: 6px;
+  }
+  
+  .index-hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+  
+  .aside-wrap {
+    width: 80%; /* Un poco más ancho en móviles pequeños */
+    left: -80%;
+  }
 }
 </style>
