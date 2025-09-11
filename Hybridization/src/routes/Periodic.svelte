@@ -1,7 +1,6 @@
 <script>
     import { link } from 'svelte-spa-router';
     import Header from '../components/Header.svelte';
-    import Footer from '../components/footer.svelte';
     import Element from "../components/elements.svelte";
     import './styles.css';
     import { onMount } from 'svelte';
@@ -82,8 +81,7 @@
 
   </script>
   
-  <Header />
-  
+
   <div class="Periodic">
     {#each items as item, index}
       <div class="box box-{index}">
@@ -121,7 +119,4 @@
 
       </div>
     {/each}
-  </div>
-  
-  <Footer />
-  
+  </div>  

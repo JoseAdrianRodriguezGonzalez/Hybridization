@@ -1,7 +1,6 @@
 <script>
   import{link} from 'svelte-spa-router'
   import Header from '../components/Header.svelte';
-  import Footer from '../components/footer.svelte';
   import yti from "/icons/youtube.svg"
   import DownloadSection from './DownloadSection.svelte';
 const yt= [
@@ -29,7 +28,6 @@ function handleImageError(event) {
  console.warn('No se pudo cargar la imagen:', event.target.src);
 }
 </script>
-<Header></Header>
 
 <div class="Principal">
 
@@ -52,7 +50,6 @@ function handleImageError(event) {
       downloads={yt}
     />
 
-<Footer></Footer>
 
 
 <style>
