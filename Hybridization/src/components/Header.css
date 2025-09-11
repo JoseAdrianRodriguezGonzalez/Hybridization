@@ -1,30 +1,181 @@
-.nav ul{
-    font-size:2vw;
-    position:fixed;
+/* Header.css */
+
+/* Contenedor principal del header */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 5vh;
+  background-color: rgb(8, 7, 7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.3vw;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navegación principal */
+.nav {
+  height: 100%;
+}
+
+.nav-menu {
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 3vw;
+  list-style-type: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  text-shadow: 1vw;
+}
+
+/* Botón hamburguesa - oculto por defecto */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animación del hamburger cuando está activo */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0062ff;
+}
+
+/* RESPONSIVE - DESKTOP */
+@media screen and (min-width: 1020px) {
+  .nav-menu > li {
+    font-size: 1.5vw;
+  }
+}
+
+/* RESPONSIVE - TABLET Y MÓVIL */
+@media screen and (max-width: 768px) {
+  
+  /* Mostrar hamburguesa en móviles */
+  .hamburger {
     display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    gap:3vw;
+  }
+  
+  /* Ocultar logo en móviles si necesitas más espacio */
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  /* Menú móvil */
+  .nav-menu {
+    position: fixed;
+    top: 5vh; /* Altura del header */
+    left: -100%;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: calc(100vh - 5vh);
+    text-align: center;
+    transition: left 0.3s ease;
+    padding: 2rem 0;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Menú activo - se desliza desde la izquierda ocupando 3/4 */
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  /* Overlay para cerrar el menú al tocar afuera */
+  .nav-menu.active::before {
+    content: '';
+    position: fixed;
+    top: 5vh;
     right: 0;
-    list-style-type:none;
-    background-color: rgb(8, 7, 7);
-    height: 5vh;
-    z-index: 100;
-    width: 100vw;
-    padding: 2.3vw;
+    width: 25%; /* El 1/4 restante */
+    height: calc(100vh - 5vh);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+  
+  .nav-menu li {
+    margin: 1rem 0;
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* Ajustar contenedor para móvil */
+  .header-container {
+    padding: 0 1rem;
+  }
 }
-.nav{
-    height: 10vh;
-}
-.nav ul>li{
-    text-shadow: 1vw ;
-}
-a{
-    text-decoration: none;
-    color:inherit
-}
-@media screen and (min-width:1020px) {
-    .nav ul>li{
-        font-size: 1.5vw;
-    }
+
+/* RESPONSIVE - MÓVIL PEQUEÑO */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-menu {
+    font-size: 1.2rem;
+  }
+  
+  .header-container {
+    padding: 0 0.5rem;
+  }
 }

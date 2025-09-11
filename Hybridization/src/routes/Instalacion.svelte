@@ -6,31 +6,36 @@
     import Footer from '../components/footer.svelte';
     import CardInstall from '../lib/CardInstall.svelte';
     import DownloadSection from './DownloadSection.svelte';
+    import linuxicon from "/icons/linux-svgrepo-com.svg";
+    import macicon from "/icons/mac-svgrepo-com.svg";
+    import windowsicon from "/icons/windows-174-svgrepo-com.svg";
+
+
     const Windows10 = [
   {
     label:"Windows 10",
     description: "Sofware de visualización",
-    url: "http://localhost:5173/Hybridization/documentacion/QuPlots-1.pdf",
+    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-Win10.exe",
     filename: "QuPlots-1.pdf", 
-    icon: "💻",
+    icono: windowsicon,
     type: "download" // Descarga directa
   }]
-  const Windows11= [
+  const linux= [
   {
-    label:"Windows 11",
+    label:"Linux",
     description: "Sofware de visualización",
-    url: "http://localhost:5173/Hybridization/documentacion/QuPlots-1.pdf",
-    filename: "QuPlots-1.pdf", 
-    icon: "💻",
+    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-linux",
+    filename: "QuPlots-linux", 
+    icon: linuxicon,
     type: "download" // Descarga directa
   }]
   const Mac = [
   {
     label:"Mac OS",
     description: "Sofware de visualización",
-    url: "http://localhost:5173/Hybridization/documentacion/QuPlots-1.pdf",
+    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-mac",
     filename: "QuPlots-1.pdf", 
-    icon: "💻",
+    icon: macicon,
     type: "download" // Descarga directa
   }
     ]
@@ -76,7 +81,7 @@ pip install quplots`}
       downloads={Windows10}
     />
     <DownloadSection 
-      downloads={Windows11}
+      downloads={linux}
     />
     <DownloadSection 
       downloads={Mac}
