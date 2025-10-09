@@ -1,7 +1,6 @@
 <!-- GenerateSp3.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función generate_sp3()",
     functionName: "generate_sp3()",

@@ -1,5 +1,5 @@
 <script>
-  import WelcomeTemplate from "../routes/WelcomeTemplate.svelte";
+  import WelcomeTemplate from "../../routes/WelcomeTemplate.svelte";
   
   const content = {
     title: "Bienvenid@ a la Documentación de Quplots",

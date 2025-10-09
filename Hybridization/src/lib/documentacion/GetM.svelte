@@ -1,7 +1,6 @@
 <!-- GetM.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función getM()",
     functionName: "getM()",

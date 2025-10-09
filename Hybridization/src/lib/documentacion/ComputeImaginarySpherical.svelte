@@ -1,7 +1,6 @@
 <!-- ComputeImaginarySpherical.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_imaginary_spherical()",
     functionName: "compute_imaginary_spherical()",

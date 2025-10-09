@@ -1,7 +1,6 @@
 <!-- GenerateSp2d.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función generate_sp2d()",
     functionName: "generate_sp2d()",

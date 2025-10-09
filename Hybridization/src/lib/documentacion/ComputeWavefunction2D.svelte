@@ -1,7 +1,6 @@
 <!-- ComputeWavefunction2D.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_wavefunction_2D(d=20)",
     functionName: "compute_wavefunction_2D(d=20)",

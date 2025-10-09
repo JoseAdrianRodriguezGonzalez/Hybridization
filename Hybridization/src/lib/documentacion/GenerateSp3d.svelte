@@ -1,6 +1,6 @@
 <!-- GenerateSp3d.svelte -->
 <script>
-  import DocumentationTemplate from '../routes/DocumentationTemplate.svelte';
+  import DocumentationTemplate from './DocumentationTemplate.svelte';
 
   const content = {
     title: "Función generate_sp3d()",

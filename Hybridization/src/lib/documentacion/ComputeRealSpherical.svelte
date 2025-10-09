@@ -1,7 +1,6 @@
 <!-- ComputeRealSpherical.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_real_spherical()",
     functionName: "compute_real_spherical()",

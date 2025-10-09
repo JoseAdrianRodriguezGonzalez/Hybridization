@@ -1,7 +1,6 @@
 <!-- ComputeWavefunction3D.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_wavefunction_3D()",
     functionName: "compute_wavefunction_3D()",

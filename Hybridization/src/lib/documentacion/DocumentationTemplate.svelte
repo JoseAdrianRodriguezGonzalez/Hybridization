@@ -3,7 +3,6 @@
   import { onMount } from 'svelte';
   
   // Props que recibe el componente
-  export let title = "";
   export let functionName = "nombre_funcion";
   export let parameters = [];
   export let description="";

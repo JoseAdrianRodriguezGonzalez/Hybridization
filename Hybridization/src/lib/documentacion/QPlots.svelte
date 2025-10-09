@@ -1,7 +1,6 @@
 <!-- QuplotsPlotsOverview.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     functionName: "Clase quplots.plots",
     description: `

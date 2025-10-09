@@ -1,7 +1,7 @@
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
+import DocumentationTemplate from './DocumentationTemplate.svelte';
 
-  const content = {
+const content = {
     functionName: "Clase quplots.electron",
     description: `
       Esta clase realiza los cálculos necesarios para describir las propiedades geométricas del electrón. Posee los siguientes atributos:

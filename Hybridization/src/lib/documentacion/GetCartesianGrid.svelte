@@ -1,7 +1,6 @@
 <!-- GetCartesianGrid.svelte -->
 <script>
-  import DocumentationTemplate from './DocumentationTemplate.svelte';
-
+import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función get_cartesian_grid()",
     functionName: "get_cartesian_grid()",

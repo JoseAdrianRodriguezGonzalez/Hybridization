@@ -1,7 +1,6 @@
 <!-- PlotWf3d.svelte -->
 <script>
 import DocumentationTemplate from './DocumentationTemplate.svelte';
-
 const content = {
     title: "Función plot_wf_3d(elect, **kwargs_plot)",
     functionName: "plot_wf_3d(elect, **kwargs_plot)",
