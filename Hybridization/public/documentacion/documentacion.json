@@ -114,10 +114,10 @@
         "href": "PlotSp2d.svelte" },
       { "name": "3.10 plot_sp3d()", "id": "plot_sp3d",
         
-        "href": "" },
+        "href": "GenerateSp3d.svelte" },
       { "name": "3.11 plot_sp3d2()", "id": "plot_sp3d2",
         
-        "href": "" }
+        "href": "GenerateSp3d2.svelte" }
     ]
   }
 ]

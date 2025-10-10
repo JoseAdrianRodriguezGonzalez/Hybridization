@@ -4,10 +4,10 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_imaginary_spherical()",
     functionName: "compute_imaginary_spherical()",
-    parameters: [],
-    description: `Función que no recibe parámetros y que devuelve una tupla de 5 elementos: el valor de la función de los armónicos esféricos, los valores de las coordenadas θ, φ, los rangos de colores definidos por la distribución de probabilidad y los números cuánticos l, m.
+    description: `Devuelve una tupla de 5 elementos: el valor de la función de los armónicos esféricos, los valores de las coordenadas θ, φ, los rangos de colores definidos por la distribución de probabilidad y los números cuánticos l, m.
     <br>
     Calcula la parte compleja de los armónicos esféricos.`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> electron
 <span class="comment"># n, l, m, y radio</span>
 <span class="variable">e</span> = <span class="function">electron</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)
@@ -49,6 +49,7 @@ Probability Colors=[[nan nan nan ... nan nan nan]
 Number L=0
 Number m=0
 `
+
   };
 </script>
 

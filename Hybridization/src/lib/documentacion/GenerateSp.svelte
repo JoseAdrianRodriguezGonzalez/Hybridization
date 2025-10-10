@@ -5,7 +5,6 @@
   const content = {
     title: "Función generate_sp()",
     functionName: "generate_sp()",
-    parameters: [],
     description: `La función no recibe valores y devuelve una tupla de dos tensores.
     <br>
     La hibridación es la combinación lineal de funciones \\(\\psi\\) de onda, cumpliendo la ortonormalidad.
@@ -19,6 +18,8 @@
         \\end{aligned}
       \\]
     </div>`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> hybridization
 <span class="variable">h</span> = <span class="function">hybridization</span>()
 <span class="variable">psi1</span>, <span class="variable">psi2</span> = <span class="variable">h</span>.<span class="function">generate_sp</span>()

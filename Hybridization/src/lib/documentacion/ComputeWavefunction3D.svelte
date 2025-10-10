@@ -4,9 +4,10 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_wavefunction_3D()",
     functionName: "compute_wavefunction_3D()",
-    parameters: [],
     description: `La función no requiere ningún parámetro de entrada y devuelve un arreglo numpy de 3 dimensiones (tensor). 
     <br>Calcula la función de onda de probabilidad en 3 dimensiones. Esta función es útil para graficar en 3 dimensiones.`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> electron
 <span class="comment"># n, l, m, y radio</span>
 <span class="variable">e</span> = <span class="function">electron</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)

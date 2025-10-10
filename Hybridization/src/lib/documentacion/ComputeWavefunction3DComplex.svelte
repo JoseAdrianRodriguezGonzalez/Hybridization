@@ -4,12 +4,13 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_wavefunction_3D_complex()",
     functionName: "compute_wavefunction_3D_complex()",
-    parameters: [],
     description: `Función que no recibe ningún parámetro y que devuelve un tensor 3D. Calcula la parte compleja de la función de onda.
     <br>
     <div style="text-align: center;">
       $$|\\psi_{n,l,m}|^2=|R_{n,l}(r) \\Re\\left( Y_{l,m}(\\theta,\\phi) \\right) \\Im\\left( Y_{l,m}(\\theta,\\phi) \\right)|^2$$
     </div>`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> electron
 <span class="comment"># n, l, m, y radio</span>
 <span class="variable">e</span> = <span class="function">electron</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)

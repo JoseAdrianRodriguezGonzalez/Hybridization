@@ -4,8 +4,9 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función getRadius()",
     functionName: "getRadius()",
-    parameters: [],
     description: `Función que no recibe parámetros y devuelve el atributo radius de nuestro objeto de la clase electron.`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> electron
 <span class="comment"># n, l, m, y radio</span>
 <span class="variable">e</span> = <span class="function">electron</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)

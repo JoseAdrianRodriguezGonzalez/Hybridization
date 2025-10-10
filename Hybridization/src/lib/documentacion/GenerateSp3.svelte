@@ -4,7 +4,6 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función generate_sp3()",
     functionName: "generate_sp3()",
-    parameters: [],
     description: `La hibridación \\(sp^3\\) (tetrahédrica) está descrita por las siguientes ecuaciones:
     <br>
     <div style="text-align: center;">
@@ -17,6 +16,8 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
         \\end{aligned}
       \\]
     </div>`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> hybridization
 <span class="variable">h</span> = <span class="function">hybridization</span>()
 <span class="variable">psi1</span>, <span class="variable">psi2</span>, <span class="variable">psi3</span>, <span class="variable">psi4</span> = <span class="variable">h</span>.<span class="function">generate_sp3</span>()

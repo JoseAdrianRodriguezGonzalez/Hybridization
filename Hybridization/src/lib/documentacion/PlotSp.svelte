@@ -5,6 +5,10 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
 const content = {
     title: "Función plot_sp(**kwargs)",
     functionName: "plot_sp(**kwargs)",
+    
+    description: `
+    Función que únicamente requiere estilos personalizados de plotly para generar la gráfica de hibridación sp (lineal).
+    `,
     parameters: [
         {
             name: "**kwargs",
@@ -13,9 +17,6 @@ const content = {
             mathNotation: null
         }
     ],
-    description: `
-    Función que únicamente requiere estilos personalizados de plotly para generar la gráfica de hibridación sp (lineal).
-    `,
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> plots
 <span class="variable">p</span> = <span class="function">plots</span>()
 <span class="variable">p</span>.<span class="function">plot_sp</span>(

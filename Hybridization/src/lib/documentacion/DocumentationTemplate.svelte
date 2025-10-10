@@ -44,7 +44,7 @@
 <div class="syntaxCode tex2jax_process" bind:this={mathContainer}>
   <div class="syntaxCode">
     <!-- <h1>{title}</h1> -->
-    <h2>{functionName}</h2>
+    <h1>{functionName}</h1>
     
     <!-- Sección de retorno -->
     <div class="syntaxCodeription">
@@ -77,19 +77,21 @@
       {/if}
     </div>
 
-    <div class="parameters-section">
-      <h3>Parámetros</h3>
-      <ul class="parameter-list">
-        {#each parameters as param}
-          <li class="tex2jax_process">
-            <strong>{param.name}</strong> ({param.type}): <span class="tex2jax_process">{@html param.description}</span>
-            {#if param.mathNotation}
-              <span class="math-inline tex2jax_process">{@html param.mathNotation}</span>
-            {/if}
-          </li>
-        {/each}
-      </ul>
-    </div>
+    {#if parameters && parameters.length > 0}
+  <div class="parameters-section">
+    <h3>Parámetros</h3>
+    <ul class="parameter-list">
+      {#each parameters as param}
+        <li class="tex2jax_process">
+          <strong>{param.name}</strong> ({param.type}): <span class="tex2jax_process">{@html param.description}</span>
+          {#if param.mathNotation}
+            <span class="math-inline tex2jax_process">{@html param.mathNotation}</span>
+          {/if}
+        </li>
+      {/each}
+    </ul>
+  </div>
+{/if}
         
     <!-- Sintaxis -->
     {#if syntaxCode}

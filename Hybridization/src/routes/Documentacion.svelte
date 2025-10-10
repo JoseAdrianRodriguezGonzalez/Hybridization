@@ -6,7 +6,7 @@ import AsideNav from '../lib/AsideNav.svelte';
 import { onMount } from 'svelte';
 import ContentSection from '../lib/documentacion/ContentSection.svelte';
 import ComputeRadial from '../lib/documentacion/ComputeRadial.svelte';
-import GetSphericalGrid from '../lib/documentacion/GetSphericalGrid.svelte.svelte';
+import GetSphericalGrid from '../lib/documentacion/GetSphericalGrid.svelte';
 import GetCartesianGrid from '../lib/documentacion/GetCartesianGrid.svelte';
 import ComputeRealSpherical from '../lib/documentacion/ComputeRealSpherical.svelte'
 import ComputeImaginarySpherical from '../lib/documentacion/ComputeImaginarySpherical.svelte';

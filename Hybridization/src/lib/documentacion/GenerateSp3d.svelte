@@ -5,7 +5,6 @@
   const content = {
     title: "Función generate_sp3d()",
     functionName: "generate_sp3d()",
-    parameters: [],
     description: `Función que no recibe valores y retorna una tupla de 5 tensores.
     <br>
     La hibridación \\(sp^{3}d\\) (trigonal bipyramidal) se describe como:
@@ -21,6 +20,8 @@
         \\end{aligned}
       \\]
     </div>`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> hybridization
 <span class="variable">h</span> = <span class="function">hybridization</span>()
 <span class="variable">psi1</span>, <span class="variable">psi2</span>, <span class="variable">psi3</span>, <span class="variable">psi4</span>, <span class="variable">psi5</span> = <span class="variable">h</span>.<span class="function">generate_sp3d</span>()

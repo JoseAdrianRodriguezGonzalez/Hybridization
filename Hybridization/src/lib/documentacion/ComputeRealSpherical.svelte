@@ -4,7 +4,6 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
   const content = {
     title: "Función compute_real_spherical()",
     functionName: "compute_real_spherical()",
-    parameters: [],
     description: `No requiere parámetros de entrada, y devuelve una tupla de 5 elementos: el valor de la función de los armónicos esféricos reales, los valores de las coordenadas θ, φ, los rangos de colores definidos por la distribución de probabilidad y los números cuánticos l, m.
     <br>
     Calcula la función real de los armónicos esféricos, definida por:
@@ -14,6 +13,8 @@ import DocumentationTemplate from './DocumentationTemplate.svelte';
     </div>
     <br>
     Donde \(l, m\) son los números cuánticos azimutal y magnético, y \(P_l^m(\\cos \\theta)\) son las funciones asociadas de Legendre.`,
+    parameters: [{ name: "Sin parámetros",type:"", description: "Función que no recibe parámetros" }],
+
     syntaxCode: `<span class="keyword">from</span> quplots <span class="keyword">import</span> electron
 <span class="variable">e</span> = <span class="function">electron</span>(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)
 <span class="variable">Y</span>, <span class="variable">theta</span>, <span class="variable">phi</span>, <span class="variable">colors</span>, <span class="variable">l</span>, <span class="variable">m</span> = <span class="variable">e</span>.<span class="function">compute_real_spherical</span>()

@@ -24,14 +24,7 @@ const content = {
       </div>
       <br>
       El radio puede ser \\( r \\in \\mathbb{R}^+ \\).
-      <br>
-      El siguiente bloque muestra cómo instanciar un objeto de tipo <code>electron</code> con números cuánticos \\(n=1, l=0, m=0\\) y radio igual a 1:
-      <pre>
-from quplots import electron
-# n,l, m, y radio
-e = electron(1, 0, 0, 1)
-      </pre>
-      <br>
+
       La clase posee las siguientes funciones:
       <ol>
         <li><code>get_cartesian_grid()</code></li>
@@ -47,7 +40,13 @@ e = electron(1, 0, 0, 1)
         <li><code>getM()</code></li>
         <li><code>getRadius()</code></li>
       </ol>
+      <br>
+      El siguiente bloque muestra cómo instanciar un objeto de tipo <code>electron</code> con números cuánticos \\(n=1, l=0, m=0\\) y radio igual a 1:
+      <br>
     `,
+      syntaxCode: `<span class="keyword">from quplots import hybridization</span>
+# n,l, m, y radio
+e = electron(1, 0, 0, 1)</span>()`
   };
 </script>
 
