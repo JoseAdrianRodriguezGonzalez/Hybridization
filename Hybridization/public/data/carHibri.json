@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "src": "Hybridization/galeria/hibri/nsp.png",
+    "alt": "Hibridación sp (lineal)"
+  },
+  {
+    "id": 2,
+    "src": "Hybridization/galeria/hibri/nsp2.png",
+    "alt": "Hibridación sp² (trigonal plana)"
+  },
+  {
+    "id": 3,
+    "src": "Hybridization/galeria/hibri/nsp2d.png",
+    "alt": "Hibridación sp²d (piramidal cuadrada)"
+  },
+  {
+    "id": 4,
+    "src": "Hybridization/galeria/hibri/nsp3.png",
+    "alt": "Hibridación sp³ (tetraédrica)"
+  },
+  {
+    "id": 5,
+    "src": "Hybridization/galeria/hibri/nsp3d.png",
+    "alt": "Hibridación sp³d (bipiramidal trigonal)"
+  },
+  {
+    "id": 6,
+    "src": "Hybridization/galeria/hibri/nsp3d2.png",
+    "alt": "Hibridación sp³d² (octaédrica)"
+  }
+]
