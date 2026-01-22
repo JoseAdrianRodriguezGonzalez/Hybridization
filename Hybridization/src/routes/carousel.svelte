@@ -326,7 +326,6 @@
     transform: scale(1.05);
   }
   
-  /* Caption */
   .carousel-caption {
     position: absolute;
     bottom: 0;
@@ -352,7 +351,6 @@
     line-height: 1.4;
   }
   
-  /* Controles */
   .carousel-control {
     position: absolute;
     top: 50%;
@@ -688,7 +686,6 @@
     }
   }
   
-  /* Animations */
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -705,7 +702,6 @@
     }
   }
   
-  /* Responsive */
   @media (max-width: 1024px) {
     .carousel-caption h3 {
       font-size: 1rem;

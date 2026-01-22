@@ -14,7 +14,6 @@
     icon: yti,
   }];
 
-  // Configuración de títulos para cada carrusel
 const carouselConfig = [
   { title: "Tipos de Hibridación", description: "Visualización de orbitales híbridos" },
   { title: "Funciones de Onda", description: "Representación de funciones de onda cuánticas" },
@@ -37,7 +36,6 @@ const carouselConfig = [
       const responseRadial = await fetch("/Hybridization/public/data/carRadialFunction.json");
       const responseWave = await fetch("/Hybridization/public/data/carWaveFunction.json");
 
-      // Verificar cada respuesta
       if (!responseHibri.ok) throw new Error('No se pudo cargar carHibri.json');
       if (!responseWave.ok) throw new Error('No se pudo cargar WaveFunction.json');
       if (!response3D.ok) throw new Error('No se pudo cargar 3DProba.json');
@@ -45,7 +43,6 @@ const carouselConfig = [
       if (!responseArmoEsfRe.ok) throw new Error('No se pudo cargar carArmonicosEsfericosReales.json');
       if (!responseRadial.ok) throw new Error('No se pudo cargar carRadialFunction.json');
 
-      // Convertir cada uno a JSON
       const proba = await response3D.json();
       const armoEsIm = await responseArmoEsfIm.json();
       const armoEsRe = await responseArmoEsfRe.json();
@@ -53,7 +50,6 @@ const carouselConfig = [
       const radial = await responseRadial.json();
       const wave = await responseWave.json();
 
-      // Guardar en el array
       dataSets = [hibri, wave, proba, armoEsIm, armoEsRe, radial];
       loading = false;
 
@@ -109,7 +105,6 @@ const carouselConfig = [
     {/if}
   </section>
 
-  <!-- Sección de YouTube -->
   <DownloadSection downloads={yt} />
 
 </main>
@@ -123,7 +118,6 @@ const carouselConfig = [
     padding: 40px 20px;
   }
 
-  /* Sección del Carrusel */
   .carousel-section {
     margin-bottom: 80px;
   }
@@ -144,6 +138,7 @@ const carouselConfig = [
     font-size: 1.2rem;
     color: #7f8c8d;
     margin: 0;
+    text-align: center;
   }
 
   .carousel-container {
@@ -156,22 +151,18 @@ const carouselConfig = [
     margin-bottom: 15px;
     text-align: center;
     font-weight: 600;
-    border-bottom: 3px solid #667eea;
-    padding-bottom: 10px;
     display: inline-block;
   }
 
   .carousel-description {
-    text-align: center;
     color: #7f8c8d;
     margin-bottom: 25px;
     font-size: 1.1rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
   }
 
-  /* Loading State */
   .loading {
     display: flex;
     flex-direction: column;
@@ -201,7 +192,6 @@ const carouselConfig = [
     margin: 0;
   }
 
-  /* Error State */
   .error {
     background: #ffeaa7;
     border: 2px solid #fdcb6e;
@@ -217,7 +207,6 @@ const carouselConfig = [
     color: #e17055;
   }
 
-  /* Responsivo */
   @media (max-width: 768px) {
     .principal {
       padding: 20px 15px;
