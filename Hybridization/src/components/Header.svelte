@@ -64,7 +64,6 @@
       QuPlots
     </a>
     
-    <!-- Navegación principal -->
     <nav class="nav">
       <ul class="nav-menu" class:active={isMenuOpen}>
         <li>
@@ -85,16 +84,6 @@
             aria-label="Ir a Galería"
           >
             Galería
-          </a>
-        </li>
-        <li>
-          <a 
-            href="/" 
-            use:link 
-            on:click={closeMenu}
-            aria-label="Ir al Inicio"
-          >
-            Inicio
           </a>
         </li>
         <li>

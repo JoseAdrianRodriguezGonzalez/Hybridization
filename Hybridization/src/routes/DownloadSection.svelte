@@ -1,23 +1,19 @@
 <!-- DownloadSection.svelte -->
 <script>
-  // Props del componente
-  export let downloads = []; // Array de objetos de descarga
-  export let showSection = true; // Mostrar u ocultar la sección
+  export let downloads = [];
+  export let showSection = true;
 
-  // Función para manejar la descarga o navegación
   function handleAction(downloadItem) {
     if (!downloadItem.url) {
       console.warn('No se ha proporcionado una URL');
       return;
     }
     
-    // Si es tipo 'link', abrir en nueva pestaña
     if (downloadItem.type === 'link') {
       window.open(downloadItem.url, '_blank');
       return;
     }
     
-    // Si es tipo 'download' o no está especificado (comportamiento por defecto), descargar
     const link = document.createElement('a');
     link.href = downloadItem.url;
     link.download = downloadItem.filename || 'documento.pdf';
@@ -66,6 +62,8 @@
     text-align: center;
     margin: 1rem 0 1rem 0;
     animation: fadeInUp 0.8s ease-out 0.8s both;
+    padding: 1vw 1vw;
+    margin-bottom: 1vw;
   }
   
   .downloads-grid {
@@ -186,7 +184,6 @@
     text-align: center;
   }
   
-  /* Animaciones */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -198,7 +195,6 @@
     }
   }
   
-  /* Responsive */
   @media (max-width: 768px) {
     .downloads-grid {
       grid-template-columns: 1fr;

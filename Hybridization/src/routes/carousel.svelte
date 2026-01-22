@@ -18,6 +18,11 @@
   let itemsPerView = itemsToShow; // Cantidad actual de items visibles
   let containerWidth = 0;
   
+  // Estado para el modal
+  let showModal = false;
+  let modalImageIndex = 0;
+  let modalImage = null;
+  
   // Calcular items por vista según el ancho
   $: {
     if (containerWidth > 0) {
@@ -84,10 +89,42 @@
   function handleKeydown(event) {
     if (event.key === 'ArrowLeft') prevSlide();
     if (event.key === 'ArrowRight') nextSlide();
+    if (event.key === 'Escape' && showModal) closeModal();
   }
   
   // Calcular el desplazamiento
   $: translateX = -(currentIndex * (100 / itemsPerView));
+  
+  // Funciones para el modal
+  function openModal(imageIndex) {
+    modalImageIndex = imageIndex;
+    modalImage = images[imageIndex];
+    showModal = true;
+    document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+  }
+  
+  function closeModal() {
+    showModal = false;
+    document.body.style.overflow = ''; // Restaurar scroll del body
+  }
+  
+  function nextModalImage() {
+    modalImageIndex = (modalImageIndex + 1) % images.length;
+    modalImage = images[modalImageIndex];
+  }
+  
+  function prevModalImage() {
+    modalImageIndex = (modalImageIndex - 1 + images.length) % images.length;
+    modalImage = images[modalImageIndex];
+  }
+  
+  // Manejar clicks en el modal
+  function handleModalClick(event) {
+    // Cerrar modal si se hace click en el fondo
+    if (event.target.classList.contains('modal-backdrop')) {
+      closeModal();
+    }
+  }
   
   onMount(() => {
     if (autoplay && images.length > itemsPerView) {
@@ -97,6 +134,7 @@
   
   onDestroy(() => {
     if (intervalId) clearInterval(intervalId);
+    document.body.style.overflow = ''; // Asegurar que se restaure el scroll
   });
 </script>
 
@@ -116,7 +154,12 @@
     >
       {#each images as image, index}
         <div class="carousel-slide">
-          <img src={image.src} alt={image.alt || `Slide ${index + 1}`} />
+          <img 
+            src={image.src} 
+            alt={image.alt || `Slide ${index + 1}`} 
+            on:click={() => openModal(index)}
+            class="clickable-image"
+          />
           
           <!-- Caption -->
           {#if image.caption || showAltAsCaption}
@@ -179,6 +222,56 @@
   {/if}
 </div>
 
+<!-- Modal para imagen ampliada -->
+{#if showModal && modalImage}
+  <div class="modal-backdrop" on:click={handleModalClick}>
+    <div class="modal-content">
+      <!-- Botón cerrar -->
+      <button class="modal-close" on:click={closeModal} aria-label="Cerrar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <!-- Controles de navegación -->
+      {#if images.length > 1}
+        <button class="modal-nav modal-prev" on:click={prevModalImage} aria-label="Imagen anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        
+        <button class="modal-nav modal-next" on:click={nextModalImage} aria-label="Imagen siguiente">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      {/if}
+      
+      <!-- Imagen -->
+      <div class="modal-image-container">
+        <img 
+          src={modalImage.src} 
+          alt={modalImage.alt || `Imagen ${modalImageIndex + 1}`}
+          class="modal-image"
+        />
+      </div>
+      
+      <!-- Información de la imagen -->
+      <div class="modal-info">
+        <h3>{modalImage.alt || `Imagen ${modalImageIndex + 1}`}</h3>
+        {#if modalImage.caption?.description}
+          <p>{modalImage.caption.description}</p>
+        {/if}
+        <div class="modal-counter">
+          {modalImageIndex + 1} / {images.length}
+        </div>
+      </div>
+    </div>
+  </div>
+{/if}
+
 <style>
   .carousel {
     position: relative;
@@ -210,13 +303,27 @@
     height: 100%;
     overflow: hidden;
     border-radius: 8px;
+    background: #ffffff00; /* Fondo para áreas vacías */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-slide img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
   }
   
-  .carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .clickable-image {
+    cursor: pointer;
+  }
+  
+  .clickable-image:hover {
+    transform: scale(1.05);
   }
   
   /* Caption */
@@ -225,7 +332,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
     color: white;
     padding: 20px 15px;
     text-align: center;
@@ -328,6 +435,276 @@
     border-radius: 5px;
   }
   
+  /* Modal Styles */
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+  .modal-content {
+      position: relative;
+      max-width: min(95vw, 1000px); /* REDUCIDO de 1200px a 1000px */
+      max-height: min(95vh, 700px);  /* REDUCIDO de 800px a 700px */
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      animation: scaleIn 0.3s ease;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .modal-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: calc(100% - 100px); /* REDUCIDO de 120px a 100px */
+    padding: 30px; /* REDUCIDO de 40px a 30px */
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+  .modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-info {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    min-height: 80px;
+  }
+
+  .modal-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .modal-info p {
+    margin: 0 0 10px 0;
+    color: #666;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .modal-counter {
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Mejorar los controles del modal */
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  .modal-close:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+  }
+
+  .modal-close svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  .modal-nav:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .modal-prev {
+    left: 25px;
+  }
+
+  .modal-next {
+    right: 25px;
+  }
+
+  .modal-nav svg {
+    color: white;
+    width: 24px;
+    height: 24px;
+  }
+@media (max-width: 1366px) {
+    .modal-content {
+        max-width: min(92vw, 900px);
+        max-height: min(92vh, 600px);
+    }
+    
+    .modal-image-container {
+        padding: 25px;
+        max-height: calc(100% - 90px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .modal-content {
+        max-width: min(95vw, 800px);
+        max-height: min(95vh, 550px);
+    }
+    
+    .modal-image-container {
+        padding: 20px;
+        max-height: calc(100% - 80px);
+    }
+    
+    .modal-info {
+        padding: 15px;
+        min-height: 70px;
+    }
+    
+    .modal-info h3 {
+        font-size: 1.1rem;
+    }
+}
+  /* Para pantallas muy grandes, limitar aún más */
+  @media (min-width: 1600px) {
+    .modal-content {
+      max-width: min(80vw, 1400px);
+      max-height: min(80vh, 900px);
+    }
+  }
+
+  /* Para móviles, ajustar padding */
+  @media (max-width: 768px) {
+    .modal-backdrop {
+      padding: 10px;
+    }
+
+    .modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+
+    .modal-image-container {
+      padding: 20px;
+      max-height: calc(100% - 100px);
+    }
+
+    .modal-info {
+      padding: 15px;
+      min-height: 70px;
+    }
+
+    .modal-info h3 {
+      font-size: 1.1rem;
+    }
+
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      right: 10px;
+    }
+
+    .modal-nav {
+      width: 45px;
+      height: 45px;
+    }
+
+    .modal-prev {
+      left: 15px;
+    }
+
+    .modal-next {
+      right: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modal-image-container {
+      padding: 15px;
+    }
+
+    .modal-info {
+      padding: 12px;
+    }
+
+    .modal-info h3 {
+      font-size: 1rem;
+    }
+
+    .modal-close {
+      width: 35px;
+      height: 35px;
+    }
+
+    .modal-nav {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
   /* Responsive */
   @media (max-width: 1024px) {
     .carousel-caption h3 {
@@ -336,6 +713,11 @@
     
     .carousel-caption p {
       font-size: 0.8rem;
+    }
+    
+    .modal-nav {
+      width: 40px;
+      height: 40px;
     }
   }
   
@@ -368,6 +750,41 @@
     .carousel-caption p {
       font-size: 0.75rem;
     }
+    
+    .modal-backdrop {
+      padding: 10px;
+    }
+    
+    .modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+    
+    .modal-image-container {
+      max-height: 60vh;
+      padding: 15px;
+    }
+    
+    .modal-info {
+      padding: 15px;
+    }
+    
+    .modal-info h3 {
+      font-size: 1.1rem;
+    }
+    
+    .modal-nav {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .modal-prev {
+      left: 10px;
+    }
+    
+    .modal-next {
+      right: 10px;
+    }
   }
   
   @media (max-width: 640px) {
@@ -392,6 +809,13 @@
     
     .indicator.active {
       width: 24px;
+    }
+    
+    .modal-close {
+      width: 35px;
+      height: 35px;
+      top: 10px;
+      right: 10px;
     }
   }
 </style>

@@ -1,5 +1,4 @@
 <script>
-  // Card.svelte (componente individual)
   import{link} from 'svelte-spa-router';
   export let titulo;
   export let texto;

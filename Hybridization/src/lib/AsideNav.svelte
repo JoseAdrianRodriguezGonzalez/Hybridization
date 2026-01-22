@@ -9,7 +9,7 @@
 
   function toggleSection(index) {
     sections[index].open = !sections[index].open;
-    sections = sections; // Trigger reactivity
+    sections = sections;
   }
 
   function selectSection(index) {

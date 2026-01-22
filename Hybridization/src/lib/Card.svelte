@@ -1,5 +1,4 @@
 <script>
-  // Card.svelte (componente individual)
   import{link} from 'svelte-spa-router';
   export let titulo;
   export let texto;
@@ -21,12 +20,13 @@
     box-shadow: 0 0 0.2vw #21234d22;
     padding: 1vw 1vw;
     width: 100%;
-    min-width: 22vw;
+    min-width: 24vw;
     max-width: 40vw;
     text-align: center;
     margin-bottom: 2vw;
     display: block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
   }
   
   .card:hover {
@@ -35,8 +35,10 @@
   }
 
   .icono {
-    width: 8vw;
-    margin-bottom: 0.1vw;
+    width: 9rem; 
+    height: 9rem;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
   }
 
   h2 {
@@ -50,7 +52,7 @@
   h2::after {
     content: '';
     display: block;
-    width: 100%;
+    width: 60%;
     margin: 0.5vw auto 0 auto;
     border-bottom: 0.4vw solid #48C6FF;
     border-radius: 0.2vw;
@@ -62,36 +64,43 @@
     margin-top: 0.5rem;
   }
   
-  /* Responsive */
-  @media (max-width: 768px) {
+   @media (max-width: 768px) {
     .card {
-      
-      max-width: 95vw;
-      margin: 1rem auto;
-      padding: 1rem;
+      width: 100%;
+      max-width: 100vw;
       min-width: auto;
-      gap:1px;
-  }
-    }
-    
-    .icono {
-      width: 10vw;
-    }
-    
-    
-    h2::after {
-      margin: 0.5rem auto 0 auto;
-      border-bottom: 0.25rem solid #48C6FF;
+      margin: 1.5rem auto;
+      padding: 2.5rem 1.5rem;
+      border-radius: 1.5rem;
     }
 
-@media (max-width: 480px) {
-  
-  .card {
-    flex-direction: column;
-    text-align: center;
-    gap: 0.8rem;
-    padding: 1rem;
+    .icono {
+      width: 25vw;
+      height: 25vw;
+      max-width: 80px;
+      max-height: 80px;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h2::after {
+      border-bottom: 4px solid #48C6FF;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #cecfef;
+    }
   }
+    
+  @media (max-width: 480px) {
+    .card {
+      padding: 2rem 1rem;
+    }
   }
     
 </style>

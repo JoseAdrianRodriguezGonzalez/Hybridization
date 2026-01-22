@@ -14,101 +14,100 @@
     icon: yti,
   }];
 
-  // Variables para almacenar los datos del JSON
-  let hibri = [];
+  // Configuración de títulos para cada carrusel
+const carouselConfig = [
+  { title: "Tipos de Hibridación", description: "Visualización de orbitales híbridos" },
+  { title: "Funciones de Onda", description: "Representación de funciones de onda cuánticas" },
+  { title: "Probabilidades 3D", description: "Distribuciones de probabilidad tridimensionales" },
+  { title: "Armónicos Esféricos Imaginarios", description: "Representación de armónicos esféricos complejos" },
+  { title: "Armónicos Esféricos Reales", description: "Representación de armónicos esféricos reales" },
+  { title: "Funciones Radiales", description: "Distribuciones radiales de probabilidad" }
+];
+
+  let dataSets = [];
   let loading = true;
   let error = null;
 
-  // Cargar el JSON al montar el componente
   onMount(async () => {
     try {
-      const response = await fetch("/Hybridization/public/data/carHibri.json");
-      if (!response.ok) {
-        throw new Error('No se pudo cargar el archivo JSON');
-      }
-      hibri = await response.json();
+      const response3D = await fetch("/Hybridization/public/data/car3DProba.json");
+      const responseArmoEsfIm = await fetch("/Hybridization/public/data/carArmonicosEsfericosImaginarios.json");
+      const responseArmoEsfRe = await fetch("/Hybridization/public/data/carArmonicosEsfericosReales.json");
+      const responseHibri = await fetch("/Hybridization/public/data/carHibri.json");
+      const responseRadial = await fetch("/Hybridization/public/data/carRadialFunction.json");
+      const responseWave = await fetch("/Hybridization/public/data/carWaveFunction.json");
+
+      // Verificar cada respuesta
+      if (!responseHibri.ok) throw new Error('No se pudo cargar carHibri.json');
+      if (!responseWave.ok) throw new Error('No se pudo cargar WaveFunction.json');
+      if (!response3D.ok) throw new Error('No se pudo cargar 3DProba.json');
+      if (!responseArmoEsfIm.ok) throw new Error('No se pudo cargar carArmonicosEsfericosImaginarios.json');
+      if (!responseArmoEsfRe.ok) throw new Error('No se pudo cargar carArmonicosEsfericosReales.json');
+      if (!responseRadial.ok) throw new Error('No se pudo cargar carRadialFunction.json');
+
+      // Convertir cada uno a JSON
+      const proba = await response3D.json();
+      const armoEsIm = await responseArmoEsfIm.json();
+      const armoEsRe = await responseArmoEsfRe.json();
+      const hibri = await responseHibri.json();
+      const radial = await responseRadial.json();
+      const wave = await responseWave.json();
+
+      // Guardar en el array
+      dataSets = [hibri, wave, proba, armoEsIm, armoEsRe, radial];
       loading = false;
+
     } catch (err) {
       console.error('Error cargando JSON:', err);
       error = err.message;
       loading = false;
     }
   });
-
-  function handleImageClick(imagen) {
-    console.log('Imagen clickeada:', imagen.alt);
-  }
-
-  function handleImageError(event) {
-    console.warn('No se pudo cargar la imagen:', event.target.src);
-  }
 </script>
 
 <Header />
 
 <main class="principal">
   
-  <!-- Carrusel Principal -->
   <section class="carousel-section">
     <div class="section-header">
-      <h1>Tipos de Hibridación</h1>
+      <h1>Galería de imagenes</h1>
+      <p>Todos los graficos han sido creados con Quplots</p>
     </div>
-    
+
     {#if loading}
       <div class="loading">
         <div class="spinner"></div>
-        <p>Cargando imágenes...</p>
+        <p>Cargando datos...</p>
       </div>
     {:else if error}
       <div class="error">
-        <p>⚠️ Error: {error}</p>
+        <p>Error: {error}</p>
       </div>
-    {:else if hibri.length > 0}
-      <Carousel 
-        images={hibri}
-        showIndicators={true}
-        showControls={true}
-        autoplay={true}
-        interval={6000}
-        height="300px"
-        showAltAsCaption={true}
-        itemsToShow={3}
-        gap={20} 
-      />
     {:else}
-      <div class="error">
-        <p>No hay imágenes para mostrar</p>
-      </div>
+      {#each dataSets as dataset, index}
+        <div class="carousel-container">
+          <h2>{carouselConfig[index].title}</h2>
+          <p class="carousel-description">{carouselConfig[index].description}</p>
+          {#if dataset && dataset.length > 0}
+            <Carousel 
+              images={dataset}
+              showIndicators={false}
+              showControls={true}
+              autoplay={true}
+              interval={6000}
+              height="300px"
+              showAltAsCaption={true}
+              itemsToShow={3}
+              gap={20} 
+            />
+          {:else}
+            <p>No hay datos disponibles</p>
+          {/if}
+        </div>
+      {/each}
     {/if}
   </section>
-
-  <!-- Grid de Galería -->
-  {#if hibri.length > 0}
-    <section class="image-grid-responsive">
-      <h2>Galería de Hibridaciones</h2>
-      <div class="grid-responsive">
-        {#each hibri as imagen (imagen.id)}
-          <div 
-            class="image-item-responsive" 
-            on:click={() => handleImageClick(imagen)}
-            on:keydown={(e) => e.key === 'Enter' && handleImageClick(imagen)}
-            role="button"
-            tabindex="0"
-          >
-            <img 
-              src={imagen.src} 
-              alt={imagen.alt} 
-              on:error={handleImageError}
-              loading="lazy"
-            />
-            <div class="overlay">
-              <span>{imagen.alt}</span>
-            </div>
-          </div>
-        {/each}
-      </div>
-    </section>
-  {/if}
 
   <!-- Sección de YouTube -->
   <DownloadSection downloads={yt} />
@@ -136,7 +135,7 @@
 
   .section-header h1 {
     font-size: 2.8rem;
-    color: #2c3e50;
+    color: #ffffff;
     margin: 0 0 10px 0;
     font-weight: 700;
   }
@@ -145,6 +144,31 @@
     font-size: 1.2rem;
     color: #7f8c8d;
     margin: 0;
+  }
+
+  .carousel-container {
+    margin-bottom: 60px;
+  }
+
+  .carousel-container h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  .carousel-description {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Loading State */
@@ -179,103 +203,18 @@
 
   /* Error State */
   .error {
-    background: #fff3cd;
-    border: 2px solid #ffc107;
+    background: #ffeaa7;
+    border: 2px solid #fdcb6e;
     border-radius: 8px;
     padding: 30px;
     text-align: center;
+    margin: 20px 0;
   }
 
   .error p {
     margin: 0 0 10px 0;
     font-size: 1.1rem;
-    color: #856404;
-  }
-
-  .error-hint {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-  }
-
-  .error code {
-    background: #f8f9fa;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-  }
-
-  /* Grid de Galería */
-  .image-grid-responsive {
-    margin-bottom: 80px;
-  }
-
-  .image-grid-responsive h2 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin: 0 0 30px 0;
-    text-align: center;
-    font-weight: 600;
-  }
-
-  .grid-responsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 24px;
-  }
-
-  .image-item-responsive {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    background: #f8f9fa;
-  }
-
-  .image-item-responsive:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  }
-
-  .image-item-responsive:focus {
-    outline: 3px solid #667eea;
-    outline-offset: 2px;
-  }
-
-  .image-item-responsive img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  .image-item-responsive:hover img {
-    transform: scale(1.1);
-  }
-
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-    color: white;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-
-  .image-item-responsive:hover .overlay {
-    transform: translateY(0);
-  }
-
-  .overlay span {
-    font-size: 1rem;
-    font-weight: 500;
-    display: block;
+    color: #e17055;
   }
 
   /* Responsivo */
@@ -296,21 +235,12 @@
       margin-bottom: 60px;
     }
 
-    .image-grid-responsive {
-      margin-bottom: 60px;
-    }
-
-    .image-grid-responsive h2 {
+    .carousel-container h2 {
       font-size: 1.5rem;
     }
 
-    .grid-responsive {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-    }
-
-    .image-item-responsive img {
-      height: 200px;
+    .carousel-description {
+      font-size: 1rem;
     }
   }
 
@@ -319,12 +249,8 @@
       font-size: 1.5rem;
     }
 
-    .grid-responsive {
-      grid-template-columns: 1fr;
-    }
-
-    .image-item-responsive img {
-      height: 180px;
+    .carousel-container h2 {
+      font-size: 1.3rem;
     }
   }
 </style>
