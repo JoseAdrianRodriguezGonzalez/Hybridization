@@ -2,20 +2,20 @@
   import { onMount, onDestroy } from 'svelte';
   
   // Props del componente
-  export let images = []; // Array de objetos: [{id, src, alt}] o [{src, alt, caption}]
-  export let showIndicators = true; // Mostrar indicadores
-  export let showControls = true; // Mostrar controles
-  export let autoplay = true; // Reproducción automática
-  export let interval = 5000; // Intervalo en ms
-  export let height = '400px'; // Altura del carrusel
-  export let showAltAsCaption = false; // Mostrar el alt como caption
-  export let itemsToShow = 3; // Número de items a mostrar (desktop)
-  export let gap = 20; // Espacio entre items en px
+  export let images = []; // [{id, src, alt}] o [{src, alt, caption}]
+  export let showIndicators = true;
+  export let showControls = true;
+  export let autoplay = true;
+  export let interval = 5000;
+  export let height = '400px';
+  export let showAltAsCaption = false;
+  export let itemsToShow = 3;
+  export let gap = 20;
   
   let currentIndex = 0;
   let intervalId;
   let isTransitioning = false;
-  let itemsPerView = itemsToShow; // Cantidad actual de items visibles
+  let itemsPerView = itemsToShow;
   let containerWidth = 0;
   
   // Estado para el modal
@@ -23,27 +23,23 @@
   let modalImageIndex = 0;
   let modalImage = null;
   
-  // Calcular items por vista según el ancho
   $: {
     if (containerWidth > 0) {
       if (containerWidth < 640) {
-        itemsPerView = 1; // Móvil
+        itemsPerView = 1;
       } else if (containerWidth < 1024) {
-        itemsPerView = 2; // Tablet
+        itemsPerView = 2; 
       } else {
-        itemsPerView = Math.min(itemsToShow, images.length); // Desktop
+        itemsPerView = Math.min(itemsToShow, images.length);
       }
     }
   }
   
-  // Calcular el índice máximo para no mostrar espacios vacíos
   $: maxIndex = Math.max(0, images.length - itemsPerView);
   
-  // Navegar a un slide específico
   function goToSlide(index) {
     if (isTransitioning) return;
     
-    // Limitar el índice al rango válido
     const validIndex = Math.max(0, Math.min(index, maxIndex));
     if (validIndex === currentIndex) return;
     
@@ -57,27 +53,22 @@
     resetInterval();
   }
   
-  // Siguiente slide
   function nextSlide() {
     if (currentIndex < maxIndex) {
       goToSlide(currentIndex + 1);
     } else if (autoplay) {
-      // Si está en autoplay, volver al inicio
       goToSlide(0);
     }
   }
   
-  // Slide anterior
   function prevSlide() {
     if (currentIndex > 0) {
       goToSlide(currentIndex - 1);
     } else if (autoplay) {
-      // Si está en autoplay, ir al final
       goToSlide(maxIndex);
     }
   }
   
-  // Resetear el intervalo de autoplay
   function resetInterval() {
     if (autoplay && images.length > itemsPerView) {
       clearInterval(intervalId);
@@ -85,27 +76,24 @@
     }
   }
   
-  // Manejar teclado
   function handleKeydown(event) {
     if (event.key === 'ArrowLeft') prevSlide();
     if (event.key === 'ArrowRight') nextSlide();
     if (event.key === 'Escape' && showModal) closeModal();
   }
   
-  // Calcular el desplazamiento
   $: translateX = -(currentIndex * (100 / itemsPerView));
   
-  // Funciones para el modal
   function openModal(imageIndex) {
     modalImageIndex = imageIndex;
     modalImage = images[imageIndex];
     showModal = true;
-    document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+    document.body.style.overflow = 'hidden';
   }
   
   function closeModal() {
     showModal = false;
-    document.body.style.overflow = ''; // Restaurar scroll del body
+    document.body.style.overflow = '';
   }
   
   function nextModalImage() {
@@ -118,9 +106,7 @@
     modalImage = images[modalImageIndex];
   }
   
-  // Manejar clicks en el modal
   function handleModalClick(event) {
-    // Cerrar modal si se hace click en el fondo
     if (event.target.classList.contains('modal-backdrop')) {
       closeModal();
     }
@@ -134,7 +120,7 @@
   
   onDestroy(() => {
     if (intervalId) clearInterval(intervalId);
-    document.body.style.overflow = ''; // Asegurar que se restaure el scroll
+    document.body.style.overflow = '';
   });
 </script>
 
@@ -146,7 +132,6 @@
   bind:clientWidth={containerWidth}
 >
   
-  <!-- Slides Container -->
   <div class="carousel-track-wrapper">
     <div 
       class="carousel-track"
@@ -161,7 +146,6 @@
             class="clickable-image"
           />
           
-          <!-- Caption -->
           {#if image.caption || showAltAsCaption}
             <div class="carousel-caption">
               {#if image.caption?.title}
@@ -180,7 +164,6 @@
     </div>
   </div>
   
-  <!-- Controles Previous/Next -->
   {#if showControls && images.length > itemsPerView}
     <button 
       class="carousel-control prev" 
@@ -207,7 +190,6 @@
     </button>
   {/if}
   
-  <!-- Indicadores -->
   {#if showIndicators && images.length > itemsPerView}
     <div class="carousel-indicators">
       {#each Array(maxIndex + 1) as _, index}
@@ -226,7 +208,7 @@
 {#if showModal && modalImage}
   <div class="modal-backdrop" on:click={handleModalClick}>
     <div class="modal-content">
-      <!-- Botón cerrar -->
+      <!-- boton close-->
       <button class="modal-close" on:click={closeModal} aria-label="Cerrar">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -234,7 +216,6 @@
         </svg>
       </button>
       
-      <!-- Controles de navegación -->
       {#if images.length > 1}
         <button class="modal-nav modal-prev" on:click={prevModalImage} aria-label="Imagen anterior">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -249,7 +230,6 @@
         </button>
       {/if}
       
-      <!-- Imagen -->
       <div class="modal-image-container">
         <img 
           src={modalImage.src} 

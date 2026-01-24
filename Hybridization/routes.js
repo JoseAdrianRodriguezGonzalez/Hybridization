@@ -13,8 +13,7 @@ const routes ={
     '/':inicio,
     '/Radial':Radial,
     '/table':Periodic,
-    '/Instalacion':Instalacion,
-    '/Teoria':Teoria,
+    '/Instalacion':Instalacion
 
 }
 export default routes;

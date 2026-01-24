@@ -86,8 +86,9 @@
             Galería
           </a>
         </li>
-        <li>
-          <a 
+        
+        <!--<li>
+          //<a 
             href="/table" 
             use:link 
             on:click={closeMenu}
@@ -96,16 +97,7 @@
             Tabla Periódica
           </a>
         </li>
-        <li>
-          <a 
-            href="/Teoria" 
-            use:link 
-            on:click={closeMenu}
-            aria-label="Ir a Teoría"
-          >
-            Teoría
-          </a>
-        </li>
+        -->
         <li>
           <a 
             href="/Instalacion" 
