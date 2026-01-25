@@ -204,11 +204,9 @@
   {/if}
 </div>
 
-<!-- Modal para imagen ampliada -->
 {#if showModal && modalImage}
   <div class="modal-backdrop" on:click={handleModalClick}>
     <div class="modal-content">
-      <!-- boton close-->
       <button class="modal-close" on:click={closeModal} aria-label="Cerrar">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>

@@ -1,11 +1,21 @@
 <script>
     import './footer.css'
+    import github from "/images/GitHub.svg";
 </script>
 <footer>
-    <div class="">Contact us on</div>
-    <div class="">
+    <div class="footer-container">
         <p>
-            The information about this site you can look it at at different source and check the fidelity of the terms
+            ¡Contáctanos por nuestro correo quplots@gmail.com!
         </p>
+        
+        <a href="https://github.com/JoseAdrianRodriguezGonzalez/quplots" 
+           target="_blank" 
+           class="footer-link" 
+           aria-label="Ver repositorio en GitHub">
+            
+            <img src={github} alt="Icono de GitHub">                 
+            
+            <span class="github-text">Repositorio del proyecto</span>
+        </a>
     </div>
 </footer>
