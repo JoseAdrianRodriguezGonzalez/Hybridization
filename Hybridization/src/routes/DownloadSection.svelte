@@ -1,10 +1,8 @@
 <!-- DownloadSection.svelte - Versión Corregida -->
 <script>
-  // Props del componente
-  export let downloads = []; 
-  export let showSection = true; 
+  export let downloads = [];
+  export let showSection = true;
 
-  // Función para manejar la descarga o navegación
   function handleAction(downloadItem) {
     if (!downloadItem.url) {
       console.warn('No se ha proporcionado una URL');
@@ -65,8 +63,8 @@
     margin: 2rem auto;
     padding: 0 1rem;
     animation: fadeInUp 0.8s ease-out 0.8s both;
-    width: 100%;
-    max-width: 1100px; 
+    padding: 1vw 1vw;
+    margin-bottom: 1vw;
   }
   
   .downloads-grid {
@@ -192,7 +190,6 @@
     text-align: center;
   }
   
-  /* Animaciones */
   @keyframes fadeInUp {
     from {
       opacity: 0;
@@ -201,14 +198,6 @@
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-  
-  /* ✅ RESPONSIVE MEJORADO */
-  @media (max-width: 1024px) {
-    .downloads-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
     }
   }
   

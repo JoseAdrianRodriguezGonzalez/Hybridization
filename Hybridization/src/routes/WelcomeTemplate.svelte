@@ -74,14 +74,12 @@
 
 <div class="welcome-container tex2jax_process" bind:this={mathContainer}>
   <div class="content-wrapper">
-    <!-- Título principal -->
     <h1>{title}</h1>
     
     {#if subtitle}
       <p class="subtitle">{subtitle}</p>
     {/if}
     
-    <!-- Mensaje de bienvenida -->
     {#if welcomeMessage}
       <div class="welcome-message">
         <div class="tex2jax_process">
@@ -90,7 +88,6 @@
       </div>
     {/if}
     
-    <!-- Sección ¿Qué podrás encontrar aquí? -->
     {#if features && features.length > 0}
       <div class="features-section">
         <h2>¿Qué podrás encontrar aquí?</h2>
@@ -116,7 +113,6 @@
       </div>
     {/if}
     
-    <!-- Sección de descargas -->
     {#if showDownloadButton && processedDownloads.length > 0}
       <div class="download-section">
         <h3 class="download-title">Recursos Disponibles</h3>
@@ -196,12 +192,7 @@
     animation: fadeInUp 0.8s ease-out 0.4s both;
   }
   
-  .welcome-message p {
-    margin: 0 0 1rem 0;
-    color: #ffffff;
-    line-height: 1.8;
-  }
-  
+
   .features-section {
     margin: 2rem 0;
     animation: fadeInUp 0.8s ease-out 0.6s both;

@@ -5,7 +5,6 @@ import Header from './components/Header.svelte';
 import routes from './routes';
 import Footer from './components/footer.svelte';
 
-    // Revisa si la ruta es la raízW
 </script>
 
 <Header />

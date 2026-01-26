@@ -70,11 +70,12 @@
             texto="Encontraras videos e imagenes detalladas."
             icono={GaleriaIcon}
             enlace="/Galeria"/> 
-            
+            <!-- 
             <Card titulo="Teoria"
             texto="Encontraras conceptos matemáticos y que hay físicos detrás."
             icono={TeoriaIcon}
             enlace="/Teoria"/> 
+            -->
         
             
         </section>
@@ -95,11 +96,10 @@
                 <li>Hibridaciónes atómicas en 3 dimensiones.</li>
             </ol>
         </section>
-
+        <!-- 
         <section class="gallery">
             <h2>Galería de Imagenes</h2>
-            <!-- Aquí va tu galería de imágenes -->
         </section>
-
+         -->
     </article>
 </div>

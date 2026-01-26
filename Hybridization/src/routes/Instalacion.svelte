@@ -7,7 +7,7 @@
     import DownloadSection from './DownloadSection.svelte';
     import linuxicon from "/icons/linux-svgrepo-com.svg";
     import macicon from "/icons/mac-svgrepo-com.svg";
-    import windowsicon from "/icons/windows.svg";
+    import windowsicon from "/icons/windowsicon.svg";
 
 
     const Windows10 = [
@@ -15,25 +15,27 @@
     label:"Windows 10",
     description: "Sofware de visualización",
     url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-Win10.exe",
+    filename: "QuPlots_Windows", 
     icono: windowsicon,
-    type: "download" // Descarga directa
+    type: "download"
   }]
   const linux= [
   {
     label:"Linux",
     description: "Sofware de visualización",
     url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-linux",
-    filename: "QuPlots-linux", 
+    filename: "QuPlots_linux", 
     icon: linuxicon,
-    type: "download" // Descarga directa
+    type: "download"
   }]
   const Mac = [
   {
     label:"Mac OS",
     description: "Sofware de visualización",
     url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-mac",
+    filename: "QuPlots_Mac", 
     icon: macicon,
-    type: "download" // Descarga directa
+    type: "download"
   }
     ]
 </script>
@@ -72,7 +74,6 @@ pip install quplots`}
 <h1>Si no quieres tocar código ¡Descarga el Sofware de Quplots!</h1>
 
 <section class="cards-container">
-
     <DownloadSection 
       downloads={Windows10}
     />

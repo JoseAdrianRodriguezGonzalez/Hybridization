@@ -2,12 +2,11 @@
     padding: 1.2rem;
     grid-template-columns: auto auto auto;
     display:flex;
-    gap: 5rem;
+    gap: 8rem;
     width: 100%;
     align-items: center;
-
-
   }
+
   
 .catalogue{
     display: grid;
@@ -152,6 +151,12 @@ h1 {
   flex-direction: column;
   align-items: flex-end;
 }
+p {
+  font-size: 1.5vw;
+}
+li {
+  font-size: 1.5vw;
+}
 .desc {
   font-style: bold;
   color: #fff;
@@ -164,7 +169,7 @@ h1 {
   color: #fff;
   font-size: 2.2vw;
   font-weight: bold;
-  padding: 1.7vw 3vw;
+  padding: 1.7vw 5vw;
   border: none;
   border-radius: 40px;
   cursor: pointer;
@@ -174,7 +179,36 @@ h1 {
 }
 @media (max-width: 768px) {
   .cards-container {
-    flex-direction: column; /* En móviles, apila las cards verticalmente */
-    gap: 1rem; /* Reduce el gap en móviles */
+    flex-direction: column;
+    gap: 1rem;
   }
+  .main-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .left-block,
+  .right-block {
+    width: 100%;
+    align-items: center;
+  }
+  .install-btn {
+  background: #02023A;
+  color: #fff;
+  font-size: 6vw;
+  font-weight: bold;
+  padding: 1.7vw 6vw;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+ .desc{
+  font-size: 6vw;
+}
+p {
+  font-size: 5vw;
+}
+li {
+  font-size: 5vw;
+}
 }

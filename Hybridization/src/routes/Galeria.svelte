@@ -1,129 +1,245 @@
 <script>
-  import{link} from 'svelte-spa-router'
+  import { onMount } from 'svelte';
+  import { link } from 'svelte-spa-router';
   import Header from '../components/Header.svelte';
-  import yti from "/icons/youtube.svg"
+  import Footer from '../components/footer.svelte';
   import DownloadSection from './DownloadSection.svelte';
-const yt= [
-{
-  label:"Videos",
-  description: "Canal de Youtube",
-  url: "https://youtube.com/@quplots?si=KterFMrhEb8fjEYS",
-  icon: yti,
-}]
-let hibri = [
-  { id: 1, src: 'Hybridization/galeria/hibri/nsp.png', alt: 'Hibridación sp (lineal)' },
-  { id: 2, src: 'Hybridization/galeria/hibri/nsp2.png', alt: 'Hibridación sp² (trigonal plana)' },
-  { id: 3, src: 'Hybridization/galeria/hibri/nsp2d.png', alt: 'Hibridación sp²d (piramidal cuadrada)' },
-  { id: 4, src: 'Hybridization/galeria/hibri/nsp3.png', alt: 'Hibridación sp³ (tetraédrica)' },
-  { id: 5, src: 'Hybridization/galeria/hibri/nsp3d.png', alt: 'Hibridación sp³d (bipiramidal trigonal)' },
-  { id: 6, src: 'Hybridization/galeria/hibri/nsp3d2.png', alt: 'Hibridación sp³d² (octaédrica)' }
+  import Carousel from './carousel.svelte';
+  import yti from "/icons/youtube.svg";
+
+  const yt = [{
+    label: "Videos",
+    description: "Canal de Youtube",
+    url: "https://youtube.com/@quplots?si=KterFMrhEb8fjEYS",
+    icon: yti,
+  }];
+
+const carouselConfig = [
+  { title: "Tipos de Hibridación", description: "Visualización de orbitales híbridos" },
+  { title: "Funciones de Onda", description: "Representación de funciones de onda cuánticas" },
+  { title: "Probabilidades 3D", description: "Distribuciones de probabilidad tridimensionales" },
+  { title: "Armónicos Esféricos Imaginarios", description: "Representación de armónicos esféricos complejos" },
+  { title: "Armónicos Esféricos Reales", description: "Representación de armónicos esféricos reales" },
+  { title: "Funciones Radiales", description: "Distribuciones radiales de probabilidad" }
 ];
 
-function handleImageClick(imagen) {
- console.log('Imagen clickeada:', imagen.alt);
-}
+  let dataSets = [];
+  let loading = true;
+  let error = null;
 
-// Función para manejar errores de carga
-function handleImageError(event) {
- console.warn('No se pudo cargar la imagen:', event.target.src);
-}
+  onMount(async () => {
+    try {
+      const response3D = await fetch("/Hybridization/public/data/car3DProba.json");
+      const responseArmoEsfIm = await fetch("/Hybridization/public/data/carArmonicosEsfericosImaginarios.json");
+      const responseArmoEsfRe = await fetch("/Hybridization/public/data/carArmonicosEsfericosReales.json");
+      const responseHibri = await fetch("/Hybridization/public/data/carHibri.json");
+      const responseRadial = await fetch("/Hybridization/public/data/carRadialFunction.json");
+      const responseWave = await fetch("/Hybridization/public/data/carWaveFunction.json");
+
+      if (!responseHibri.ok) throw new Error('No se pudo cargar carHibri.json');
+      if (!responseWave.ok) throw new Error('No se pudo cargar WaveFunction.json');
+      if (!response3D.ok) throw new Error('No se pudo cargar 3DProba.json');
+      if (!responseArmoEsfIm.ok) throw new Error('No se pudo cargar carArmonicosEsfericosImaginarios.json');
+      if (!responseArmoEsfRe.ok) throw new Error('No se pudo cargar carArmonicosEsfericosReales.json');
+      if (!responseRadial.ok) throw new Error('No se pudo cargar carRadialFunction.json');
+
+      const proba = await response3D.json();
+      const armoEsIm = await responseArmoEsfIm.json();
+      const armoEsRe = await responseArmoEsfRe.json();
+      const hibri = await responseHibri.json();
+      const radial = await responseRadial.json();
+      const wave = await responseWave.json();
+
+      dataSets = [hibri, wave, proba, armoEsIm, armoEsRe, radial];
+      loading = false;
+
+    } catch (err) {
+      console.error('Error cargando JSON:', err);
+      error = err.message;
+      loading = false;
+    }
+  });
 </script>
 
-<div class="Principal">
+<Header />
 
-  <div class="image-grid-responsive">
-    <h1>Hibridaciónes</h1>
-    <div class="grid-responsive">
-      {#each hibri as imagen (imagen.id)}
-      <div class="image-item-responsive" on:click={() => handleImageClick(imagen)}>
-      <img src={imagen.src} alt={imagen.alt} on:error={handleImageError} />
-      <div class="overlay">
-        <span>{imagen.alt}</span>
-          </div>
+<main class="principal">
+  
+  <section class="carousel-section">
+    <div class="section-header">
+      <h1>Galería de imagenes</h1>
+      <p>Todos los graficos han sido creados con Quplots</p>
+    </div>
+
+    {#if loading}
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Cargando datos...</p>
+      </div>
+    {:else if error}
+      <div class="error">
+        <p>Error: {error}</p>
+      </div>
+    {:else}
+      {#each dataSets as dataset, index}
+        <div class="carousel-container">
+          <h2>{carouselConfig[index].title}</h2>
+          <p class="carousel-description">{carouselConfig[index].description}</p>
+          {#if dataset && dataset.length > 0}
+            <Carousel 
+              images={dataset}
+              showIndicators={false}
+              showControls={true}
+              autoplay={true}
+              interval={6000}
+              height="300px"
+              showAltAsCaption={true}
+              itemsToShow={3}
+              gap={20} 
+            />
+          {:else}
+            <p>No hay datos disponibles</p>
+          {/if}
         </div>
       {/each}
-  </div>
-</div>
-</div>
+    {/if}
+  </section>
 
-<DownloadSection 
-      downloads={yt}
-    />
+  <DownloadSection downloads={yt} />
 
+</main>
 
+<Footer />
 
 <style>
+  .principal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 
-  /* Grid responsivo */
-  .grid-responsive {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+  .carousel-section {
+    margin-bottom: 80px;
+  }
+
+  .section-header {
+    text-align: center;
     margin-bottom: 40px;
   }
 
-  .image-item-responsive {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+  .section-header h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-weight: 700;
   }
 
-  .image-item-responsive:hover {
-    transform: translateY(-5px);
+  .section-header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin: 0;
+    text-align: center;
   }
 
-  .image-item-responsive img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  .carousel-container {
+    margin-bottom: 60px;
   }
 
-  .image-item-responsive:hover img {
-    transform: scale(1.1);
+  .carousel-container h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 600;
+    display: inline-block;
   }
 
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-    color: white;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+  .carousel-description {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
   }
 
-  .image-item-responsive:hover .overlay {
-    transform: translateY(0);
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 20px;
   }
 
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
 
-  /* Responsivo general */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .loading p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin: 0;
+  }
+
+  .error {
+    background: #ffeaa7;
+    border: 2px solid #fdcb6e;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .error p {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #e17055;
+  }
+
   @media (max-width: 768px) {
- 
-
-    .grid-responsive {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .principal {
+      padding: 20px 15px;
     }
-    
 
+    .section-header h1 {
+      font-size: 2rem;
+    }
+
+    .section-header p {
+      font-size: 1rem;
+    }
+
+    .carousel-section {
+      margin-bottom: 60px;
+    }
+
+    .carousel-container h2 {
+      font-size: 1.5rem;
+    }
+
+    .carousel-description {
+      font-size: 1rem;
+    }
   }
 
   @media (max-width: 480px) {
-    
-    .grid-responsive {
-      grid-template-columns: 1fr;
+    .section-header h1 {
+      font-size: 1.5rem;
     }
 
-  }
-
-
-
-  .image-grid-responsive {
-    margin-bottom: 50px;
+    .carousel-container h2 {
+      font-size: 1.3rem;
+    }
   }
 </style>

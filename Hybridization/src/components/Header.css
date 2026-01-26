@@ -1,50 +1,37 @@
-/* ========================================
-   HEADER.CSS - MEJORES PRÁCTICAS
-   ======================================== */
-
-/* 🎯 VARIABLES CSS - Fácil mantenimiento */
 :root {
   --header-height: 60px; /* Altura fija en px para mejor control */
   --header-bg: rgb(8, 7, 7);
   --header-text: #ffffff;
-  --header-hover: #0062ff;
+  --header-hover: #025beb;
   --header-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   --header-z-index: 2000;
   --transition-speed: 0.3s;
 }
 
 
-/* 🎨 CONTENEDOR PRINCIPAL DEL HEADER */
 .header-container {
-  /* Posicionamiento fijo */
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   
-  /* Dimensiones */
   height: var(--header-height);
   width: 100%;
   
-  /* Diseño */
   background-color: var(--header-bg);
   backdrop-filter: blur(10px);
   
-  /* Layout interno */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(1rem, 4vw, 3rem); /* Padding responsivo */
+  padding: 0 clamp(1rem, 4vw, 3rem);
   
-  /* Efectos visuales */
   box-shadow: var(--header-shadow);
   z-index: var(--header-z-index);
   
-  /* Transiciones suaves */
   transition: all var(--transition-speed) ease;
 }
 
-/* 🎨 LOGO/MARCA (opcional) */
 .logo {
   font-size: clamp(1.2rem, 2.5vw, 2rem);
   font-weight: 700;
@@ -58,7 +45,6 @@
   color: var(--header-hover);
 }
 
-/* 🧭 NAVEGACIÓN PRINCIPAL */
 .nav {
   height: 100%;
   display: flex;
@@ -82,17 +68,14 @@
 }
 
 .nav-menu a {
-  /* Diseño del enlace */
   color: var(--header-text);
   text-decoration: none;
   font-weight: 500;
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   
-  /* Área de clic más grande */
   padding: 0.5rem 1rem;
   border-radius: 6px;
   
-  /* Transiciones */
   transition: all var(--transition-speed) ease;
   
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -123,7 +106,6 @@
   padding: 0;
   z-index: calc(var(--header-z-index) + 1);
   
-  /* Área de clic más grande en móvil */
   position: relative;
 }
 
@@ -159,7 +141,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  /* Ajustar altura del header en móvil */
   :root {
     --header-height: 65px;
   }
@@ -168,7 +149,6 @@
     display: flex;
   }
 
-  /* Ocultar navegación principal en móvil */
   .nav-menu {
     position: fixed;
     top: var(--header-height);
@@ -176,31 +156,25 @@
     width: 100vw;
     height: calc(100vh - var(--header-height));
     
-    /* Layout móvil */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 0;
     padding-top: 2rem;
     
-    /* Fondo y efectos */
     background: rgba(8, 7, 7, 0.98);
     backdrop-filter: blur(15px);
     
-    /* Animación de entrada */
     transform: translateX(-100%);
     transition: transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
     
-    /* Z-index */
     z-index: calc(var(--header-z-index) - 1);
   }
 
-  /* Menú activo */
   .nav-menu.active {
     transform: translateX(0);
   }
 
-  /* Enlaces en móvil */
   .nav-menu li {
     width: 100%;
     height: auto;
@@ -222,7 +196,6 @@
     background-color: rgba(255, 255, 255, 0.15);
   }
 
-  /* Overlay para cerrar menú */
   .nav-menu.active::after {
     content: '';
     position: fixed;
@@ -236,7 +209,6 @@
   }
 }
 
-/* 📱 MÓVIL PEQUEÑO */
 @media screen and (max-width: 480px) {
   :root {
     --header-height: 70px;
@@ -256,7 +228,6 @@
   }
 }
 
-/* 🎨 MEJORAS DE ACCESIBILIDAD */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -265,7 +236,6 @@
   }
 }
 
-/* Focus visible para navegación por teclado */
 .nav-menu a:focus-visible {
   outline: 2px solid var(--header-hover);
   outline-offset: 2px;
@@ -275,16 +245,4 @@
   outline: 2px solid var(--header-hover);
   outline-offset: 4px;
   border-radius: 4px;
-}
-
-/* ✨ EFECTOS ADICIONALES */
-/* Scroll shadow - aparece cuando hay scroll */
-.header-container.scrolled {
-  box-shadow: var(--header-shadow), 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Loading state (opcional) */
-.header-container.loading {
-  pointer-events: none;
-  opacity: 0.7;
 }
