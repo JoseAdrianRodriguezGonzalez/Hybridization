@@ -61,7 +61,6 @@ const carouselConfig = [
   });
 </script>
 
-<Header />
 
 <main class="principal">
   
@@ -109,7 +108,6 @@ const carouselConfig = [
 
 </main>
 
-<Footer />
 
 <style>
   .principal {

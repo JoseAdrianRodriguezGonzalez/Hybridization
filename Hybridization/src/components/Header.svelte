@@ -87,7 +87,7 @@
             Galería
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a 
             href="/" 
             use:link 
@@ -116,7 +116,7 @@
           >
             Teoría
           </a>
-        </li>
+        </li> -->
         <li>
           <a 
             href="/Instalacion" 
