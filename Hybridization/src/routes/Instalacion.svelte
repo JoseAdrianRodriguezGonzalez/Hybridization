@@ -3,7 +3,6 @@
 
     import{link} from 'svelte-spa-router';
     import Header from '../components/Header.svelte';
-    import Footer from '../components/footer.svelte';
     import CardInstall from '../lib/CardInstall.svelte';
     import DownloadSection from './DownloadSection.svelte';
     import linuxicon from "/icons/linux-svgrepo-com.svg";
@@ -41,10 +40,9 @@
     ]
 </script>
 
-<Header></Header>
 
 
-<div class="Principal">
+  
     <h1>Instalar la libreria de QuPlots: </h1>
 
 <section class="cards-container">
@@ -87,6 +85,3 @@ pip install quplots`}
     />
 </section>
 
-
-</div>
-<Footer></Footer>

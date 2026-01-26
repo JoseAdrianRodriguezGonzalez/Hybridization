@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.env
+.DS_Store
+*.log
+=======
+venv/
+>>>>>>> b7968fb09a61658763eb23a9025831096695004a

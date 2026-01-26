@@ -1,4 +1,4 @@
-<!-- DownloadSection.svelte -->
+<!-- DownloadSection.svelte - Versión Corregida -->
 <script>
   export let downloads = [];
   export let showSection = true;
@@ -60,7 +60,8 @@
 <style>
   .download-section {
     text-align: center;
-    margin: 1rem 0 1rem 0;
+    margin: 2rem auto;
+    padding: 0 1rem;
     animation: fadeInUp 0.8s ease-out 0.8s both;
     padding: 1vw 1vw;
     margin-bottom: 1vw;
@@ -68,10 +69,11 @@
   
   .downloads-grid {
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    max-width: 200px;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 100%; 
     margin: 0 auto;
+    width: 100%; 
   }
   
   .download-button {
@@ -86,7 +88,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
-    width: 20rem;
+    min-width: 280px; 
+    width: 100%; 
+    max-width: 400px;
+    margin: 0 auto; 
   }
   
   .icono {
@@ -154,6 +159,7 @@
     flex-direction: column;
     gap: 0.25rem;
     flex: 1;
+    min-width: 0; 
   }
   
   .download-label {
@@ -196,15 +202,22 @@
   }
   
   @media (max-width: 768px) {
+    .download-section {
+      padding: 0 0.5rem;
+      margin: 1.5rem auto;
+    }
+    
     .downloads-grid {
       grid-template-columns: 1fr;
-      gap: 0.8rem;
+      gap: 1rem;
       max-width: 100%;
     }
     
     .download-button {
       padding: 1.2rem;
       font-size: 0.95rem;
+      min-width: unset; 
+      max-width: none; 
     }
     
     .download-icon {
@@ -216,25 +229,32 @@
     }
     
     .icono {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.8rem;
+      height: 1.8rem;
     }
   }
   
   @media (max-width: 480px) {
     .download-section {
-      margin: 2rem 0 1rem 0;
+      margin: 1rem auto;
+      padding: 0 0.25rem;
+    }
+    
+    .downloads-grid {
+      gap: 0.8rem;
     }
     
     .download-button {
       flex-direction: column;
       text-align: center;
       gap: 0.8rem;
-      padding: 1rem;
+      padding: 1.2rem 1rem;
+      min-height: 140px; 
     }
     
     .download-text {
       text-align: center;
+      width: 100%;
     }
     
     .external-link-icon {
@@ -243,8 +263,28 @@
     }
     
     .icono {
-      width: 2rem;
-      height: 2rem;
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    
+    .download-label {
+      font-size: 1.05rem;
+    }
+  }
+  
+  /* ✅ MÓVIL MUY PEQUEÑO */
+  @media (max-width: 360px) {
+    .download-button {
+      padding: 1rem 0.8rem;
+      min-height: 120px;
+    }
+    
+    .download-label {
+      font-size: 1rem;
+    }
+    
+    .download-description {
+      font-size: 0.85rem;
     }
   }
 </style>

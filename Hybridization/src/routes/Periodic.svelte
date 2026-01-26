@@ -1,7 +1,6 @@
 <script>
     import { link } from 'svelte-spa-router';
     import Header from '../components/Header.svelte';
-    import Footer from '../components/footer.svelte';
     import Element from "../components/elements.svelte";
     import './styles.css';
     import { onMount } from 'svelte';
@@ -82,8 +81,7 @@
 
   </script>
   
-  <Header />
-  
+
   <div class="Periodic">
     {#each items as item, index}
       <div class="box box-{index}">
@@ -111,9 +109,9 @@
             atomicNumber={data[secondIndexes[index]-1]?.atomicNumber || '-'} 
             elementName={data[secondIndexes[index]-1]?.name || 'Unknown'} 
             Symbol={data[secondIndexes[index]-1]?.symbol || '-'}
-            n={data[visibleItems[index]-1]?.n || ''}
-            l={data[visibleItems[index]-1]?.l || '-'}
-            m={data[visibleItems[index]-1]?.m || '-'}
+            n={data[secondIndexes[index]-1]?.n || ''}
+            l={data[secondIndexes[index]-1]?.l || '-'}
+            m={data[secondIndexes[index]-1]?.m || '-'}
           />
         {:else}
           <p>Loading...</p>
@@ -121,7 +119,4 @@
 
       </div>
     {/each}
-  </div>
-  
-  <Footer />
-  
+  </div>  

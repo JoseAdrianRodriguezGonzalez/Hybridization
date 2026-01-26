@@ -18,7 +18,7 @@
     box-shadow: 0 0 0.2vw #21234d22;
     padding: 1vw 1vw;
     width: 100%;
-    min-width: 22vw;
+    min-width: 30vw;
     max-width: 40vw;
     text-align: center;
     margin-bottom: 1vw;
@@ -109,7 +109,7 @@ code.language-bash {
 }
 
 @media (max-width: 480px) {
-  .card {
+  .card2{
     max-width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;

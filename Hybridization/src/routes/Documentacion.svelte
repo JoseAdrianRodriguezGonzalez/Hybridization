@@ -1,7 +1,6 @@
 <script>
 import { link } from 'svelte-spa-router';
 import Header from '../components/Header.svelte';
-import Footer from '../components/footer.svelte';
 import AsideNav from '../lib/AsideNav.svelte';
 import { onMount } from 'svelte';
 import ContentSection from '../lib/documentacion/ContentSection.svelte';
@@ -309,7 +308,6 @@ onMount(() => {
 
 <svelte:window on:resize={handleResize} />
 
-<Header></Header>
 
 <!-- Botón hamburguesa para el índice (lado izquierdo) -->
 <button class="index-hamburger" class:active={isIndexOpen} on:click={toggleIndex} aria-label="Toggle index">
@@ -373,7 +371,6 @@ onMount(() => {
   <div class="index-overlay" on:click={closeIndex}></div>
 {/if}
 
-<Footer></Footer>
 
 <style>
   /* Botón de índice (lado izquierdo) */

@@ -35,7 +35,7 @@
   }
 </script>
 
-<main class="main">
+<main class="main-2">
   <div class="Principle">
     <Header />
     <h1>Radial Function</h1>
