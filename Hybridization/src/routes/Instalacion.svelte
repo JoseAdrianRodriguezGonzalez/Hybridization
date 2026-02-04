@@ -14,7 +14,7 @@
   {
     label:"Windows 10",
     description: "Sofware de visualización",
-    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-Win10.exe",
+    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v2.0.3/QuPlots-Win10.exe",
     filename: "QuPlots_Windows", 
     icono: windowsicon,
     type: "download"
@@ -23,7 +23,7 @@
   {
     label:"Linux",
     description: "Sofware de visualización",
-    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-linux",
+    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v2.0.3/QuPlots-linux",
     filename: "QuPlots_linux", 
     icon: linuxicon,
     type: "download"
@@ -32,7 +32,7 @@
   {
     label:"Mac OS",
     description: "Sofware de visualización",
-    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v1.0.6/QuPlots-mac",
+    url: "https://github.com/JoseAdrianRodriguezGonzalez/AppHibr/releases/download/v2.0.3/QuPlots-mac",
     filename: "QuPlots_Mac", 
     icon: macicon,
     type: "download"
