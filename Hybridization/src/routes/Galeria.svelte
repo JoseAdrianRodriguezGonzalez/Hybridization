@@ -15,7 +15,7 @@
   }];
 
 const carouselConfig = [
-  { title: "Tipos de Hibridación", description: "Visualización de orbitales híbridos" },
+  //{ title: "Tipos de Hibridación", description: "Visualización de orbitales híbridos" },
   { title: "Funciones de Onda", description: "Representación de funciones de onda cuánticas" },
   { title: "Probabilidades 3D", description: "Distribuciones de probabilidad tridimensionales" },
   { title: "Armónicos Esféricos Imaginarios", description: "Representación de armónicos esféricos complejos" },
@@ -31,12 +31,12 @@ const carouselConfig = [
     try {
       const response3D = await fetch("/Hybridization/public/data/car3DProba.json");
       const responseArmoEsfIm = await fetch("/Hybridization/public/data/carArmonicosEsfericosImaginarios.json");
-      const responseArmoEsfRe = await fetch("../data/carArmonicosEsfericosReales.json");
-      const responseHibri = await fetch("../data/carHibri.json");
+      const responseArmoEsfRe = await fetch("/Hybridization/public/data/carArmonicosEsfericosReales.json");
+      //const responseHibri = await fetch("../data/carHibri.json");
       const responseRadial = await fetch("/Hybridization/public/data/carRadialFunction.json");
       const responseWave = await fetch("/Hybridization/public/data/carWaveFunction.json");
 
-      if (!responseHibri.ok) throw new Error('No se pudo cargar carHibri.json');
+      //if (!responseHibri.ok) throw new Error('No se pudo cargar carHibri.json');
       if (!responseWave.ok) throw new Error('No se pudo cargar WaveFunction.json');
       if (!response3D.ok) throw new Error('No se pudo cargar 3DProba.json');
       if (!responseArmoEsfIm.ok) throw new Error('No se pudo cargar carArmonicosEsfericosImaginarios.json');
@@ -46,11 +46,11 @@ const carouselConfig = [
       const proba = await response3D.json();
       const armoEsIm = await responseArmoEsfIm.json();
       const armoEsRe = await responseArmoEsfRe.json();
-      const hibri = await responseHibri.json();
+      //const hibri = await responseHibri.json();
       const radial = await responseRadial.json();
       const wave = await responseWave.json();
 
-      dataSets = [hibri, wave, proba, armoEsIm, armoEsRe, radial];
+      dataSets = [ wave, proba, armoEsIm, armoEsRe, radial];
       loading = false;
 
     } catch (err) {
