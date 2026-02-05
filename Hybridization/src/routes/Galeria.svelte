@@ -27,12 +27,12 @@ const carouselConfig = [
 
   onMount(async () => {
     try {
-      const response3D = await fetch("public/data/car3DProba.json");
-      const responseArmoEsfIm = await fetch("/public/data/carArmonicosEsfericosImaginarios.json");
-      const responseArmoEsfRe = await fetch("public/data/carArmonicosEsfericosReales.json");
-      const responseHibri = await fetch("public/data/carHibri.json");
-      const responseRadial = await fetch("public/data/carRadialFunction.json");
-      const responseWave = await fetch("public/data/carWaveFunction.json");
+      const response3D = await fetch("data/car3DProba.json");
+      const responseArmoEsfIm = await fetch("data/carArmonicosEsfericosImaginarios.json");
+      const responseArmoEsfRe = await fetch("data/carArmonicosEsfericosReales.json");
+      const responseHibri = await fetch("data/carHibri.json");
+      const responseRadial = await fetch("data/carRadialFunction.json");
+      const responseWave = await fetch("data/carWaveFunction.json");
 
       if (!responseHibri.ok) throw new Error('No se pudo cargar carHibri.json');
       if (!responseWave.ok) throw new Error('No se pudo cargar WaveFunction.json');
