@@ -48,7 +48,7 @@ const carouselConfig = [
       const radial = await responseRadial.json();
       const wave = await responseWave.json();
 
-      dataSets = [ wave, proba, armoEsIm, armoEsRe, radial];
+      dataSets = [ hibri,wave, proba, armoEsIm, armoEsRe, radial];
       loading = false;
 
     } catch (err) {
