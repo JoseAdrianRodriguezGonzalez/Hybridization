@@ -4,7 +4,7 @@
     import DocumentacionIcon from "/images/documentacion.svg";
     import TeoriaIcon from "/images/teoria.svg";
     import GaleriaIcon from "/images/galeria.svg";
-    import Card from '../lib/Card.svelte';
+    import Card from '../lib/common/Card.svelte';
     import{link} from 'svelte-spa-router';
     import {onMount} from 'svelte';
     import logo from "/images/LogoQP.svg"

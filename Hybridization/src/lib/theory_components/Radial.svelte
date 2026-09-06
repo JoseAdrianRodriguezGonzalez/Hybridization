@@ -1,6 +1,6 @@
 <script>
-  import Header from "../components/Header.svelte";
-  import Footer from "../components/footer.svelte";
+  import Header from "../../components/Header.svelte";
+  import Footer from "../../components/footer.svelte";
   import './Radial.css';
   import { onMount } from 'svelte';
 
