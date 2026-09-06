@@ -1,11 +1,10 @@
 <script>
   import { link } from "svelte-spa-router";
-  import Header from "../components/Header.svelte";
   import Element from "../components/elements.svelte";
   import "./styles.css";
   import { onMount } from "svelte";
-  import Plot3D from "../lib/Plot3D.svelte";
-  import Modal from "../lib/Modal.svelte";
+  import Plot3D from "../lib/common/Plot3D.svelte";
+  import Modal from "../lib/common/Modal.svelte";
 
   const items = Array.from({ length: 126 }, (_, i) => i + 1);
   const items2 = Array.from({ length: 28 }, (_, i) => i + 1);
@@ -92,6 +91,12 @@
     //   console.log(selectedOrbital);
   };
 </script>
+
+<div class="Periodic-header">
+  <div class="header-content">
+    <h1>Periodic Table</h1>
+  </div>
+</div>
 
 <div class="Periodic">
   {#each items as item, index}

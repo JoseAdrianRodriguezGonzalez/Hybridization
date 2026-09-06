@@ -1,21 +1,19 @@
 import {wrap} from 'svelte-spa-router/wrap'
-import Documentacion from "./routes/Documentacion.svelte";
-import Galeria from "./routes/Galeria.svelte";
-import inicio from "./routes/inicio.svelte"
-import Radial from "./routes/Radial.svelte";
-import Periodic from "./routes/Periodic.svelte";
-import Instalacion from "./routes/Instalacion.svelte";
-import Teoria from "./routes/Teoria.svelte";
+import Documentation from "./routes/documentation.svelte";
+import Gallery from "./routes/gallery.svelte";
+import Home from "./routes/home.svelte"
+import Periodic from "./routes/periodic.svelte";
+import Download from "./routes/download.svelte";
+import Theory from "./routes/theory.svelte";
 
 const routes ={
-    '/Documentacion':Documentacion,
-    '/Galeria':Galeria,
-    '/':inicio,
-    '/Radial':Radial,
+    '/documentacion':Documentation,
+    '/galeria':Gallery,
+    '/':Home,
     '/table':Periodic,
-    '/Instalacion':Instalacion,
-    '/Teoria':Teoria,
-    '/Periodic':Periodic,
+    '/instalacion':Download,
+    '/teoria':Theory,
+    '/periodic':Periodic,
 
 }
 export default routes;

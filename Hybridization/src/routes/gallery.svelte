@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
   import { link } from 'svelte-spa-router';
-  import DownloadSection from './DownloadSection.svelte';
-  import Carousel from './carousel.svelte';
+  import DownloadSection from '../lib/common/DownloadSection.svelte';
+  import Carousel from '../lib/common/carousel.svelte';
   import yti from "/icons/youtube.svg";
 
   const yt = [{

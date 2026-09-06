@@ -2,9 +2,8 @@
 // @ts-nocheck
 
     import{link} from 'svelte-spa-router';
-    import Header from '../components/Header.svelte';
-    import CardInstall from '../lib/CardInstall.svelte';
-    import DownloadSection from './DownloadSection.svelte';
+    import CardInstall from '../lib/common/CardInstall.svelte';
+    import DownloadSection from '../lib/common/DownloadSection.svelte';
     import linuxicon from "/icons/linux-svgrepo-com.svg";
     import macicon from "/icons/mac-svgrepo-com.svg";
     import windowsicon from "/icons/windowsicon.svg";

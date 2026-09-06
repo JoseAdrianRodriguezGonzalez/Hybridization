@@ -1,4 +1,3 @@
-<!-- DownloadSection.svelte - Versión Corregida -->
 <script>
   export let downloads = [];
   export let showSection = true;
