@@ -1,0 +1,57 @@
+/* Contenedor principal de la tabla (18 columnas) */
+.Periodic {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(48px, 1fr));
+  gap: 6px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto 2rem auto;
+  overflow-x: auto;
+  padding: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Tabla de Lantánidos y Actínidos (14 columnas) */
+.Periodic-2 {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(48px, 1fr));
+  gap: 6px;
+  width: calc((100% / 18) * 14);
+  max-width: 1011px;
+  margin: 1rem auto 3rem auto;
+  overflow-x: auto;
+  padding: 0 10px;
+}
+
+/* Celdas individuales de los elementos */
+.box, .box_ {
+  width: 100%;
+  aspect-ratio: 1 / 1.15; /* Relación de aspecto para acomodar bien la info */
+  min-width: 44px;
+  border-radius: 8px; /* Solicitado: border-radius de 8px */
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Sutil borde exterior */
+  box-sizing: border-border;
+  overflow: hidden;
+}
+
+/* Espacios vacíos de la tabla periódica */
+.box:nth-child(n+2):nth-child(-n+17),
+.box:nth-child(n+21):nth-child(-n+30),
+.box:nth-child(n+39):nth-child(-n+48) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .Periodic, .Periodic-2 {
+    gap: 3px;
+    padding-bottom: 8px;
+  }
+
+  .box, .box_ {
+    min-width: 36px;
+    border-radius: 6px;
+  }
+}
