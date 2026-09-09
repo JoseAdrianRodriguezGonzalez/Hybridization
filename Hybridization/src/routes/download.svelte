@@ -42,7 +42,8 @@
 
 
   
-    <h1>Instalar la libreria de QuPlots: </h1>
+  <h1 style=" margin: 1.5rem  1.5rem  1rem 1rem;">
+  Instalar la librería de QuPlots </h1>
 
 <section class="cards-container">
 
@@ -70,7 +71,9 @@ deactivate
 pip install quplots`}
             />
 </section>
-<h1>Si no quieres tocar código ¡Descarga el Sofware de Quplots!</h1>
+<h1 style=" margin: 0 0 1rem 1rem;">
+  Si no quieres tocar código ¡Descarga el Sofware de Quplots!
+</h1>
 
 <section class="cards-container">
     <DownloadSection 

@@ -15,7 +15,7 @@
 
   onMount(async () => {
     try {
-      const cleanUrl = window.location.href.split("#")[0] + "/data/periodic.json";
+      const cleanUrl = window.location.href.split("#")[0] + "/data/periodic_data.json";
       const res = await fetch(cleanUrl);
       if (!res.ok) throw new Error("Failed to load JSON");
       data = await res.json();
@@ -68,7 +68,8 @@
 
 <div class="Periodic-header">
   <div class="header-content">
-    <h1>Periodic Table of Elements</h1>
+    <h1 style=" margin: 1.5rem 1.5rem 1rem 1rem;">
+      Periodic Table of Elements</h1>
   </div>
 </div>
 

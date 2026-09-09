@@ -24,13 +24,11 @@
   tabindex="0"
   on:keydown={(e) => e.key === 'Enter' && handleClick()}
 >
-  <!-- Cabecera superpuesta -->
   <div class="card-header">
     <span class="atomic-number">{atomicNumber}</span>
     <span class="symbol">{Symbol}</span>
   </div>
 
-  <!-- Imagen ocupando casi todo el espacio del contenedor -->
   <div class="card-body">
     {#if imgUrl}
       <img class="thumbnail" src={imgUrl} alt={`Orbital de ${elementName}`} />
