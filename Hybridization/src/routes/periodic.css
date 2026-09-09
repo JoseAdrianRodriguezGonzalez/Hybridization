@@ -29,11 +29,10 @@
   width: 100%;
   aspect-ratio: 1 / 1.15; /* Relación de aspecto para acomodar bien la info */
   min-width: 44px;
-  border-radius: 8px; /* Solicitado: border-radius de 8px */
-  background: #000000;
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Sutil borde exterior */
+  background: trasparent;
   box-sizing: border-border;
   overflow: hidden;
+  border: none; /* Asegura que solo .element-card maneje el borde */
 }
 
 /* Espacios vacíos de la tabla periódica */

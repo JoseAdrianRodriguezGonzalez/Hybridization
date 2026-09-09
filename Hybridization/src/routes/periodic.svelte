@@ -68,7 +68,7 @@
 
 <div class="Periodic-header">
   <div class="header-content">
-    <h1>Periodic Table</h1>
+    <h1>Periodic Table of Elements</h1>
   </div>
 </div>
 

@@ -8,8 +8,6 @@
   export let n = 1;
   export let l = 0;
   export let m = 0;
-  
-  // AQUÍ ESTABA EL ERROR: debe llamarse exactamente como la propiedad que envías (imgUrl)
   export let imgUrl = "";
 
   const dispatch = createEventDispatcher();
@@ -26,24 +24,24 @@
   tabindex="0"
   on:keydown={(e) => e.key === 'Enter' && handleClick()}
 >
-  <!-- Cabecera: Número arriba a la izquierda y Símbolo arriba a la derecha -->
+  <!-- Cabecera superpuesta -->
   <div class="card-header">
     <span class="atomic-number">{atomicNumber}</span>
     <span class="symbol">{Symbol}</span>
   </div>
 
-  <!-- Centro: Miniatura del orbital cuántico -->
+  <!-- Imagen ocupando casi todo el espacio del contenedor -->
   <div class="card-body">
     {#if imgUrl}
-      <img class="thumbnail" src={imgUrl} alt={`Orbital ${elementName}`} />
+      <img class="thumbnail" src={imgUrl} alt={`Orbital de ${elementName}`} />
     {:else}
       <div class="orbital-placeholder"></div>
     {/if}
   </div>
 
-  <!-- Pie: Nombre y Números Cuánticos (n, l, m) -->
+  <!-- Pie con ajuste de texto mejorado -->
   <div class="card-footer">
-    <span class="element-name">{elementName}</span>
-    <span class="quantum-numbers">n: {n}, l: {l}, m: {m}</span>
+    <span class="element-name" title={elementName}>{elementName}</span>
+    <span class="quantum-numbers">n:{n}, l:{l}, m:{m}</span>
   </div>
 </div>
