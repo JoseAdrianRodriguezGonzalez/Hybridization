@@ -52,11 +52,11 @@
       
       console.log("📊 Rango de valores:", min, "a", max);
       
-      // Para orbitales, usar umbrales relativos al máximo absoluto
       const absMax = Math.max(Math.abs(min), Math.abs(max));
-      const threshold = absMax * 0.3; // 30% del valor máximo
-      
-      console.log("🎯 Umbrales:", -threshold, "a", threshold);
+
+      // Normalizar valores al rango 0-1 (como los originales)
+      const valueNormalizado = value.map(v => Math.abs(v) / absMax);
+        
 
       // Construir el trace manualmente (como en tu versión anterior)
       const trace = {
@@ -64,9 +64,9 @@
         x: x,
         y: y,
         z: z,
-        value: value,
-        isomin: -threshold,
-        isomax: threshold,
+        value: valueNormalizado,
+        isomin: 0.1,
+        isomax: 0.8,
         opacity: 0.7,
         surface: { 
           count: 8,
@@ -74,7 +74,7 @@
           pattern: "all"
         },
         colorscale: "RdBu",
-        reversescale: true,
+        reversescale: false,
         showscale: false,
         caps: {
           x: { show: false },

@@ -43,6 +43,40 @@
   pointer-events: none;
 }
 
+/* Estilos modal */
+
+.modal-content-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .orbital-info {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .orbital-info p {
+    margin: 0;
+  }
+
+  .plot-container-box {
+    flex: 1; /* OBLIGATORIO: Hace que ocupe todo el espacio vertical restante del modal */
+     width: 100%;
+    height: 500px;      /* <-- ALTURA FIJA OBLIGATORIA PARA PRUEBAS */
+    min-height: 400px;
+    position: relative;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #020617; /* Fondo de respaldo por si Plotly falla */
+  }
+  
 @media (max-width: 768px) {
   .Periodic, .Periodic-2 {
     gap: 3px;
