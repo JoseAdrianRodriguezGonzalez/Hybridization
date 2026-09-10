@@ -16,7 +16,7 @@
    * @property {string} [image]
    */
 
-  // Carga perezosa del componente 3D (No bloquea la carga de la página inicial)
+  // Carga bajo demanda del componente 3D (No bloquea la carga de la página inicial)
   /** @type {typeof import("../lib/periodic_table_components/Plot3D.svelte").default | null} */
   let Plot3DComponent = null;
 

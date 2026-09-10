@@ -70,12 +70,12 @@
             texto="Encontraras videos e imagenes detalladas."
             icono={GaleriaIcon}
             enlace="/Galeria"/> 
-            <!-- 
-            <Card titulo="Teoria"
-            texto="Encontraras conceptos matemáticos y que hay físicos detrás."
+             
+            <Card titulo="Tabla periódica"
+            texto="Encontraras la tabla periódica de los elementos con sus orbitales."
             icono={TeoriaIcon}
-            enlace="/Teoria"/> 
-            -->
+            enlace="/Periodic"/> 
+            
         
             
         </section>
