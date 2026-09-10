@@ -2,7 +2,9 @@
   import { onMount, onDestroy } from "svelte";
 
   export let dataUrl = "";
-  let plotContainer;
+  /** @type {HTMLDivElement | null} */
+  let plotContainer = null;
+  /** @type {any} */
   let Plotly;
 
   async function loadPlot() {
@@ -18,15 +20,20 @@
       const base = import.meta.env.BASE_URL || "/";
       const url = `${base}${dataUrl.replace(/^\//, "")}`;
       
-      console.log("🔍 Cargando:", url);
       const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       
       const d = await res.json();
-      console.log("📦 Datos:", d);
 
       // Detectar estructura del JSON
-      let x, y, z, value;
+      /** @type {number[]} */
+      let x;
+      /** @type {number[]} */
+      let y;
+      /** @type {number[]} */
+      let z;
+      /** @type {number[]} */
+      let value;
       
       if (d.data && Array.isArray(d.data)) {
         // Formato nuevo: {data: [{type, x, y, z, value, ...}]}
@@ -49,8 +56,6 @@
         if (value[i] < min) min = value[i];
         if (value[i] > max) max = value[i];
       }
-      
-      console.log("📊 Rango de valores:", min, "a", max);
       
       const absMax = Math.max(Math.abs(min), Math.abs(max));
 
@@ -97,7 +102,6 @@
       };
 
       await Plotly.react(plotContainer, [trace], layout, { responsive: true });
-      console.log("✅ Renderizado completado");
 
     } catch (err) {
       console.error("❌ Error:", err);
