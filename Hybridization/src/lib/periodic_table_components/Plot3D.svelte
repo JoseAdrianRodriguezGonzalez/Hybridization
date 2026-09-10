@@ -224,7 +224,7 @@
   <div class="fallback-container">
     {#if dataUrl}
       <img 
-        src="/orbitals/img/{(dataUrl.split('/').pop() ?? '').replace('.json', '.png')}" 
+        src="/orbitals/img/{(dataUrl.split('/').pop() ?? '').replace('.json', '.webp')}" 
         alt="Orbital"
         class="fallback-image"
         on:error={(e) => console.error("❌ Error cargando imagen:", e)}
