@@ -119,7 +119,7 @@
           n={elem?.n ?? 0}
           l={elem?.l ?? 0}
           m={elem?.m ?? 0}
-          imgUrl={elem ? (elem.image || `/orbitals/img/${elem.n}_${elem.l}_${elem.m}.png`) : ""}
+          imgUrl={elem ? (elem.image || `/orbitals/img/${elem.n}_${elem.l}_${elem.m}.webp`) : ""}
         />
       {:else}
         <p class="loading">Loading...</p>
@@ -141,7 +141,7 @@
           n={elem?.n ?? 0}
           l={elem?.l ?? 0}
           m={elem?.m ?? 0}
-          imgUrl={elem ? (elem.image || `/orbitals/img/${elem.n}_${elem.l}_${elem.m}.png`) : ""}
+          imgUrl={elem ? (elem.image || `/orbitals/img/${elem.n}_${elem.l}_${elem.m}.webp`) : ""}
 
         />
       {:else}

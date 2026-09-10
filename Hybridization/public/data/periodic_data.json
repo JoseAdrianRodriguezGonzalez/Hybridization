@@ -24,7 +24,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/1_0_0.png"
+        "image": "/Hybridization/orbitals/img/1_0_0.webp"
     },
     {
         "atomicNumber": 2,
@@ -51,7 +51,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/1_0_0.png"
+        "image": "/Hybridization/orbitals/img/1_0_0.webp"
     },
     {
         "atomicNumber": 3,
@@ -78,7 +78,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/2_0_0.png"
+        "image": "/Hybridization/orbitals/img/2_0_0.webp"
     },
     {
         "atomicNumber": 4,
@@ -105,7 +105,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/2_0_0.png"
+        "image": "/Hybridization/orbitals/img/2_0_0.webp"
     },
     {
         "atomicNumber": 5,
@@ -132,7 +132,7 @@
         "l": 1,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/2_1_-1.png"
+        "image": "/Hybridization/orbitals/img/2_1_-1.webp"
     },
     {
         "atomicNumber": 6,
@@ -159,7 +159,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/2_1_0.png"
+        "image": "/Hybridization/orbitals/img/2_1_0.webp"
     },
     {
         "atomicNumber": 7,
@@ -186,7 +186,7 @@
         "l": 1,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/2_1_1.png"
+        "image": "/Hybridization/orbitals/img/2_1_1.webp"
     },
     {
         "atomicNumber": 8,
@@ -213,7 +213,7 @@
         "l": 1,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/2_1_-1.png"
+        "image": "/Hybridization/orbitals/img/2_1_-1.webp"
     },
     {
         "atomicNumber": 9,
@@ -240,7 +240,7 @@
         "l": 1,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/2_1_0.png"
+        "image": "/Hybridization/orbitals/img/2_1_0.webp"
     },
     {
         "atomicNumber": 10,
@@ -267,7 +267,7 @@
         "l": 1,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/2_1_1.png"
+        "image": "/Hybridization/orbitals/img/2_1_1.webp"
     },
     {
         "atomicNumber": 11,
@@ -294,7 +294,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_0_0.png"
+        "image": "/Hybridization/orbitals/img/3_0_0.webp"
     },
     {
         "atomicNumber": 12,
@@ -321,7 +321,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_0_0.png"
+        "image": "/Hybridization/orbitals/img/3_0_0.webp"
     },
     {
         "atomicNumber": 13,
@@ -348,7 +348,7 @@
         "l": 1,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_1_-1.png"
+        "image": "/Hybridization/orbitals/img/3_1_-1.webp"
     },
     {
         "atomicNumber": 14,
@@ -375,7 +375,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_1_0.png"
+        "image": "/Hybridization/orbitals/img/3_1_0.webp"
     },
     {
         "atomicNumber": 15,
@@ -402,7 +402,7 @@
         "l": 1,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_1_1.png"
+        "image": "/Hybridization/orbitals/img/3_1_1.webp"
     },
     {
         "atomicNumber": 16,
@@ -429,7 +429,7 @@
         "l": 1,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_1_-1.png"
+        "image": "/Hybridization/orbitals/img/3_1_-1.webp"
     },
     {
         "atomicNumber": 17,
@@ -456,7 +456,7 @@
         "l": 1,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_1_0.png"
+        "image": "/Hybridization/orbitals/img/3_1_0.webp"
     },
     {
         "atomicNumber": 18,
@@ -483,7 +483,7 @@
         "l": 1,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_1_1.png"
+        "image": "/Hybridization/orbitals/img/3_1_1.webp"
     },
     {
         "atomicNumber": 19,
@@ -510,7 +510,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_0_0.png"
+        "image": "/Hybridization/orbitals/img/4_0_0.webp"
     },
     {
         "atomicNumber": 20,
@@ -537,7 +537,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_0_0.png"
+        "image": "/Hybridization/orbitals/img/4_0_0.webp"
     },
     {
         "atomicNumber": 21,
@@ -564,7 +564,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_2_-2.png"
+        "image": "/Hybridization/orbitals/img/3_2_-2.webp"
     },
     {
         "atomicNumber": 22,
@@ -591,7 +591,7 @@
         "l": 2,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_2_-1.png"
+        "image": "/Hybridization/orbitals/img/3_2_-1.webp"
     },
     {
         "atomicNumber": 23,
@@ -618,7 +618,7 @@
         "l": 2,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_2_0.png"
+        "image": "/Hybridization/orbitals/img/3_2_0.webp"
     },
     {
         "atomicNumber": 24,
@@ -645,7 +645,7 @@
         "l": 2,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_2_2.png"
+        "image": "/Hybridization/orbitals/img/3_2_2.webp"
     },
     {
         "atomicNumber": 25,
@@ -672,7 +672,7 @@
         "l": 2,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/3_2_2.png"
+        "image": "/Hybridization/orbitals/img/3_2_2.webp"
     },
     {
         "atomicNumber": 26,
@@ -699,7 +699,7 @@
         "l": 2,
         "m": -2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_2_-2.png"
+        "image": "/Hybridization/orbitals/img/3_2_-2.webp"
     },
     {
         "atomicNumber": 27,
@@ -726,7 +726,7 @@
         "l": 2,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_2_-1.png"
+        "image": "/Hybridization/orbitals/img/3_2_-1.webp"
     },
     {
         "atomicNumber": 28,
@@ -753,7 +753,7 @@
         "l": 2,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_2_0.png"
+        "image": "/Hybridization/orbitals/img/3_2_0.webp"
     },
     {
         "atomicNumber": 29,
@@ -780,7 +780,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_2_2.png"
+        "image": "/Hybridization/orbitals/img/3_2_2.webp"
     },
     {
         "atomicNumber": 30,
@@ -807,7 +807,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/3_2_2.png"
+        "image": "/Hybridization/orbitals/img/3_2_2.webp"
     },
     {
         "atomicNumber": 31,
@@ -834,7 +834,7 @@
         "l": 1,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_1_-1.png"
+        "image": "/Hybridization/orbitals/img/4_1_-1.webp"
     },
     {
         "atomicNumber": 32,
@@ -861,7 +861,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_1_0.png"
+        "image": "/Hybridization/orbitals/img/4_1_0.webp"
     },
     {
         "atomicNumber": 33,
@@ -888,7 +888,7 @@
         "l": 1,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_1_1.png"
+        "image": "/Hybridization/orbitals/img/4_1_1.webp"
     },
     {
         "atomicNumber": 34,
@@ -915,7 +915,7 @@
         "l": 1,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_1_-1.png"
+        "image": "/Hybridization/orbitals/img/4_1_-1.webp"
     },
     {
         "atomicNumber": 35,
@@ -942,7 +942,7 @@
         "l": 1,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_1_0.png"
+        "image": "/Hybridization/orbitals/img/4_1_0.webp"
     },
     {
         "atomicNumber": 36,
@@ -969,7 +969,7 @@
         "l": 1,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_1_1.png"
+        "image": "/Hybridization/orbitals/img/4_1_1.webp"
     },
     {
         "atomicNumber": 37,
@@ -996,7 +996,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_0_0.png"
+        "image": "/Hybridization/orbitals/img/5_0_0.webp"
     },
     {
         "atomicNumber": 38,
@@ -1023,7 +1023,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_0_0.png"
+        "image": "/Hybridization/orbitals/img/5_0_0.webp"
     },
     {
         "atomicNumber": 39,
@@ -1050,7 +1050,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_2_-2.png"
+        "image": "/Hybridization/orbitals/img/4_2_-2.webp"
     },
     {
         "atomicNumber": 40,
@@ -1077,7 +1077,7 @@
         "l": 2,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_2_-1.png"
+        "image": "/Hybridization/orbitals/img/4_2_-1.webp"
     },
     {
         "atomicNumber": 41,
@@ -1104,7 +1104,7 @@
         "l": 2,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_2_1.png"
+        "image": "/Hybridization/orbitals/img/4_2_1.webp"
     },
     {
         "atomicNumber": 42,
@@ -1131,7 +1131,7 @@
         "l": 2,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_2_2.png"
+        "image": "/Hybridization/orbitals/img/4_2_2.webp"
     },
     {
         "atomicNumber": 43,
@@ -1160,7 +1160,7 @@
         "l": 2,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_2_2.png"
+        "image": "/Hybridization/orbitals/img/4_2_2.webp"
     },
     {
         "atomicNumber": 44,
@@ -1187,7 +1187,7 @@
         "l": 2,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_2_-1.png"
+        "image": "/Hybridization/orbitals/img/4_2_-1.webp"
     },
     {
         "atomicNumber": 45,
@@ -1214,7 +1214,7 @@
         "l": 2,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_2_0.png"
+        "image": "/Hybridization/orbitals/img/4_2_0.webp"
     },
     {
         "atomicNumber": 46,
@@ -1241,7 +1241,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_2_2.png"
+        "image": "/Hybridization/orbitals/img/4_2_2.webp"
     },
     {
         "atomicNumber": 47,
@@ -1268,7 +1268,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_2_2.png"
+        "image": "/Hybridization/orbitals/img/4_2_2.webp"
     },
     {
         "atomicNumber": 48,
@@ -1295,7 +1295,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_2_2.png"
+        "image": "/Hybridization/orbitals/img/4_2_2.webp"
     },
     {
         "atomicNumber": 49,
@@ -1322,7 +1322,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_1_0.png"
+        "image": "/Hybridization/orbitals/img/5_1_0.webp"
     },
     {
         "atomicNumber": 50,
@@ -1349,7 +1349,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_1_0.png"
+        "image": "/Hybridization/orbitals/img/5_1_0.webp"
     },
     {
         "atomicNumber": 51,
@@ -1376,7 +1376,7 @@
         "l": 1,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_1_1.png"
+        "image": "/Hybridization/orbitals/img/5_1_1.webp"
     },
     {
         "atomicNumber": 52,
@@ -1403,7 +1403,7 @@
         "l": 1,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_1_-1.png"
+        "image": "/Hybridization/orbitals/img/5_1_-1.webp"
     },
     {
         "atomicNumber": 53,
@@ -1430,7 +1430,7 @@
         "l": 1,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_1_0.png"
+        "image": "/Hybridization/orbitals/img/5_1_0.webp"
     },
     {
         "atomicNumber": 54,
@@ -1457,7 +1457,7 @@
         "l": 1,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_1_1.png"
+        "image": "/Hybridization/orbitals/img/5_1_1.webp"
     },
     {
         "atomicNumber": 55,
@@ -1484,7 +1484,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_0_0.png"
+        "image": "/Hybridization/orbitals/img/6_0_0.webp"
     },
     {
         "atomicNumber": 56,
@@ -1511,7 +1511,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_0_0.png"
+        "image": "/Hybridization/orbitals/img/6_0_0.webp"
     },
     {
         "atomicNumber": 57,
@@ -1538,7 +1538,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-2.png"
+        "image": "/Hybridization/orbitals/img/5_2_-2.webp"
     },
     {
         "atomicNumber": 58,
@@ -1565,7 +1565,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-2.png"
+        "image": "/Hybridization/orbitals/img/5_2_-2.webp"
     },
     {
         "atomicNumber": 59,
@@ -1592,7 +1592,7 @@
         "l": 3,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_3_-1.png"
+        "image": "/Hybridization/orbitals/img/4_3_-1.webp"
     },
     {
         "atomicNumber": 60,
@@ -1619,7 +1619,7 @@
         "l": 3,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_3_0.png"
+        "image": "/Hybridization/orbitals/img/4_3_0.webp"
     },
     {
         "atomicNumber": 61,
@@ -1648,7 +1648,7 @@
         "l": 3,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_3_1.png"
+        "image": "/Hybridization/orbitals/img/4_3_1.webp"
     },
     {
         "atomicNumber": 62,
@@ -1675,7 +1675,7 @@
         "l": 3,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_3_2.png"
+        "image": "/Hybridization/orbitals/img/4_3_2.webp"
     },
     {
         "atomicNumber": 63,
@@ -1702,7 +1702,7 @@
         "l": 3,
         "m": 3,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/4_3_3.png"
+        "image": "/Hybridization/orbitals/img/4_3_3.webp"
     },
     {
         "atomicNumber": 64,
@@ -1729,7 +1729,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-2.png"
+        "image": "/Hybridization/orbitals/img/5_2_-2.webp"
     },
     {
         "atomicNumber": 65,
@@ -1756,7 +1756,7 @@
         "l": 3,
         "m": -2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_3_-2.png"
+        "image": "/Hybridization/orbitals/img/4_3_-2.webp"
     },
     {
         "atomicNumber": 66,
@@ -1783,7 +1783,7 @@
         "l": 3,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_3_-1.png"
+        "image": "/Hybridization/orbitals/img/4_3_-1.webp"
     },
     {
         "atomicNumber": 67,
@@ -1810,7 +1810,7 @@
         "l": 3,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_3_0.png"
+        "image": "/Hybridization/orbitals/img/4_3_0.webp"
     },
     {
         "atomicNumber": 68,
@@ -1837,7 +1837,7 @@
         "l": 3,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_3_1.png"
+        "image": "/Hybridization/orbitals/img/4_3_1.webp"
     },
     {
         "atomicNumber": 69,
@@ -1864,7 +1864,7 @@
         "l": 3,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_3_2.png"
+        "image": "/Hybridization/orbitals/img/4_3_2.webp"
     },
     {
         "atomicNumber": 70,
@@ -1891,7 +1891,7 @@
         "l": 3,
         "m": 3,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/4_3_3.png"
+        "image": "/Hybridization/orbitals/img/4_3_3.webp"
     },
     {
         "atomicNumber": 71,
@@ -1918,7 +1918,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-2.png"
+        "image": "/Hybridization/orbitals/img/5_2_-2.webp"
     },
     {
         "atomicNumber": 72,
@@ -1945,7 +1945,7 @@
         "l": 2,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-1.png"
+        "image": "/Hybridization/orbitals/img/5_2_-1.webp"
     },
     {
         "atomicNumber": 73,
@@ -1972,7 +1972,7 @@
         "l": 2,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_0.png"
+        "image": "/Hybridization/orbitals/img/5_2_0.webp"
     },
     {
         "atomicNumber": 74,
@@ -1999,7 +1999,7 @@
         "l": 2,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_1.png"
+        "image": "/Hybridization/orbitals/img/5_2_1.webp"
     },
     {
         "atomicNumber": 75,
@@ -2026,7 +2026,7 @@
         "l": 2,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_2_2.png"
+        "image": "/Hybridization/orbitals/img/5_2_2.webp"
     },
     {
         "atomicNumber": 76,
@@ -2053,7 +2053,7 @@
         "l": 2,
         "m": -2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-2.png"
+        "image": "/Hybridization/orbitals/img/5_2_-2.webp"
     },
     {
         "atomicNumber": 77,
@@ -2080,7 +2080,7 @@
         "l": 2,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_2_-1.png"
+        "image": "/Hybridization/orbitals/img/5_2_-1.webp"
     },
     {
         "atomicNumber": 78,
@@ -2107,7 +2107,7 @@
         "l": 2,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_2_1.png"
+        "image": "/Hybridization/orbitals/img/5_2_1.webp"
     },
     {
         "atomicNumber": 79,
@@ -2134,7 +2134,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_2_2.png"
+        "image": "/Hybridization/orbitals/img/5_2_2.webp"
     },
     {
         "atomicNumber": 80,
@@ -2161,7 +2161,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_2_2.png"
+        "image": "/Hybridization/orbitals/img/5_2_2.webp"
     },
     {
         "atomicNumber": 81,
@@ -2188,7 +2188,7 @@
         "l": 1,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_1_-1.png"
+        "image": "/Hybridization/orbitals/img/6_1_-1.webp"
     },
     {
         "atomicNumber": 82,
@@ -2215,7 +2215,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_1_0.png"
+        "image": "/Hybridization/orbitals/img/6_1_0.webp"
     },
     {
         "atomicNumber": 83,
@@ -2242,7 +2242,7 @@
         "l": 1,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_1_1.png"
+        "image": "/Hybridization/orbitals/img/6_1_1.webp"
     },
     {
         "atomicNumber": 84,
@@ -2271,7 +2271,7 @@
         "l": 1,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_1_-1.png"
+        "image": "/Hybridization/orbitals/img/6_1_-1.webp"
     },
     {
         "atomicNumber": 85,
@@ -2300,7 +2300,7 @@
         "l": 1,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_1_0.png"
+        "image": "/Hybridization/orbitals/img/6_1_0.webp"
     },
     {
         "atomicNumber": 86,
@@ -2329,7 +2329,7 @@
         "l": 1,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_1_1.png"
+        "image": "/Hybridization/orbitals/img/6_1_1.webp"
     },
     {
         "atomicNumber": 87,
@@ -2358,7 +2358,7 @@
         "l": 0,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/7_0_0.png"
+        "image": "/Hybridization/orbitals/img/7_0_0.webp"
     },
     {
         "atomicNumber": 88,
@@ -2387,7 +2387,7 @@
         "l": 0,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/7_0_0.png"
+        "image": "/Hybridization/orbitals/img/7_0_0.webp"
     },
     {
         "atomicNumber": 89,
@@ -2416,7 +2416,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-2.png"
+        "image": "/Hybridization/orbitals/img/6_2_-2.webp"
     },
     {
         "atomicNumber": 90,
@@ -2443,7 +2443,7 @@
         "l": 2,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-1.png"
+        "image": "/Hybridization/orbitals/img/6_2_-1.webp"
     },
     {
         "atomicNumber": 91,
@@ -2470,7 +2470,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-2.png"
+        "image": "/Hybridization/orbitals/img/6_2_-2.webp"
     },
     {
         "atomicNumber": 92,
@@ -2497,7 +2497,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-2.png"
+        "image": "/Hybridization/orbitals/img/6_2_-2.webp"
     },
     {
         "atomicNumber": 93,
@@ -2526,7 +2526,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-2.png"
+        "image": "/Hybridization/orbitals/img/6_2_-2.webp"
     },
     {
         "atomicNumber": 94,
@@ -2555,7 +2555,7 @@
         "l": 3,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_3_2.png"
+        "image": "/Hybridization/orbitals/img/5_3_2.webp"
     },
     {
         "atomicNumber": 95,
@@ -2584,7 +2584,7 @@
         "l": 3,
         "m": 3,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/5_3_3.png"
+        "image": "/Hybridization/orbitals/img/5_3_3.webp"
     },
     {
         "atomicNumber": 96,
@@ -2613,7 +2613,7 @@
         "l": 2,
         "m": -2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-2.png"
+        "image": "/Hybridization/orbitals/img/6_2_-2.webp"
     },
     {
         "atomicNumber": 97,
@@ -2642,7 +2642,7 @@
         "l": 3,
         "m": -2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_3_-2.png"
+        "image": "/Hybridization/orbitals/img/5_3_-2.webp"
     },
     {
         "atomicNumber": 98,
@@ -2671,7 +2671,7 @@
         "l": 3,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_3_-1.png"
+        "image": "/Hybridization/orbitals/img/5_3_-1.webp"
     },
     {
         "atomicNumber": 99,
@@ -2700,7 +2700,7 @@
         "l": 3,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_3_0.png"
+        "image": "/Hybridization/orbitals/img/5_3_0.webp"
     },
     {
         "atomicNumber": 100,
@@ -2729,7 +2729,7 @@
         "l": 3,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_3_1.png"
+        "image": "/Hybridization/orbitals/img/5_3_1.webp"
     },
     {
         "atomicNumber": 101,
@@ -2758,7 +2758,7 @@
         "l": 3,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_3_2.png"
+        "image": "/Hybridization/orbitals/img/5_3_2.webp"
     },
     {
         "atomicNumber": 102,
@@ -2787,7 +2787,7 @@
         "l": 3,
         "m": 3,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/5_3_3.png"
+        "image": "/Hybridization/orbitals/img/5_3_3.webp"
     },
     {
         "atomicNumber": 103,
@@ -2816,7 +2816,7 @@
         "l": 1,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/7_1_-1.png"
+        "image": "/Hybridization/orbitals/img/7_1_-1.webp"
     },
     {
         "atomicNumber": 104,
@@ -2845,7 +2845,7 @@
         "l": 2,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-1.png"
+        "image": "/Hybridization/orbitals/img/6_2_-1.webp"
     },
     {
         "atomicNumber": 105,
@@ -2874,7 +2874,7 @@
         "l": 2,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_0.png"
+        "image": "/Hybridization/orbitals/img/6_2_0.webp"
     },
     {
         "atomicNumber": 106,
@@ -2903,7 +2903,7 @@
         "l": 2,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_1.png"
+        "image": "/Hybridization/orbitals/img/6_2_1.webp"
     },
     {
         "atomicNumber": 107,
@@ -2932,7 +2932,7 @@
         "l": 2,
         "m": 2,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/6_2_2.png"
+        "image": "/Hybridization/orbitals/img/6_2_2.webp"
     },
     {
         "atomicNumber": 108,
@@ -2961,7 +2961,7 @@
         "l": 2,
         "m": -2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-2.png"
+        "image": "/Hybridization/orbitals/img/6_2_-2.webp"
     },
     {
         "atomicNumber": 109,
@@ -2990,7 +2990,7 @@
         "l": 2,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_2_-1.png"
+        "image": "/Hybridization/orbitals/img/6_2_-1.webp"
     },
     {
         "atomicNumber": 110,
@@ -3019,7 +3019,7 @@
         "l": 2,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_2_1.png"
+        "image": "/Hybridization/orbitals/img/6_2_1.webp"
     },
     {
         "atomicNumber": 111,
@@ -3048,7 +3048,7 @@
         "l": 2,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_2_1.png"
+        "image": "/Hybridization/orbitals/img/6_2_1.webp"
     },
     {
         "atomicNumber": 112,
@@ -3077,7 +3077,7 @@
         "l": 2,
         "m": 2,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/6_2_2.png"
+        "image": "/Hybridization/orbitals/img/6_2_2.webp"
     },
     {
         "atomicNumber": 113,
@@ -3106,7 +3106,7 @@
         "l": 1,
         "m": -1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/7_1_-1.png"
+        "image": "/Hybridization/orbitals/img/7_1_-1.webp"
     },
     {
         "atomicNumber": 114,
@@ -3135,7 +3135,7 @@
         "l": 1,
         "m": 0,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/7_1_0.png"
+        "image": "/Hybridization/orbitals/img/7_1_0.webp"
     },
     {
         "atomicNumber": 115,
@@ -3164,7 +3164,7 @@
         "l": 1,
         "m": 1,
         "s": "1/2",
-        "image": "/Hybridization/orbitals/img/7_1_1.png"
+        "image": "/Hybridization/orbitals/img/7_1_1.webp"
     },
     {
         "atomicNumber": 116,
@@ -3193,7 +3193,7 @@
         "l": 1,
         "m": -1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/7_1_-1.png"
+        "image": "/Hybridization/orbitals/img/7_1_-1.webp"
     },
     {
         "atomicNumber": 117,
@@ -3222,7 +3222,7 @@
         "l": 1,
         "m": 0,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/7_1_0.png"
+        "image": "/Hybridization/orbitals/img/7_1_0.webp"
     },
     {
         "atomicNumber": 118,
@@ -3251,6 +3251,6 @@
         "l": 1,
         "m": 1,
         "s": "±1/2",
-        "image": "/Hybridization/orbitals/img/7_1_1.png"
+        "image": "/Hybridization/orbitals/img/7_1_1.webp"
     }
 ]
