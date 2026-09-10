@@ -1,0 +1,90 @@
+/* Contenedor principal de la tabla (18 columnas) */
+.Periodic {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(48px, 1fr));
+  gap: 6px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto 2rem auto;
+  overflow-x: auto;
+  padding: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Tabla de Lantánidos y Actínidos (14 columnas) */
+.Periodic-2 {
+  display: grid;
+  grid-template-columns: repeat(14, minmax(48px, 1fr));
+  gap: 6px;
+  width: calc((100% / 18) * 14);
+  max-width: 1011px;
+  margin: 1rem auto 3rem auto;
+  overflow-x: auto;
+  padding: 0 10px;
+}
+
+/* Celdas individuales de los elementos */
+.box, .box_ {
+  width: 100%;
+  aspect-ratio: 1 / 1.15; /* Relación de aspecto para acomodar bien la info */
+  min-width: 44px;
+  background: trasparent;
+  box-sizing: border-border;
+  overflow: hidden;
+  border: none; /* Asegura que solo .element-card maneje el borde */
+}
+
+/* Espacios vacíos de la tabla periódica */
+.box:nth-child(n+2):nth-child(-n+17),
+.box:nth-child(n+21):nth-child(-n+30),
+.box:nth-child(n+39):nth-child(-n+48) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Estilos modal */
+
+.modal-content-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+
+  .orbital-info {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .orbital-info p {
+    margin: 0;
+  }
+
+  .plot-container-box {
+    flex: 1; /* OBLIGATORIO: Hace que ocupe todo el espacio vertical restante del modal */
+     width: 100%;
+    height: 500px;      /* <-- ALTURA FIJA OBLIGATORIA PARA PRUEBAS */
+    min-height: 400px;
+    position: relative;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #020617; /* Fondo de respaldo por si Plotly falla */
+  }
+  
+@media (max-width: 768px) {
+  .Periodic, .Periodic-2 {
+    gap: 3px;
+    padding-bottom: 8px;
+  }
+
+  .box, .box_ {
+    min-width: 36px;
+    border-radius: 6px;
+  }
+}

@@ -1,0 +1,115 @@
+.element-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  border-radius: 8px;
+  box-sizing: border-box;
+  /* Reducimos el padding al mínimo para ganar espacio para la imagen */
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  /* Unificamos el borde aquí */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.element-card:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+  z-index: 10;
+}
+
+/* Cabecera: Posicionada sobre la imagen para no restar altura útil */
+.card-header {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  right: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.atomic-number {
+  font-size: clamp(0.5rem, 0.75vw, 0.75rem);
+  font-weight: 300;
+  color: #d0d0d0;
+}
+
+.symbol {
+  font-size: clamp(0.6rem, 0.9vw, 0.85rem);
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Cuerpo Central: La imagen se expande al máximo */
+.card-body {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px; /* Deja espacio para el header absoluto */
+  margin-bottom: 2px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  /* Eliminamos restricciones previas de 85% para maximizar el orbital */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.orbital-placeholder {
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #b84a39 0%, #3a1815 60%, transparent 80%);
+}
+
+/* Pie: Control de desbordamiento en nombres largos */
+.card-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  line-height: 1.1;
+  z-index: 2;
+}
+
+.element-name {
+  /* clamp ajustado para evitar saltos descomunales en pantallas PC de alta resolución */
+  font-size: clamp(0.45rem, 0.65vw, 0.68rem);
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 2px;
+}
+
+.quantum-numbers {
+  font-size: clamp(0.38rem, 0.55vw, 0.52rem);
+  color: #a0a0a0;
+  margin-top: 1px;
+  white-space: nowrap;
+}
